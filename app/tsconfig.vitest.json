@@ -1,0 +1,20 @@
+{
+  "extends": "./tsconfig.app.json",
+  "exclude": [],
+  "include": [
+    "src/assets/dataset.json",
+    "src/**/*",
+	"src/tests/*"
+  ],
+  "compilerOptions": {
+    "composite": true,
+    "lib": [],
+    "types": [
+		"node", 
+		"jsdom", 
+		"vite-plugin-pwa/client",
+		"vitest/globals",
+		"jest"
+	]
+  }
+}

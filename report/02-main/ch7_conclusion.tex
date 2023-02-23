@@ -1,0 +1,153 @@
+\chapter{Conclusion}
+\label{chap:conclusions}
+
+Now that we have completed our thesis, we will summarize the work we realized during it and discuss its major aspects. The content of the specifications document, which is available at \appendixref{appendix:specifications}, will be used through this Chapter.
+
+We will start by a definition of the final state of this thesis, which will be compared with the thesis objectives and with our research question. We will also discuss the improvements that can be done. Then, the choices made during the thesis will be discussed and assessed on their correctness. Then, the problems we met will be explained, and the limitations of our work will be listed. The future work we foresee for our thesis will then be identified, followed by an explanation on our planning differences. We will conclude by a personal feedback.
+
+\minitoc
+
+\newpage
+
+% -----------------------------------------------------------------------------
+\section{Thesis State}
+\label{sec:conclusions_state}
+
+All the activities and tasks we initially planned were completed during the completion of our thesis. Some small discrepancies occurred, but the global journey stayed the same. The knowledge collection, the guide proposal, the guide content creation, the application development and the evaluation of the guide parts have all been realized as defined in the specifications document. The publishing part has also been carried out.
+
+\subsection{Comparison with the Objectives}
+\label{subsec:conclusions_state_objectives}
+
+All the thesis objectives were achieved on time. We will describe each of them in more detail to explain how they were achieved.
+
+\subsubsection{Establish an Up-To-Date Knowledge Collection}
+
+We did make a knowledge collection composed by rules, best practices, technologies and aspects that contribute to enforce the security and privacy levels of web services. Although being non-exhaustive because of the vastness of these two areas, our collection successfully allows to have a global and broad view of the topics we treated.
+
+This objective is fulfilled. However, further knowledge additions would be appreciated.
+
+\subsubsection{Provide an Understandable Guide}
+
+We stated that either a guide of a \gls{framework} would be defined during our thesis. We did propose a new way of evaluating systems with guidelines, methods, and precise rules to be respected. This outcome as been referred as a guide through our thesis, but it can also be considered as a \gls{framework}. Our proposal allows evaluating web services, but is generic and is also appropriate for evaluating other types of systems if desired.
+
+On top of the guide, an application has been developed to make its usage simpler, more accessible, and more efficient to use. The result we obtained totally meets the objective.
+
+This objective is fulfilled.
+
+\subsubsection{Apply and Test the Guide on an Online Service}
+
+We did perform an assessment of our proposal by evaluating a web service using our guide. Meaningful metrics have been defined and measured, and we manage to determine that the approaches of both our guide and application were valid. The application itself has been evaluated has optimized and well-designed, and also allows a simple usage.
+
+This objective is fulfilled.
+
+\subsubsection{Secondary Objective: Publish the Guide as an Online Resource}
+
+This secondary objective has been achieved: we did publish our work on a publicly accessible server. The application we developed is hosted on a public address:
+
+\begin{center}
+	\href{https://ohmygasp.com}{ohmygasp.com}
+\end{center}
+
+This objective is fulfilled.
+
+\subsubsection{Constraint}
+
+A constraint had been defined to address a situation where data would have been collected under real-life conditions. We did not conduct any data collection task during our thesis that had to respect this constraint.
+
+\subsection{Research Question}
+\label{subsec:conclusions_state_question}
+
+As stated in \fullrefnametype{subsec:introduction_contribution_question}, a research question had been posed in order to obtain an answer based on the work done during this thesis:
+
+\begin{displayquote}
+    \Researchquestion
+\end{displayquote}
+
+The best way we found to help organizations on this point is to allow them to evaluate whether their web services are compliant with the major risks identified by researchers, using an accessible and simple guide to evaluate the said compliance. Different scores and requirement levels are provided by the guide in order to give them a prioritization on the most sensitive concerns, in order to quickly activate levers to strengthen their web services.
+
+\subsection{Further Improvements}
+\label{subsec:conclusions_state_improvements}
+
+Our guide content can be further improved by adding the items and descriptions source. Indeed, we kept a trace of their origin while we built the knowledge collection, but we should have added this data into the spreadsheet. By doing so, the sources could then be consulted on the application by assessors.
+
+The knowledge collection can be completed with other relevant sources such as other papers, grey literature resources, or the content provided by other guides we found during the analysis made in \fullrefnametype{sec:comparison_analyse}.
+
+If an update is made on the guide by adding new content, any saved progress or results made before the update would be outdated. In this case, assessors can not take advantage of the new added content without redoing the entire evaluation process. In order to allow them to effortlessly access to new additions, a tool could be developed to convert results or progress generated using any old guide version to new ones adapted to the updated content.
+
+As explained in \fullrefnametype{sec:app_improvements}, the application can be improved on multiple points. This consists mainly of minor improvements on its \gls{ui} and on its navigation, with some optimizations in the source code. Those changes would not greatly impact the \gls{ux}, our application being already well-designed.
+
+Those different improvements will certainly be implemented in our free time, out of the thesis scope.
+
+% -----------------------------------------------------------------------------
+\section{Choices Made}
+\label{sec:conclusions_choices}
+
+We made several choices during this thesis. Those choices will be reviewed in order to establish whether the decisions we made were appropriate.
+
+The topics we selected to build our knowledge collection were totally appropriate. We managed to include a great amount of sources which constituted a comprehensive vision of the security and privacy concerns. Moreover, we managed to identify complementary yet diverse sources for each of the topics. This allowed us to guarantee a great coverage of our knowledge collection.
+
+Regarding our proposal, the guidelines of its structure and content have allowed us to provide a simple yet complete and effective way of evaluating web services. The combination of hierarchy, categorization, and information about each item ended up being a perfect compromise between simplicity and completeness.
+
+The guide content being stored into a spreadsheet file was a good choice. It allowed us to easily add new content, to define cell references and to sort the content, which saved us some time while building it. Moreover, this support is human-readable without using specialized tools.
+
+The technologies chosen to develop the application were totally appropriate to our needs. \citeproper{Vue} and the other modules allowed us to implement each capability we wanted, and our experience with this \gls{framework} helped us to build a stable and robust application.
+
+The design we chose for the application \glspl{ui} is entirely adapted to our proposal characteristics, and allows a clear understanding by the assessors.
+
+Once our thesis completed, we were very happy with the definition and the approach of the risk assessment. This choice allowed us to reach of objectives at time considering the great amount of knowledges we had to collect. In addition, the risks prioritization is consistent and satisfactory, with the most risky items being ranked as the highest priority and the less risky items as low priority. The majority of the items, having limited risks, have been classified as medium priority. This distribution is a result that fully meets our objectives and the scope of our guide.
+
+No other major choices had to be done through this thesis.
+
+We are very satisfied with the results of our choices and their positive impact on the quality of our work. Those choices were questioned and validated by our supervisors.
+
+% -----------------------------------------------------------------------------
+\section{Encountered Problems}
+\label{sec:conclusions_difficulties}
+
+We did not encounter a great amount of problems. Furthermore, those problems did not cause us much harm. However, we did meet some issues during the application implementation, as explained in \fullrefnametype{sec:app_summary}.
+
+% -----------------------------------------------------------------------------
+\section{Limitations}
+\label{sec:conclusions_limitations}
+
+We are aware that our approach has some limitations which we will address.
+
+First, the protocol we defined in \fullrefnametype{subsec:state_methodology_approach} has some limits. Although being adapted to the scope of our thesis and allowed us to reach our objectives, it did not allow us to build a knowledge collection as complete as one that would have been done using a systematic review. In addition, consultation with specialists in each topic would be appreciated. However, further additions are still possible in order to develop and improve our guide.
+
+Secondly, the risk assessment as defined in \fullrefnametype{subsec:proposal_content_levels} is not optimal. This choice was however explained and justified, and is still the best solution we found according to our thesis scope. In case of a new approach being chosen, this method can be easily changed for another one, with adapted intervals to classify the requirements levels.
+
+% -----------------------------------------------------------------------------
+\section{Future Work}
+\label{sec:conclusions_perspectives}
+
+The generic approach of our proposal allows us to imagine the development of a centralized or decentralized hub that would enable to store, compare and design different guide contents for different subjects, scopes or technologies. The application we developed could include this hub as a repository and let assessors chose the most appropriate guide for their needs.
+
+Our proposal and guide can be assessed by qualitative and/or quantitative studies to evaluate their real and measured capacity of help organization to improve their security and privacy levels. This could be the subject of further research.
+
+Our guide could be offered as a \gls{pdf} file alongside the web application medium. As the guide content is defined in a generic way, the generation of this new medium would be achievable without any modification on it, while allowing new use cases for assessors. Alternatively, the application could implement a functionality to generate a print-friendly web page using its data coming from the guide content.
+
+% -----------------------------------------------------------------------------
+\section{Planning Differences}
+\label{sec:conclusions_planning}
+
+When planning the thesis, we did not know what format our guide would use: therefore, we defined our planning in a way to be suitable for any choice. This approach has been successful given the slight changes that has resulted.
+
+One of the two major planning variations was caused by the fact that we worked on both the guide content definition and on the application development on the same time. This allowed us to take a step back from those two parts of our work and to make changes or improvements when we returned to those tasks.
+
+The second major variation was the time that the \citeproper{Test and Evaluation} activity actually took us to conduct. We planned it across too many days: those were taken for the guide content definition instead.
+
+An updated version of the planning, whose original version is available at \appendixref{appendix:specifications}, can be consulted at \appendixref{appendix:project}. Please note that the goal of the updated planning is to give an overview of the activities and tasks we did, and does not reflect all we work we did.
+
+% -----------------------------------------------------------------------------
+\section{Personal Feedback}
+\label{sec:conclusions_personal}
+
+We greatly appreciated working on this thesis. Its subject, scope and outcomes are totally suited to our centres of interest, are meaningful, and can be useful to anyone interested.
+
+All the activities done during this thesis were appropriate. The whole work process went well, and we were not stuck or bothered with major problems. We are happy with our project management as well.
+
+We are very proud and satisfied with the final state of our thesis. Our knowledge collection, proposal and application have a high level of quality, and we are convinced that we fully reached our goal. Furthermore, we were able to answer to our research question and achieved all the objectives we defined.
+
+In the future, we will certainly continue to contribute to this project, whose software repository will be made available to the public. The different improvements that could be done will be implemented, and we will also think about how to develop the future work we discussed.
+
+Finally, this thesis allowed us to learn numerous new knowledges about security and privacy. We discovered new attacks, weaknesses, technologies, and other meaningful aspects on those two subjects. We greatly appreciated this new experience, and we truly believe that using our guide would bring great benefits to any organization developing web services.

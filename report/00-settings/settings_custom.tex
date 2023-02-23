@@ -1,0 +1,90 @@
+% ========================
+% Lighter settings
+% ========================
+
+% Marc's font stack
+\usepackage{cmbright}       % Sans serif
+\usepackage{sourcecodepro}  % Monospace
+\renewcommand{\familydefault}{\sfdefault}
+
+\titlespacing{\section}{-5mm}{5mm}{2mm}
+\titlespacing{\subsection}{-5mm}{2mm}{1mm}
+\titlespacing{\subsubsection}{-5mm}{2mm}{1mm}
+
+% Colors and links - https://en.wikibooks.org/wiki/LaTeX/Hyperlinks
+\usepackage{xcolor}% http://ctan.org/pkg/xcolor
+\usepackage{hyperref}% http://ctan.org/pkg/hyperref
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!50!blue,
+  urlcolor=blue!70!blue,
+  citecolor=blue!70!blue
+%	colorlinks=false,% hyperlinks will be black
+%	linkbordercolor=blue,% hyperlink borders will be red
+%	pdfborderstyle={/S/U/W 1}% border style will be underline of width 1pt
+}
+
+% First acroynm long
+\renewcommand*{\CustomAcronymFields}{%
+  name={\the\glsshorttok},% name is abbreviated form
+  description={\the\glslongtok},% description is long form
+  first={\noexpand\emph{\the\glslongtok}\space(\the\glsshorttok)},%
+  firstplural={\noexpand\emph{\the\glslongtok\noexpand\acrpluralsuffix}\space(\the\glsshorttok)},%
+  text={\the\glsshorttok},%
+  plural={\the\glsshorttok\noexpand\acrpluralsuffix}%
+}
+
+% To print date in custom command citeproperref
+\usepackage[en-GB]{datetime2}
+
+\glsenablehyper
+
+% To continue numbering of footnotes in chapters
+% https://tex.stackexchange.com/questions/10448/continuous-footnote-numbering
+\counterwithout{footnote}{chapter}
+
+% To suppress errors on custom font sizes
+% https://tex.stackexchange.com/questions/58087/how-to-remove-the-warnings-font-shape-ot1-cmss-m-n-in-size-4-not-available
+\usepackage{lmodern}
+
+% To import PDF files as content
+\usepackage{pdfpages}
+
+% Long tables
+\usepackage{ltablex}
+\usepackage{booktabs}
+
+% inline citations
+\usepackage[
+    left = `,%
+    right = ',%
+    leftsub = ``,%
+    rightsub = ''%
+]{dirtytalk}
+
+% lighter color
+% https://stackoverflow.com/questions/2516976/latex-making-a-lighter-version-of-text-like-anti-bold
+\usepackage{color}
+\definecolor{light}{rgb}{0.4, 0.4, 0.4}
+\def\light#1{{\color{light}#1}}
+
+% change name of the hyperref
+% https://tex.stackexchange.com/questions/370991/change-chapter-to-chapter-how-to-do-this-using-autoref/370997#370997
+\addto\extrasenglish{%
+  \def\chapterautorefname{Chapter}%
+  \def\sectionautorefname{Section}%
+  \def\subsectionautorefname{Subsection}%
+  \def\subsubsectionautorefname{Subsubsection}%
+  \def\paragraphautorefname{Paragraph}%
+  \def\subparagraphautorefname{Subparagraph}%
+}
+
+% Symbols
+% https://www.latex4technics.com/?note=22y9
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+% table spacing 
+% https://tex.stackexchange.com/questions/381718/how-to-remove-the-space-after-midrule-in-a-table
+\aboverulesep = 0mm \belowrulesep = 0mm

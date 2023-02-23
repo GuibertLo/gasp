@@ -1,0 +1,61 @@
+{"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\Qplain [EL,OR]\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_GB","sentence":"^\\Qaddpagenumbersforpdfimports [RO,LE]\\E$"}
+{"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\Qaddpagenumbersforpdfimports [RO,LE]\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_GB","sentence":"^\\Qminitoc\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_GB","sentence":"^\\Qminitoc before minitoc after\\E$"}
+{"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\Q.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_GB","sentence":"^\\Qminitoc Contents\\E$"}
+{"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\Q[OR] [EL] [EL,OR]\\E$"}
+{"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\Q, , Main expert\\E$"}
+{"rule":"DOUBLE_PUNCTUATION","sentence":"^\\Q, , Main expert\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_GB","sentence":"^\\QCoRR\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_GB","sentence":"^\\Qnosql name=NoSQL, description=Database not using the relational model and the sql language\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_GB","sentence":"^\\QEvent Condition Action Elasticseach Logstash and Kibana Elasticseach Fluentd and Kibana Event Processing Agent Event Processing Network\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_GB","sentence":"^\\QRepresentational state transfer reStructuredText Remote Procedure Call\\E$"}
+{"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\Q[ longplural=Trusted Execution Environments] tee TEE Trusted Execution Environment\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_GB","sentence":"^\\Q[ longplural=Trusted Execution Environments] tee TEE Trusted Execution Environment\\E$"}
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qnosql name=NoSQL, description=Database not using the relational model and the sql language\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_GB","sentence":"^\\QJava ARchive Java Management Extensions JavaScript Object Notation Java Virtual Machine\\E$"}
+{"rule":"ENGLISH_WORD_REPEAT_RULE","sentence":"^\\Q[ longplural=Trusted Execution Environments] tee TEE Trusted Execution Environment\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_GB","sentence":"^\\QJava ARchive Java Management Extensions Java Virtual Machine\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_GB","sentence":"^\\QreStructuredText Remote Procedure Call\\E$"}
+{"rule":"ENGLISH_WORD_REPEAT_RULE","sentence":"^\\Q[ longplural=Trusted Execution Environments] tee TEE Trusted Execution Environment Trusted Execution Technology Trusted Platform Module\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_GB","sentence":"^\\Q[ longplural=Trusted Execution Environments] tee TEE Trusted Execution Environment Trusted Execution Technology Trusted Platform Module\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_GB","sentence":"^\\QLeveled fully homomorphic encryption\\E$"}
+{"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\QTransport Layer Security [ longplural=Trusted Execution Environments] tee TEE Trusted Execution Environment Trusted Execution Technology Trusted Platform Module\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_GB","sentence":"^\\QTransport Layer Security [ longplural=Trusted Execution Environments] tee TEE Trusted Execution Environment Trusted Execution Technology Trusted Platform Module\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_GB","sentence":"^\\QHTTPA: HTTPS Attestable Protocol\\E$"}
+{"rule":"ENGLISH_WORD_REPEAT_RULE","sentence":"^\\QTransport Layer Security [ longplural=Trusted Execution Environments] tee TEE Trusted Execution Environment Trusted Execution Technology Trusted Platform Module\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_GB","sentence":"^\\QThe main chip manufacturers have developed their own solutions, such as the \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q and the \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q from Intel, TrustZone from ARM or the \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q from AMD.\\E$"}
+{"rule":"EN_A_VS_AN","sentence":"^\\QThe most basic and most used manner is a hardware solution that includes an isolated space, which is then used by an \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qtee.\\E$"}
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qenglish.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_GB","sentence":"^\\QThe main chip manufacturers have developed their own solutions, such as the \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q and the \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q from Intel https://intel.ly/34RJFck 2022 03 13, TrustZone from ARM or the \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q from AMD.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_GB","sentence":"^\\QThe main chip manufacturers have developed their own solutions, such as the \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q https://intel.ly/34RJFck 2022 03 13 and the \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q https://intel.ly/3qarDcN 2022 03 13 from Intel, TrustZone https://bit.ly/3Jljsla 2022 03 13 from ARM or the \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q from AMD.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_GB","sentence":"^\\QThe main chip manufacturers have developed their own solutions, such as the \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q https://intel.ly/34RJFck 2022 03 13 and the \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q https://intel.ly/3qarDcN 2022 03 13 from Intel, TrustZone https://bit.ly/3Jljsla 2022 03 13 from ARM or the \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q https://bit.ly/3MU5p8y 2022 03 13 from AMD.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_GB","sentence":"^\\QreStructuredText Request for Comments Remote Procedure Call\\E$"}
+{"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\QTransport Layer Security Transmission Control Protocol [ longplural=Trusted Execution Environments] tee TEE Trusted Execution Environment Trusted Execution Technology Trusted Platform Module\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_GB","sentence":"^\\QTransport Layer Security Transmission Control Protocol [ longplural=Trusted Execution Environments] tee TEE Trusted Execution Environment Trusted Execution Technology Trusted Platform Module\\E$"}
+{"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\Q#1 source: \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q (accessed #3 #4 #5 )\\E$"}
+{"rule":"ENGLISH_WORD_REPEAT_BEGINNING_RULE","sentence":"^\\QWe conclude with lessons and recommendations to ensure the long-term health and security of the certificate ecosystem.\\E$"}
+{"rule":"ENGLISH_WORD_REPEAT_RULE","sentence":"^\\QTransport Layer Security Transmission Control Protocol [ longplural=Trusted Execution Environments] tee TEE Trusted Execution Environment Trusted Execution Technology Trusted Platform Module\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_GB","sentence":"^\\QGentry\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q fixed this problem by defining a Recrypt function, which re-encrypt a \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q with a quantity of noise inferior to the square-root of the noise threshold.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_GB","sentence":"^\\QIf this characteristic is met, the scheme is called bootstrappable, which that it can handle its own data noise through operations, as stated above.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_GB","sentence":"^\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q who adapted an already trained neural network to a fully homomorphic one named CyrptoNets.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_GB","sentence":"^\\QIn subsequent years, researches were more focused on \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q models, such as Dowlin et Al.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_GB","sentence":"^\\QDirected Acyclic Graph Defense Advanced Research Projects Agency Deep Learning Document Object Model Data Protection in Virtual Environments Domain Specific Language\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_GB","sentence":"^\\QSeveral key-in-hand Dummies exist, like OpenMinded's PySyft https://bit.ly/3vcVNxz 2022 04 08 library.\\E$"}
+{"rule":"EN_A_VS_AN","sentence":"^\\QThe goal is to produce two Dummies of an information system, which must contain an \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q process.\\E$"}
+{"rule":"ENGLISH_WORD_REPEAT_RULE","sentence":"^\\QPartially Homomorphic Encryption Platform Security Processor [longplural=Proofs of Concept] poc PoC Proof of Concept\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_GB","sentence":"^\\QThe personal devices can use various client libraries, such as PySyft or other implementations in Swift, JavaScript or Kotlin languages.\\E$"}
+{"rule":"PRP_VB","sentence":"^\\QHE Transformer for nGraph: this project has been launched by Intel and runs over their nGraph Compiler, dedicated to \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, but is also compatible with TensorFlow \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
+{"rule":"ENGLISH_WORD_REPEAT_RULE","sentence":"^\\QThe listing listing:image-process shows those steps.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_GB","sentence":"^\\QThe .conv2dim2col() method does a single convolution operation The .mm() method does a vector-matrix multiplication The .square() method squares the encrypted vector The ts.CKKSVector.packvectors() method arranges the vectors for CKKS operations\\E$"}
+{"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\QThe .conv2dim2col() method does a single convolution operation The .mm() method does a vector-matrix multiplication The .square() method squares the encrypted vector The ts.CKKSVector.packvectors() method arranges the vectors for CKKS operations\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_GB","sentence":"^\\Qbash|jupyter notebook –ip=\"10.0.0.4\\E$"}
+{"rule":"EN_UNPAIRED_BRACKETS","sentence":"^\\Qbash|jupyter notebook –ip=\"10.0.0.4\\E$"}
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qbash|jupyter notebook –ip=\"10.0.0.4\\E$"}
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qvm.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_GB","sentence":"^\\Qbash|jupyter nbconvert –to script <filename>.ipynb|\\E$"}
+{"rule":"ENGLISH_WORD_REPEAT_RULE","sentence":"^\\QThe table table:validation_testing_resources_time show the difference of time needed to test the two models.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_GB","sentence":"^\\QActivity to complete: sec:activities_sota\\E$"}

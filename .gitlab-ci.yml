@@ -1,0 +1,49 @@
+default:
+  image: node:19-alpine
+
+stages:
+  - data
+  - test
+  - deploy
+
+csv:
+ image: python:3.11
+ stage: data
+ script:
+  - cd data/converter
+  - pip install pipenv
+  - pipenv install
+  - git clone https://github.com/marcoconti83/read-ods-with-odfpy ODSReader
+  - pipenv run python convert.py -i ../dataset.ods -o output.json
+  - cd ../..
+  - rm app/src/assets/dataset.json
+  - cp data/converter/output.json app/src/assets/dataset.json
+  - rm app/public/thesis.pdf
+  - cp report/thesis.pdf app/public/thesis.pdf
+
+unit:
+ image: node:19-alpine
+ stage: test
+ script:
+  - cd app
+  - npm install --progress=false
+  - npm run test-unique
+ only:
+  - main
+
+pages:
+ image: node:19-alpine
+ stage: deploy
+ script:
+  - cd app
+  - npm install --progress=false
+  - npm run build
+  - rm -rf ../public
+  - mkdir ../public
+  - cp -r dist/* ../public
+ artifacts:
+  expire_in: 1 day
+  paths:
+  - public
+ only:
+  - main

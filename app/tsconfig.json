@@ -1,0 +1,21 @@
+{
+  "files": [],
+  "compilerOptions": {
+    "resolveJsonModule": true,
+	"types": [
+		"element-plus/global",
+		"vite-plugin-pwa/client",
+	]
+  },
+  "references": [
+    {
+      "path": "./tsconfig.config.json"
+    },
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.vitest.json"
+    }
+  ],
+}

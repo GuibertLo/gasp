@@ -1,0 +1,83 @@
+@font-face {
+	font-family: "Open Sans";
+	src: local("fonts/opensans.ttf") format("truetype"),
+		local("fonts/opensans-italic.ttf") format("truetype");
+}
+
+* {
+	font-family: "Open Sans", sans-serif;
+}
+
+p, a, h4, span, div {
+  font-size: 19px;
+  line-height: 27px;
+}
+
+h1 {
+	font-size: 27px;
+	font-weight: bolder;
+}
+h2 {
+	font-size: 25px;
+}
+h3, .el-button, .box-card-evaluation .item-title {
+	font-size: 23px;
+}
+h4 {
+	text-decoration: underline;
+}
+
+.el-button {
+	padding: 10px 20px;
+	height: auto;
+}
+
+/* Avoid specific styles on collapses */
+.el-collapse, .el-collapse-item__header, .el-collapse-item__wrap {
+	font-size: inherit;
+	--el-collapse-content-font-size: inherit;
+	--el-collapse-header-font-size: inherit;
+	background-color: inherit;
+}
+.el-collapse-item__header {
+	font-weight: bold;
+}
+
+@media screen and (max-width: 1200px) {
+	p, a, h4, span, div {
+		font-size: 17px;
+		line-height: 23px;
+	}
+
+	h1 {
+		font-size: 23px;
+	}
+
+	h2 {
+		font-size: 21px;
+	}
+
+	h3, .el-button, .box-card-evaluation .item-title {
+		font-size: 17px;
+	}
+
+}
+
+@media screen and (max-width: 768px) {
+  p, a, .box-card-evaluation .item-title, h3, h4, .el-button, span, div {
+    font-size: 14px;
+	line-height: 20px;
+  }
+  h1 {
+  	font-size: 20px;
+  	font-weight: bolder;
+  }
+
+  h2 {
+  	font-size: 17px;
+  }
+
+.el-button {
+	padding: 10px;
+}
+}

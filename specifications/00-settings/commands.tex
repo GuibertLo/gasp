@@ -1,0 +1,71 @@
+\newcommand{\itembullet}{\begin{itemize}[label={•}]}
+
+\newcommand{\newimage}[4]{
+\begin{figure}[!h]
+    \begin{center}
+        \includegraphics[width=#1\textwidth]{#2}
+        \caption{#3}
+        \label{fig:#4}
+    \end{center}
+\end{figure}
+}
+
+%TODO Improve with inclusion of the basic form
+\newcommand{\newsourcedimage}[8]{
+\begin{figure}[!h]
+    \begin{center}
+        \includegraphics[width=#1\textwidth]{#2}
+        %\caption{#3\\\hspace{\textwidth}Source: \url{#4} (accessed \DTMdisplaydate{#5}{#6}{#7}\\)}
+        \captionsourcedated{#3}{\url{#4}}{#5}{#6}{#7}
+        \label{fig:#8}
+    \end{center}
+\end{figure}
+}
+
+\newcommand{\fullrefname}[1]{\ref{#1} (\nameref*{#1})}
+\newcommand{\fullrefnametype}[1]{\autoref{#1} (\nameref*{#1})}
+% TODO fix this \newcommand{\Fullrefnametype}[1]{\expandafter\MakeUppercase A}
+\newcommand{\Fullrefnametype}[1]{\fullrefnametype{#1}}
+
+\newcommand{\citeproper}[1]{\textit{#1}}
+\newcommand{\citeproperref}[5]{\citeproper{#1}\footnote{\textit{#1} source: \url{#2} \accessed{#3}{#4}{#5}}}
+
+% --- Code and minted
+
+% \newenvironment{codeBloc}[3]{
+%     \begin{listing}[!ht]
+%         \begin{minted}{#1}
+%             ...
+%         \end{minted}    
+%         \caption{#2}
+%         \label{listing:#3}
+%     \end{listing}
+% }
+
+% \newenvironment{codeBloc}[1]
+%     {[2]
+%     {\end{minted}\caption{#1}\label{listing:#2}\end{listing}}
+
+\newcommand{\codefile}[4]{
+    \begin{listing}[!ht]
+        \inputminted{#1}{#4}
+        \caption{#2}
+        \label{listing:#3}
+    \end{listing}
+}
+
+
+\newcommand*{\captionsourcedated}[5]{%
+\caption[{#1}]{%
+	#1%
+	
+    \textit{Source:} #2%
+    \
+    \accessed{#3}{#4}{#5}%
+	}%
+}
+
+
+\newcommand{\accessed}[3]{%
+(accessed \DTMdisplaydate{#1}{#2}{#3}\\)
+}

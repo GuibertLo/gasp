@@ -1,0 +1,558 @@
+\chapter{Guide Proposal}
+\label{chap:proposal}
+
+Once the collection of knowledge and the comparison of other guides done, we have to propose a new way of defining a guide. This Chapter will expose our considerations toward this challenge and how we defined an effective, accessible and complete guide. We will start with the global considerations of the guide and finish with its precise parts.
+
+First, an explanation of the capabilities that the guide must have will be made. Then, the medium that will distribute the guide will be discussed and chosen, followed by the definition of its structure. Once those parts done, the guidelines on how to create the guide content will be defined. Afterwards, the ability to get a score through evaluations made by the guide will be discussed and then defined. The creation of the guide content by following our proposal will then be explained. We will conclude by a comparison between our proposal and the other guides already compared between each other in \fullrefnametype{chap:comparison}.
+
+The other guides will play a role in the definition of our proposal: we analysed various ways of building, exposing and formatting them, and we noticed some of their useful approaches. We will use this knowledge in order to refine, in our opinion, the best guide definition that serves our goal.
+
+\minitoc
+
+\newpage
+
+% -----------------------------------------------------------------------------
+\section{Guide Capabilities}
+\label{sec:proposal_capabilties}
+
+First and foremost, we have to define what the guide must be able to do for its users. We will refer to them as assessors to avoid any confusion with the end users of their web services. Furthermore, we must define who will be using it, as well as the final output of the guide. Those definitions are essential for an adequate, adapted and well-defined work process.
+
+The capabilities of our guide must meet the global objectives of this thesis, described in \fullrefnametype{subsec:introduction_objectives}. In order to define those capabilities appropriately and to be sure that our approach is complete, we defined a set of question that must be answered to cover all the context. 
+\begin{enumerate}
+    \item \textbf{Why} should the guide be used?
+    \item \textbf{What} must the guide be able to \textbf{do}?
+    \item \textbf{How} to use the guide?
+    \item \textbf{Who} are the guide targeted users?
+    \item \textbf{When} should the guide be used?
+    \item \textbf{What} are the \textbf{results} of the guide usage?
+\end{enumerate}
+
+After reflexion, here are the answers for those prior questions:
+\begin{enumerate}
+    \item To \textbf{improve} the security and privacy levels of a web service, including considerations on the \gls{ai} topic.
+    \item An easy, quick and accessible \textbf{assessment} on security and privacy risks.
+    \item By evaluating whether the service is \textbf{compliant} with a set of directives designed to mitigate security and privacy risks.
+    \item It is addressed to the \textbf{developers and/or decision makers} of the service. The latter must have an adapted technical understanding in order to use the guide.
+    \item Ideally during the \textbf{(Secured) \gls{sdlc}} process done for the service development. Its usage would also be possible on existing services, but it would be less convenient because of the costly and painful changes that come when modifying already built pieces of software.
+    \item A \textbf{scored evaluation} of the service security and privacy levels, which allows to get an accessible overview of its compliance with the set of directives designed to mitigate risks.
+\end{enumerate}
+
+The following Sections will describe more specific aspects of the guide based on the answers of the questions.
+
+% -----------------------------------------------------------------------------
+\section{Medium Choice}
+\label{sec:proposal_medium}
+
+The medium of the guide is determining for its ease of use and accessibility. Indeed, potential assessors must not be frightened to understand how to use the guide, nor be afraid of its workload.
+
+In our case, we wish to make our guide as available as possible for assessors. To this end, we found two mediums that are the most appropriate choices given their universality, ease of use, and availability: \gls{pdf} files and web applications. The \gls{pdf} files must be published in order to access them and websites are often used for this purpose. Those websites often include additional information about the \gls{pdf} files themselves.
+
+The medium choice is not decisive for the next steps of our proposal definition. Indeed, the content of the guide is the same regardless of the medium choice, but its layout and presentation will be optimized for the medium we choose.
+
+The two mediums have different advantages, which is why we defined the characteristics that are the most relevant for our needs. Those mediums will then be evaluated based on their compliance with those characteristics to make an appropriate choice.
+\begin{itemize}
+    \item \textbf{Accessibility}: do assessors need particular knowledge about how to use the medium?
+    \item \textbf{Availability}: is the medium available under all circumstances? Takes into account the Internet connection.
+    \item \textbf{Extendability}: is the medium easily upgradable with new items or resources?
+    \item \textbf{Interactivity}: can assessors interact with the medium?
+    \item \textbf{Interoperability}: can assessors access and use the medium on any platform and/or client?
+    \item \textbf{Sustainability}: is the medium maintenance easy and light?
+    \item \textbf{Technicity}: does the medium require a technical infrastructure?
+\end{itemize}
+
+\fullrefnametype{table:proposal_format_medium} shows an evaluation of each medium on the characteristics we defined. Because of their complementarity, we would like to publish both mediums. Indeed, the interactivity that web applications provide is a strong advantage for a guide that includes an evaluation process. This point is ever more relevant considering the fact that we need to design a light guide for the assessors. Furthermore, new resources or updates can be distributed more conveniently. However, a \gls{pdf} file can be accessed using any device, does not require any Internet connection if already downloaded, and is less sensitive to technological evolutions. Its main limitation for our use case is its ability of integrating scoring capabilities that must be compatible on all major \gls{pdf} readers.
+
+\begin{table}[ht]
+    \begin{center}
+        \begin{tabular}{l|cc}
+            \toprule[0.8mm]
+            \textbf{Characteristic} & \textbf{\gls{pdf} file} & \textbf{Web app.} \\ 
+            \midrule[0.8mm]
+            Accessibility & \multicolumn{2}{c}{equivalent} \\
+            Availability & $\pmb{++}$ & $\pmb{+}$ \\
+            Extendability & $\pmb{+}$ & $\pmb{++}$ \\
+            Interactivity & limited & broad \\
+            Interoperability & $\pmb{+}$ & $\pmb{++}$ \\
+            Sustainability & lighter & heavier \\
+            Technicity & lighter & heavier \\
+            \bottomrule[0.8mm]
+        \end{tabular}
+		\tableannotations{}{$\pmb{++}$: totally fills the criteria; $\pmb{+}$: somehow fills the criteria.}
+    \end{center}
+    \caption{Advantages of the considered mediums for the guide}
+    \label{table:proposal_format_medium}
+\end{table}
+
+Due to the thesis timeframe, we have chosen to restrict ourselves to the web application medium only. The creation of a \gls{pdf} file could be conducted outside the thesis scope as further addition.
+
+With this medium choice, new considerations must be taken into account to ensure adapted access to the guide for the majority of assessors: 
+\begin{itemize}
+    \item \textbf{Browsable}: the navigation and \gls{ux} must be as simple as possible.
+    \item \textbf{Compatible}: the web application must be compatible with all the major modern browsers.
+    \item \textbf{Offline usage}: the web application must provide an offline usage.
+    \item \textbf{Usable}: the web application must be designed as simple as possible.
+\end{itemize}
+
+Other mediums have been considered but have been evaluated as unsuitable for various reasons:
+\begin{itemize}
+    \item \textbf{Mobile application}: the added benefits of this medium comparing to a web application are not adapted to our needs. Furthermore, doing an evaluation on a mobile platform is less convenient because of the screen size. Finally, the fact that mobile applications must be installed first can be an adoption barrier.
+    \item \textbf{Desktop application}: same reasons as for the mobile application medium plus the fact that desktop applications can be difficult to be installed in professional environments. Furthermore, the maintenance of such applications is heavier.
+    \item \textbf{Paper-based}: difficult to distribute. Moreover, a \gls{pdf} file can be easily printed. 
+    \item \textbf{Single or multiple video clips}: not suited for an evaluation process that requires non-predictable break times while assessing the guide content. The production of video clips is also too heavy for this project. However, the guidance provided by video clips is very high, which is great to lead a such processes.
+\end{itemize}
+
+% -----------------------------------------------------------------------------
+\section{Structure Guidelines}
+\label{sec:proposal_structure}
+
+In order to build a simple yet complete guide, we need to define a structure that allows guidance in an understandable manner. To this end, we defined several structural parts to classify related content in a hierarchical manner: content nature, categories, and objectives.
+
+Each structural part has been defined in order to be both compatible and distinguishable from the others. The main goal of this approach is to efficiently guide the assessors in the process without creating any complexity. The visual features defined for each structural part have been defined in order to limit the readability overhead.
+
+\Fullrefnametype{fig:ch4_structure} shows a summary of each structural part defined in this Section in the form of a flowchart.
+
+\subsection{Content Nature}
+\label{subsec:proposal_structure_nature}
+
+The guide content must be classified based on its relative importance: indeed, some elements are more useful and essential than others. In order to keep the guide as light as possible in its original state while allowing it to be able to go into specifics, we defined a binary classification on the content nature.
+
+A \textbf{primary content} has been defined as any item that is considered as mandatory to understand the context of an assessment. Following this statement, a \textbf{secondary content} has been defined as any related item to a primary content that is not as important for the assessment understanding. A secondary content must be directly link to only one primary content.
+
+Due to the subjectivity of this classification, we defined a set of rules to determine a content nature:
+\begin{enumerate}
+    \item \textbf{Assessable}: a primary content must enable an assessment.
+    \item \textbf{Brevity}: a primary content must be brief.
+    \item \textbf{Specificity}: a primary content must assess a single item.
+\end{enumerate}
+
+The chosen guide medium being a web application, the secondary content must be displayed or hidden using non-modal specific containers relatively to their primary content through buttons, information icons or other interactive elements. Navigating to separated pages can also be considered, provided that the navigation is reversible.
+
+If a \gls{pdf} file is developed, the main part of the file must contain the primary content, with links to the appendices part that contains all the secondary content.
+
+This classification allows the items placed in the primary content to be evaluated sequentially without interruption, while having links to further explanations and/or resources represented by the secondary content when necessary.
+
+\subsection{Categorization}
+\label{subsec:proposal_structure_categorization}
+
+The \gls{ict} field is very broad and contains a lot of different areas of specialization. Even considering only web services, many areas are necessary to build such systems. The \fullrefnametype{sec:state_review} shows this diversity.
+
+Exposing a bunch of uncategorized list of items to be assessed would include a massive and shapeless workload. In order to lighten this assessment, we defined a categorization on the guide content.
+
+No research or common ground on \gls{ict} categorization has been found. Therefore, we defined our own approach.
+
+The categorization must be done on two layers, with global categories acting as the less specific layer, and their related subcategories that are more specific. All the items to be assessed must be assigned to a subcategory.
+
+We limited the amount of layers to two for simplicity and understanding purposes. Adding another layer of subcategories would bring a lot of complexity: being more specific would be a greater pain in the guide usage than adding it to get a more precise categorization. Furthermore, there are no needs to go deeper.
+
+The categorization must be defined in a way that optimizes the understanding of the assessors. Following this principle, we defined a set of rules to be respected while defining categories:
+\begin{itemize}
+    \item \textbf{Complete}: all items must be able to fit in a category and in one of its related subcategory.
+    \item \textbf{Exclusive}: an item must not be duplicated or included in two subcategories.
+    \item \textbf{Familiar}: the categories and subcategories must be similar to other ones used in the \gls{ict} field, such as articles, websites or job descriptions.
+    \item \textbf{Granular}: each category must be able to be separated into several more specific subcategories where items are assigned to. 
+    \item \textbf{Numbered}: the amount of categories and subcategories must be limited in order to avoid drowning assessors in too many topics.
+    \item \textbf{Specialized}: the categories and subcategories must have enough inner specificities so that they can be distinguished from each others. 
+\end{itemize}
+
+We did not split the items depending on their topic, security and privacy, for reasons explained later in \fullrefnametype{subsec:proposal_content_topic}.
+
+\subsection{Objectives}
+\label{subsec:proposal_structure_objectives}
+
+The last structural part of our proposal are the objectives. Displaying sets of items to be assessed directly into the subcategories was the simplest solution in terms of structure, but we noticed that the assessors might fell overwhelmed if the sets of items are too long. Furthermore, the evaluation process would give assessors no reason to comply with these sets of items if no objective is given. For those two reasons, we decided to include this last piece of structure into our guide proposal.
+
+Objectives are ideal for providing an understandable list of the considerations that must be met to reach appropriate security and privacy levels for each part of an evaluated web service. They can even be useful when taken alone without their related items as an overview to get a summary of what should be enforced for each (sub)category.
+
+Objectives must be consistent with each others in their formulation. They must form basic sentences with a subject, a verb and a complement, finished by a final point. The sentences must qualify the goal of the objectives in a clear and comprehensive way. The verbs must be in the simple present passive tense because the sentences subject are not the ones that realizes the actions. The length of the sentences is not bounded, but the amount of words should be as short as possible to optimize the reading process. Furthermore, objectives must always encapsulate the set of items that contribute to their fulfilment. An example is given below:
+
+\begin{center}
+	The distributed systems are compliant with the defined security protocols.
+\end{center}
+
+Each objective must be consistent and must be achievable. To this end, they must be defined by applying the \gls{smart} method. This method has been chosen because of its broad adoption both globally and in the \gls{ict} field. Here is an explanation of this method:
+
+\begin{itemize}
+    \item \textbf{Specific}, must be well-defined, understandable and focused on a single goal.
+    \item \textbf{Measurable}, must include metrics to indicate its fulfilment. The metric of the objectives is the compliance of the evaluated web service with the objects contained by the objective.
+    \item \textbf{Achievable}, must (eventually) be possible to reach.
+    \item \textbf{Relevant}, must be oriented toward the project scope. All the objectives must aim to improve the security and/or privacy levels.
+    \item \textbf{Time-bounded}, must include a deadline for its fulfilment. All objectives must be met by the evaluated web service when using the guide.
+\end{itemize}
+
+The definition of objectives must be realized alongside the definition of items that is explained in \fullrefnametype{subsec:proposal_content_formulation}. The related items must be grouped together based on their common ground and appropriate objectives must then be defined to express the goal that each set of item is aiming to reach. 
+
+\newimage{0.89}{ch4_structure.png}{Flowchart of the guide structure}{ch4_structure} 
+
+% -----------------------------------------------------------------------------
+\section{Content Guidelines}
+\label{sec:proposal_content}
+
+Once the guide structure specified, the process to create its content will be defined. The guide content refers to the sets of items that must be evaluated by the assessors during the guide usage.
+
+Each part of the content must respect the same principles as described in \fullrefnametype{sec:proposal_structure}: each element of the guide must be both compatible and distinguishable from the others, for both structural and content elements.
+
+\Fullrefnametype{fig:ch4_content} shows a summary of each content part defined in this Section in the form of a flowchart.
+
+\subsection{Item Topics}
+\label{subsec:proposal_content_topic}
+
+Our thesis scope includes two different fields: security and privacy. This combination can make it difficult for assessors to understand on which field an item is focused. To avoid such issues, we defined a labelling system for the items: by displaying a visual feature, assessors have an indication of what field the items are about.
+
+We have called this labelling \textit{topics} because we found this word as the most appropriate to differentiate the two fields. We did not choose the word \textit{fields} in order to avoid any confusion with the guide categorization. The topics that qualify the guide items have therefore not the same meaning that the definition we made in \fullrefnametype{sec:introduction_definitions}, which refers to the various \gls{ict} fields.
+
+We considered multiple visual features to indicate the topics: images, colours, icons, symbol, text labels, or an additional categorization on top of the one defined in \fullrefnametype{subsec:proposal_structure_categorization}. This choice must be done by considering our needs: an easy recognition, a low visual load, and a simple feature. Once those needs considered, we decided to use icons that must be added alongside the corresponding items, composed of the following characteristics:
+\begin{itemize}
+    \item A unique \textbf{shape} that is not used by other elements of the guide.
+    \item A unique yet lightly loaded \textbf{colour} that is not used by other elements of the guide, applied as a background colour.
+    \item The \textbf{first letter} of the topic contained into the shape, using a contrasting colour from the background colour.
+\end{itemize}
+
+\Fullrefnametype{fig:ch4_icons} shows an example of two icons that could be used in the guide medium.
+
+\newimage{0.3}{ch4_icons.png}{An example of topic icons}{ch4_icons}
+
+In order to have a consistent policy, an item that concerns both topics must have both icons assigned. Indeed, removing the icons for such items would break the consistency inside the sets of item, and a third icon would add more complexity for the recognition of topics. Displaying both icons is the simplest way to show this case, despite an extra visual addition.
+
+If our proposal is used to evaluate other fields that the security and privacy levels, the topics can be changed for more appropriate terms.
+
+\subsection{Requirement Levels}
+\label{subsec:proposal_content_levels}
+
+While building our knowledge collection, we have noticed that non-compliance with the rules, technologies, or principles that aim to improve the security or privacy levels of systems leads to a variety of risks with varying degrees of severity. This variety causes a need to give different priorities to objects according to the risk levels related to them. To this end, different requirement levels for items have been defined. 
+
+\subsubsection{Method}
+\label{subsec:proposal_content_levels_method}
+
+Multiple ways of expressing requirement levels have been explored by Javed et al.~\cite{bannu_28100_pakistan_comparison_2015}, and the \gls{moscow} method has the best advantages according to our needs. This method is widely used, is easily understandable, and has been peer-reviewed, although it has not been evaluated as the best prioritization assessment. Indeed, no inner priority is given to items in the same priority levels, and the \textit{Won't have} priority can lead to confusion regarding its scope. However, those two limitations do not impact our approach because we do not have any needs on inner prioritization of items for simplicity purposes, and we made an assumption that every guide items must be covered at the evaluation time, which rules out the utility of the \textit{Won't have} level.
+
+We created a hybrid method using almost all the \gls{moscow} priority levels for expressing the requirement levels, and a risk matrix to classify the guide items in the said levels. Explanations and descriptions of the requirement levels are the following:
+\begin{itemize}
+    \item \textbf{Must Have}: the evaluated web service must be compliant with the corresponding items. Mandatory, because a non-compliance includes severe risks.
+    \item \textbf{Should Have}: the evaluated web service should be compliant with the corresponding items. Compliance is not mandatory because of the lower severity of risks, but would greatly improve the security and/or privacy levels.
+    \item \textbf{Could Have}: same condition that the \textit{Should Have} level, but a non-compliance brings lower risks.
+\end{itemize}
+
+Two levels can be used for the not mandatory items in order to prioritize the efforts to be done by assessors to improve their web service overall security and privacy levels. Non-compliant items that include higher risks should be processed before the lower risky ones. However, the evaluated web service should eventually be compliant with all the guide items to be considered as totally secure and private according to our knowledge collection.
+
+\subsubsection{Visual Feature}
+\label{subsec:proposal_content_levels_visual}
+
+The requirement levels must be differentiated by \textbf{colours}. We thought of similar visual features as the ones explained in \fullrefnametype{subsec:proposal_content_topic} and found out that adding colours to items would be the lighter and most adapted way of expressing a requirement level. This choice has mainly been motivated by fact that we have three levels of risks, which can be likened to the information that is communicated by the status of traffic lights in almost all regions of the world. The more risky situations are shown by a red colour, and the less risky ones by a green colour. Following this encoding method, the colours that must be used are the following:
+\begin{itemize}
+    \item \textbf{Red}, for the \textit{Must Have} level.
+    \item \textbf{Yellow}, for the \textit{Should Have} level.
+    \item \textbf{Green}, for the \textit{Could Have} level.
+\end{itemize}
+
+\subsubsection{Risk Matrix}
+\label{subsec:proposal_content_levels_risks}
+
+In order to classify the items into their corresponding requirement level, we defined and used a risk matrix. By assessing each item with their probability to occur and their severity if they happen, we are able to classify them in the most appropriate requirement level with regard to their characteristics, being probability and severity.
+
+Multiple organizations have defined their own risk matrix with their own sensitivity or bearings, but the core of this tool is always the same. Different levels of probabilities and severities are defined to express the risk of each item. Those levels define their strength and are linked to a coefficient according to their said strength. Then, each intersection between the two characteristics give a risk score based on the multiplication of the two coefficients. Finally, intervals of score, or bearings, are given to classify items into a risk level. In our case, those risk levels are requirement levels.
+
+Our risk matrix is shown in \fullrefnametype{table:proposal_content_levels_matrix}. It contains five levels of probability and sensitivity grades in order to ensure a certain granularity on the assessment of items. Linear coefficients have been defined in order to have a consistent and distributed grading. Furthermore, we respected the \gls{likert} principle in order to guarantee equal distances and same amount of levels for each side of the characteristics.
+
+Our bearings have been defined with intervals in a way to be consistent with our definition of risk levels. Indeed, we gave the biggest weight to \textit{Must Have} items, a similar yet lighter weight to \textit{Should Have} items, and the lightest weight for the \textit{Could Have} items. This way, we are able to indicate assessors what are the most risky situations. The following is the definition of our bearings:
+
+\begin{itemize}
+    \item \textbf{Could Have}: $[0, 5)$
+    \item \textbf{Should Have}: $[5, 15)$
+    \item \textbf{Must Have}: $[15, 25]$
+\end{itemize}
+
+\begin{table}[ht]
+    \begin{center}
+        \begin{tabular}{crl|c|c|c|c|c}
+             &  &  & \multicolumn{5}{c}{\textbf{Severity}} \\
+             &  &  & Insignificant & Minor & Moderate & Major & Catastrophic \\
+             &  &  & 1 & 2 & 3 & 4 & 5 \\
+            \hline
+            \multirow{5}{*}{\rotatebox[origin=c]{90}{\textbf{Probability}}} & Very unlikely & 1      & \cellcolor{green!25}1 & \cellcolor{green!25}2 & \cellcolor{green!25}3 & \cellcolor{green!25}4 & \cellcolor{yellow!25}5 \\
+            \cline{2-8}
+            & Unlikely & 2    & \cellcolor{green!25}2 & \cellcolor{green!25}4  & \cellcolor{yellow!25}6 & \cellcolor{yellow!25}8 & \cellcolor{yellow!25}10 \\
+            \cline{2-8}
+            & Possible & 3    & \cellcolor{green!25}3 & \cellcolor{yellow!25}6 & \cellcolor{yellow!25}9 & \cellcolor{yellow!25}12 & \cellcolor{red!25}15 \\
+            \cline{2-8}
+            & Likely & 4      & \cellcolor{green!25}4 & \cellcolor{yellow!25}8 & \cellcolor{yellow!25}12 & \cellcolor{red!25}16 & \cellcolor{red!25}20 \\
+            \cline{2-8}
+            & Very likely & 5 & \cellcolor{yellow!25}5 & \cellcolor{yellow!25}10 & \cellcolor{red!25}15 & \cellcolor{red!25}20 & \cellcolor{red!25}25 \\
+        \end{tabular}
+    \end{center}
+    \caption{Our defined risk matrix}
+    \label{table:proposal_content_levels_matrix}
+\end{table}
+
+However, we are aware that risk matrices are not optimal. Anthony has found four limitations on them~\cite{anthony_tonycox_whats_2008}: they provide poor resolutions, have a low resistance to errors, they carry a suboptimal allocation of resource, and can be ambiguous because of subjective interpretations. However, this method has been broadly used in various different domains despite its limitations. Furthermore, it still offers a simple, easy and accessible way of evaluating risks: those characteristics allow risk matrices to provide a great quality-time compromise which is optimal for our thesis scope, especially regarding our project timeframe.
+
+The risk evaluation can be easily changed for another approach or method. The guide structure and content have been defined in a generic way that allows such modifications.
+
+\subsection{Items Formulation}
+\label{subsec:proposal_content_formulation}
+
+Finally, each item must be formulated appropriately to provide a good understanding to assessors. This formulation must help them to determine whether their web service is compliant with all the guide items. To this end, we made a list of the most appropriate formulation possibilities based on that we saw in other guides and on our knowledge:
+\begin{itemize}
+    \item \textbf{Actions}: sentences composed around verbs that imply to do something.
+    \item \textbf{Rules}: injunctions given to parties to comply to one or multiple acts.
+    \item \textbf{Questions}: sentences that request information. 
+    \item \textbf{Statements}: sentences without any specific feature that describe a state.
+\end{itemize}
+
+Each formulation comes with advantages and disadvantages, as shown in \fullrefnametype{table:proposal_content_formulation_comparison}. The most appropriate formulation in our opinion is to express items as rules, because of the precision that rules provide. Their disadvantages are the less disruptive ones according to our scope: being too guided and be somewhat harsh can help to lead the assessors using the role given by being the author of the guide. Our second formulation choice was the statements, but the lack of consistency would have harmed too much the consistency of the guide. The disadvantages of the other formulations are too large.
+
+\begin{table}[ht]
+    \begin{center}
+        \begin{tabular}{l|ll}
+            \toprule[0.8mm]
+            \textbf{Formulation} & \textbf{Advantage(s)} & \textbf{Disadvantage(s)} \\
+            \midrule[0.8mm]
+            \multirow{2}{*}{Actions} & \multirow{2}{*}{Easily applicable} & Not in the same timeframe \\
+            & & Difficult to assess \\
+            \midrule
+            \multirow{2}{*}{Rules} & Precise & \multirow{2}{*}{Feeling of guidance and harsh} \\
+            & Exhaustive & \\
+            \midrule
+            \multirow{2}{*}{Questions} & \multirow{2}{*}{Help to project oneself} & Longer sentences \\
+            & & Additional complexity \\
+            \midrule
+            \multirow{2}{*}{Statements} & Free form & \multirow{2}{*}{Lack of consistency} \\
+            & Permissive & \\
+            \bottomrule[0.8mm]
+        \end{tabular}
+    \end{center}
+    \caption{Advantages and disadvantages of the potential items formulations}
+    \label{table:proposal_content_formulation_comparison}
+\end{table}
+
+The rules must be formulated as imperative sentences with a final point. The sentences must start with their verb in the imperative tense, and this verb must give the nature of the compliance. The verb must then be followed by the subject that is targeted by the rule. Then, some context must be brought in order to give information on how to assess whether the system is compliant or not with the item. An example is given below.
+
+\begin{center}
+	Include the dependencies in the testing process.
+\end{center}
+
+\subsection{Items Descriptions}
+\label{subsec:proposal_content_descriptions}
+
+Items can have none, one or multiple descriptions to provide additional information about them. Those descriptions are classified as secondary content, as described in \fullrefnametype{subsec:proposal_structure_nature}. A description can contain anything: paragraphs, external links, external resources and so on. Basic English rules must however be respected.
+
+\subsection{Items Evaluation}
+\label{subsec:proposal_content_evaluation}
+
+Every item must give to the assessors the possibility to state an evaluation about the web service compliance with the rule it represents. A compliance is a binary classification, which bring two evaluation values to be provided.
+
+However, some use cases can lead the evaluated web services to not be concerned by items. For example, an item can express a risk on \gls{cloud} hosting, but the web service can be hosted by the developers' organization itself. For those scenarios, a third evaluation value should allow to remove the subject from the evaluation process to avoid any penalizations of the web service without choosing the compliant value.
+
+The evaluation of items can have three values:
+\begin{itemize}
+	\item \textbf{Compliant}: the web service is compliant with the item.
+	\item \textbf{Non-compliant}: the web service is not compliant with the item.
+	\item \textbf{Not concerned}: the web service is not concerned by the item.
+\end{itemize}
+
+\newimage{0.89}{ch4_content.png}{Flowchart of the guide content}{ch4_content}
+
+% -----------------------------------------------------------------------------
+\section{Scoring Capacity}
+\label{sec:proposal_scoring}
+
+One goal of our proposal is to provide a score of the results following evaluations made on web services. This method enable assessors to get a comprehensive, summarized and simple indication of their service compliance with the items risks. To this end, an adequate way of expressing those results is needed.
+
+The score must be able to inform the assessors on the items and categories where their web services are the most exposed to risks. To this end, two types of scores must be given to them:
+\begin{itemize}
+    \item \textbf{An overall score}, which indicates the level of compliance with the whole guide. Only one value is given.
+    \item \textbf{Multiple category scores}, which indicate the level of compliance with each defined category of the guide. Multiple values are given.
+\end{itemize}
+
+The overall score provides an overview and can be used as a basis for further comparisons. The category scores provide useful information about which area of the system should be prioritized for a quick and efficient improvement of the security and privacy levels.
+
+The overall score must be independent of the category scores to ensure a proper evaluation of all items with respect to their own weighting without consideration made on the categorization.
+
+\subsection{Scoring Methods}
+\label{subsec:proposal_scoring_methods}
+
+Multiple methods have be considered to express score values. We found three different major ways of doing so:
+\begin{itemize}
+    \item \textbf{Percentage progress}, which indicates proportions of compliance and non-compliance on a scale going from 0 to 100.
+    \item \textbf{Gradings}, which give grades on a pre-defined scale to indicate a level of compliance. Could be expressed by numbers, letters, symbols, or other symbols.
+    \item \textbf{Pass or fail notations}, which are binary values indicating a compliance status without intermediate states.
+\end{itemize}
+
+In order to decide on the most appropriate method for our needs, we defined the most relevant characteristics with our scope:
+\begin{itemize}
+    \item \textbf{Granularity}: can the method express various levels of compliance in its results?
+    \item \textbf{Simplicity}: is the method easy to understand?
+    \item \textbf{Universality}: is the method recognizable and understandable regardless of cultural and/or educational contexts?
+\end{itemize}
+
+\Fullrefnametype{table:proposal_scoring_methods_characteristics} shows each scoring method compliance with the characteristics we defined. Because of multiple local ways of expressing a grade in schools and universities, the gradings method may not be understood by everyone. The pass or fail notations method would be an optimal solution because of its simplicity and universality, but no granularity can be expressed. Yet, granularity is needed in our guide to express the level of compliance of web services. The percentage progress is nevertheless a great choice appropriate with our needs. We could argue that a percentage progress is a kind of gradings method, but encoded using a universal method.
+
+\begin{table}[ht]
+    \begin{center}
+        \begin{tabular}{l|ccc}
+            \toprule[0.8mm]
+            \textbf{Characteristic} & \textbf{\% progress} & \textbf{Gradings} & \textbf{Pass or fail} \\ 
+            \midrule[0.8mm]
+            Granularity & $\pmb{++}$ & $\pmb{+}$ & None \\
+            Simplicity & $\pmb{+}$ & Not guaranteed & $\pmb{++}$ \\
+            Universality & $\pmb{+}$ & Not guaranteed & $\pmb{++}$ \\
+            \bottomrule[0.8mm]
+        \end{tabular}
+		\tableannotations{}{$\pmb{++}$: totally fills the criteria; $\pmb{+}$: somehow fills the criteria.}
+    \end{center}
+    \caption{Characteristics of considered scoring methods for the guide}
+    \label{table:proposal_scoring_methods_characteristics}
+\end{table}
+
+\subsection{Calculations}
+\label{subsec:proposal_scoring_calculations}
+
+Appropriate calculations must be computed in order to get an output (score) from a set of inputs (items evaluations). As explained in \fullrefnametype{subsec:proposal_content_evaluation}, each item must either be classified as compliant, non-compliant or not concerned by the assessors during evaluation. A not concerned value is treated as a compliant one in the calculation, because the items that do not apply to the web services context must not degrade the scores. The scoring method must therefore show the web service level of compliance given the set of binary inputs.
+
+As explained in \fullrefnametype{subsec:proposal_content_levels}, each item must receive a level of requirement based on the risks that its non-compliance brings to the evaluated web services. In order to build a coherent scoring system, the scores should take into the risks for each item: to this end, the items risks value item must be used as weighting factors for the calculations.
+
+We also considered taking into account all the items without any weighting factor for simplification purposes, but the simplicity that its would bring is not significant and is not very useful. Indeed, we do not have any particular computational limitations to realize the calculations. Another approach would have been to use weighting factors based on the level of requirement with a fixed scale, for example $1$ for \textit{Could Have}, $2$ for \textit{Should Have} and $3$ for \textit{Must Have}. This would lead to a loss of precision in the score, and we would still have the same calculation complexity as the risk-based method, which explains why it has not been chosen.
+
+We defined the formula that must be applied on the items evaluation values. The formula scope changes with respect to whether the overall score or a category score is computed by changing the set of inputs. Furthermore, each category score is limited to the set of items contained in its corresponding category.
+
+\autoref{eqn:scoring} shows how the scores are computed, with $N$ being the set of inputs, $n_{risk}$ the risks value of each item and $n_{compliance}$ a binary indicator on whether each item is evaluated as compliant/not concerned (1) or non-compliant (0). We have chosen a linear function because the weighting factor given by the risks values already degrade the non-compliant items. However, a logarithmic scale or a normalization of the risks values may be necessary to avoid too large weighting and outliers in the evaluation results. This aspect will be tested in \fullrefnametype{chap:use}.
+
+\begin{equation}
+    \label{eqn:scoring}
+     Score [\%] = \frac{\sum\limits_{n = 1}^{N} n_{risk} \times n_{compliance}}{\sum\limits_{n = 1}^{N} n_{risk}}
+\end{equation}
+
+This scoring method is our heuristic based on our considerations, knowledge and aimed objectives. Other methods could also be adapted to provide a scoring capacity, which our proposal could easily adopt.
+
+% -----------------------------------------------------------------------------
+\section{Definition of the Guide Content}
+\label{sec:proposal_data}
+
+Now that our proposal has been formally defined, and its relative guidelines explained, the actual guide content will be created by applying our said proposal. We will use a platform-agnostic method in order to allow our guide content to be compatible with any other mediums that the one we have chosen at \fullrefnametype{sec:proposal_medium}.
+
+\subsection{Support}
+\label{subsec:proposal_data_support}
+
+We decided to use a spreadsheet to create our guide content. This structured support is the best compromise for a generic way of storing data: it is available on all major platforms and devices, is not linked to a proprietary technology, does not need any particular software apart from the spreadsheet program, and is broadly adopted across the world. 
+
+A spreadsheet can also be easily adapted to fit into a database: its tabs can be seen as tables, its columns as attributes, and rows as records. Furthermore, relations between records can be defined as well.
+
+We chose to work with the \citeproper{ODS} file format which is a free and open file format used by \citeproperref{LibreOffice}{https://www.libreoffice.org}{2022}{12}{05} and other free and open office suites. This choice allows us to work efficiently on the file while using full capacities of spreadsheet programs. If needed, \citeproper{ODS} files can easily be exported as \citeproper{CSV} files, which are comma-separated file formats optimized for exchanging data between applications.
+
+We also considered using the \gls{xml} file format, but we wanted to make our data file accessible and clear for potential readers without having to use a specific tool. The \gls{json} structure has also been considered, but this format is not well suited for structured data: it is therefore not used for the guide content creation part.
+
+\subsection{Spreadsheet File Structure}
+\label{subsec:proposal_data_categories}
+
+The spreadsheet file structure must be designed in a way that allows us to define our content while applying our proposal. Furthermore, we must not be limited in the content we want to create.
+
+As shown in \fullrefnametype{fig:ch4_file_structure}, we used the system of tabs to define each part of the guide structure and content. Each part have attributes that are needed for their definition, as shown in \fullrefnametype{table:proposal_data_attributes}. The attributes types have been designed in a way to avoid replication and to allow relationships between each others. If any, attributes constraints and formats are also given into the Table.
+
+\newimage{1}{ch4_file_structure.png}{File structure}{ch4_file_structure}
+\newpage
+
+\begin{tabularx}{\textwidth}{l|llX}
+	\toprule[0.8mm]
+	\textbf{Tab} & \textbf{Attribute}  & \textbf{Type} & \textbf{Description} \\
+	\midrule[0.8mm]
+	\multicolumn{1}{c|}{\multirow{2}{*}{\rotatebox[origin=c]{90}{cat.}}} & id & integer & Identifier, must be positive and continuous \\
+	& name & string & Displayed category title \\
+	\midrule
+	\multicolumn{1}{c|}{\multirow{5}{*}{\rotatebox[origin=c]{90}{subcategories}}} & category & integer & Reference to the category identifier \\
+	& id & integer & Identifier, must be positive and continuous \\
+	& name & string & Displayed subcategory title \\
+	& description & string & Displayed subcategory description \\
+	& PK & string & Unique reference calculated from subcategory id and category id \\
+	\midrule
+	\multicolumn{1}{c|}{\multirow{5}{*}{\rotatebox[origin=c]{90}{objectives}}} & subcategory & string & Reference to the subcategory PK \\
+	& id & integer & Identifier, must be positive and continuous \\
+	& name & string & Displayed objective title \\
+	& PK & string & Unique reference calculated from objective id and subcategory PK \\
+	\midrule
+	\multicolumn{1}{c|}{\multirow{10}{*}{\rotatebox[origin=c]{90}{items}}} & objective & string & Reference to the objective PK \\
+	& id & integer & Identifier, must be positive and continuous \\
+	& name & string & Displayed item rule \\
+	& topic & string & Displayed item topic (S, P or SP) \\
+	& probability & integer & Evaluation based on our risk matrix, must be between 1 and 5 \\
+	& severity & integer & Evaluation based on our risk matrix, must be between 1 and 5 \\
+	& risk & integer & Computed based on probability and risk, must be between 1 and 25 \\
+	& requirement & string & Computed based on risk (M, S or C) \\
+	& PK & string & Unique reference calculated from item id and objective PK \\
+	& remarks & string & Facultative field, remarks about the risk assessment \\
+	\midrule
+	\multicolumn{1}{c|}{\multirow{8}{*}{\rotatebox[origin=c]{90}{descriptions}}} & item & string & Reference to the item PK \\
+	& id & integer & Identifier, must be positive and continuous \\
+	& name & string & Displayed description title \\
+	& value & string & Open text \\
+	& link & string & Facultative field, link for an external resource \\
+	& alt & string & Facultative field, text to be shown for the link \\
+	& PK & string & Unique reference calculated from the description id and item PK \\
+	\bottomrule[0.8mm]
+	\caption{Attributes of the file}
+	\label{table:proposal_data_attributes}
+\end{tabularx}
+
+\subsection{Our approach}
+\label{subsec:proposal_data_approach}
+
+The last step to complete our proposal is to actually create the guide content. We went through multiple steps to translate our knowledge collection into the spreadsheet file structure, which will be explained in this Subsection. Our whole work has been conducted by applying and respecting the guidelines defined by our proposal.
+
+First, we defined a set of categories and subcategories once the knowledge collection done, based on the various topics we saw. Then, we went through each topic one by one, and read their corresponding source one by one. We selected the most appropriate subcategory for each source, and created a new one if none of them was appropriate. Then, we assessed whether the source content can be fitted in the scope of an existing objective if we have had chosen a subcategory. If not, we defined a new objective.
+
+The source content was then translated to fit our proposal guidelines. If the topic subject has already been processed by an item with a similar approach, we added the source content as a description. Otherwise, a new item was defined, with a separation on the source content nature between the defined item and its related description. The risk assessment was then realized once the item created.
+
+Once our whole knowledge collection processed, we reviewed the formulations of the content we defined to ensure that our proposal guidelines were respected. Then, we reviewed the first risk assessment we made when we defined the items and added the reasons for the values we gave to the probability and severity fields in the \texttt{remarks} attribute. This last step was not done while defining the content in the first place in order to force us to think twice to produce a more accurate assessment.
+
+Then, we reviewed the categorization. The categories we initially defined have not been changed, but some subcategories and objectives have been moved to other parents or merged if they concerned a similar subject. Some items have also been moved to a different objective if a more appropriate one has been found.
+
+Finally, we checked the spelling and grammar of the text and corrected our mistakes.
+
+We have chosen to parse the spreadsheet several times to ensure that we would read each part of it multiple times to find all our errors and mistakes. Although being time-consuming, this approach allowed us to produce a high quality guide content.
+
+Regarding the spreadsheet, we created a formula to automatically compute the requirement levels based on the value of the items risks. In the same spirit, the \texttt{PK} attributes are automatically calculated based on the parent \texttt{PK} and the object \texttt{id}.
+
+The content can not be shown in this report for visibilities reasons. However, the spreadsheet is available at \appendixref{appendix:guide}. It can also be consulted on the thesis repository~\cite{mt-forge}.
+
+% -----------------------------------------------------------------------------
+\section{Comparison with the Other Guides}
+\label{sec:proposal_methods}
+
+Now that a guide content has been created using our proposal, we are able to compare it to the other guides we analysed in \fullrefnametype{chap:comparison}. \Fullrefnametype{table:proposal_evaluation} shows the same table as \fullrefnametype{table:comparison_evaluation} with an added grey column that shows our guide characteristics.
+
+We decided to name our proposal \gls{gasp}, based on our scope and research question.
+
+\begin{table}[ht]
+    \begin{center}
+        \begin{tabular}{l|cccc>{\columncolor[gray]{0.8}}c}
+            \toprule[0.8mm]
+            \textbf{Charact.} & \gls{nist} & \gls{ncsc} & \citeproper{ENISA} & \gls{cisa} & \textbf{\acrshort{gasp}} \\ 
+            \midrule[0.8mm]
+            Accessible  & \cmark & $\pmb{\sim}$ & \xmark & \cmark & \cmark \\
+            \gls{ai}    & \xmark & \xmark & \xmark & \xmark & \cmark \\
+            Format      & list of items & tables of rules & multiple & set of actions & \textbf{checklist} \\
+            Privacy     & \xmark & \xmark & $\pmb{\sim}$ & \xmark & \cmark \\
+            Scoring     & \xmark & compliance levels & risk matrix & \xmark & \cmark \\
+            Volume      & high & high & medium & low & \textbf{medium} \\
+            Web         & \xmark & \xmark & \xmark & \xmark  & \cmark \\
+            \bottomrule[0.8mm]
+        \end{tabular}
+		\tableannotations{}{\cmark: fills the criteria; \xmark: does not fill the criteria; $\pmb{\sim}$: almost fills the criteria.}
+    \end{center}
+    \caption{Comparison of the selected guides and our proposal}
+    \label{table:proposal_evaluation}
+\end{table}
+
+We can see that our guide checks all the characteristics we wanted our proposal to meet. Its allows to evaluate all the topics we wanted, using an easy format. Its accessibility will be guaranteed by developing a specific application. This step will be explained in \fullrefnametype{chap:app}. The volume, although not being low, is at a totally appropriate level given the complexity and the amount of content to assess. Furthermore, our guide is the only one that has a scoring capacity based on its evaluations.
+
+We believe that our guide offers a strong added value compared to the others. We managed to design it in the simplest way possible given the complexity of the \gls{ict} security and privacy topics. However, our complete guide accessibility, ease of use and utility will be reviewed in \fullrefnametype{chap:use} using the web application.
+
+% -----------------------------------------------------------------------------
+\section{Summary}
+\label{sec:proposal_summary}
+
+We are very satisfied with the quality of our proposal. All the parts we defined have been challenged, well thought, and chosen appropriately with both our thesis needs and the assessors' needs. We truly believe that a guide built using such structure and content guidelines help to efficiently evaluate a system, regardless of which \gls{ict} field it comes from.
+
+We are aware of the limitations of our risk assessment. Indeed, risk matrices are not originally designed for this kind of threats, as explained in \fullrefnametype{table:proposal_content_levels_matrix}. However, one of the main goals of our proposal is to give priorities on which items bring more risks in case of non-compliance: being precise would be better, but it does not significantly impact the quality of our proposal. We are also aware that using colours might not be optimal for colour-blind people. Replacing this information with another symbol could be a useful improvement.
+
+The guide content can be improved by adding a reference to the source that has been used to create each item and description. All the content defined in the spreadsheet file comes from our previously done knowledge collection, but adding this information could be useful for the assessors. However, this information is not lost: each source has related comments in the report source files that list which items and/or descriptions have been created using it.
+
+As explained in \fullrefnametype{sec:proposal_medium}, a \gls{pdf} file could be created as an additional medium to the web application. This would allow more use cases for the assessors.

@@ -1,0 +1,979 @@
+\chapter{Knowledge Collection}
+\label{chap:state}
+
+First and foremost, a complete knowledge collection must be built in order to obtain a complete and comprehensive state-of-the-art review on the topics that concern our thesis scope. This Chapter will respond to this need by exposing and explaining our approach in details. Our goal is to provide a complete and unbiased review of the rules, best practices, technologies and any aspects that can improve the security and privacy levels of web services.
+
+We will start with an explanation of the methodology that will be used for the state-of-the-art review. This step includes the topic definition, the scope, the topics evaluations, and more. Then, various topics will be assessed using current, established and reviewed resources in order to define how they can contribute to the thesis goal. Finally, a summary will be made on our findings.
+
+\minitoc
+
+\newpage
+
+% -----------------------------------------------------------------------------
+\section{Methodology}
+\label{sec:state_methodology}
+
+A state-of-the-art review aims to establish the condition of a field in a given timeframe. To this end, all significant information related to the said field must be collected, a set of them must then be selected following defined rules, and those selected must finally be summarized.
+
+\subsection{Selection of the Approach}
+\label{sec:state_methodology_approach}
+
+Such process can be conducted in several ways. To decide which one is the most adapted to our needs, the two major approaches used by the academic field will be explained, and a decision will be made based on their characteristics.
+
+\subsubsection{Systematic Review}
+\label{sec:state_methodology_approach_systemic}
+
+A systematic review mainly consists of responding to a research question while minimizing the biases that can be found during the review, both in its conducting that in the used sources. Indeed, one of its objective is to reach the largest objectivity possible. The bias management consists of taking the said biases into account during the whole process and state them clearly in the results, for example by exposing the level of confidence of the findings. Those findings are finally exposed in a refined conclusion.
+
+Those reviews can be either quantitative or qualitative. They can be used to produce various outputs, with the two major ones being meta-analyses and systemic-cartographies. Meta-analyses are the results of independent studies on a given problem within a timeframe that have been combined using a reproducible protocol and used as a statistical synthesis of the studies. Systemic-cartographies consist of explaining methods that highlight the distribution of knowledge according to explicit criteria.
+
+Systematic reviews must include a research protocol composed by multiple steps: identify and define the research question, establish the topic inclusion and exclusion criteria, search for data sources, extract relevant data, assess data eligibility, analyse and combine the data, and then communicate the findings. Those steps are generic and can vary depending on the chosen approach.
+
+\subsubsection{Literature Review}
+\label{subsubsec:state_methodology_approach_literature}
+
+A literature review aims to resume the current knowledge for a given field during a given situation, which can be a timeframe, a geographical zone, or both. Its goal is to answer to a research question or topic using an adapted methodology. By doing so and by collecting relevant resources, a proper context can be explained to the audience. 
+
+Such reviews are focused on a unique subject and are a form of meta-analyses that combine several primary sources, from which they identify similarities and differences and possibly analyse them to define the knowledge at a given time only. An assumption is made for the chosen sources: they are considered as unbiased because they have been validated by peers.
+
+No official or widely-adopted methodology is defined for this kind of reviews.
+
+\subsubsection{Decision}
+\label{subsubsec:state_methodology_approach_decision}
+
+Our research question and our project scope include topics from various backgrounds. We will mainly review academic papers which can include quantitative and qualitative data. Those papers can also be theoretical or technical. Furthermore, best practices will also be a part of our review. Our data sources are therefore quite diverse, which means that we will not always be able to compare them.
+
+In addition, the time and resources at our disposal do not allow us to conduct a proper and complete systemic review: this is the reason why a literature review will be made. However, we will bring some aspects and processes from the systematic review to our methodology in order to bring more rigour, and to mitigate biases as much as possible.
+
+\subsection{Review Protocol}
+\label{subsec:state_methodology_approach}
+
+Our review will be conducted by applying a protocol that defines several steps completed sequentially. As explained in \fullrefnametype{subsubsec:state_methodology_approach_decision}, this protocol has been built using inspiration from both review approaches by selecting the steps that are useful in our research whilst being feasible in our timeframe.
+
+\begin{enumerate}
+    \item \textbf{Define the research question}: how to answer and cover the thesis scope?
+    \item \textbf{Define the scope}: which timeframe will be covered? And in which location?
+    \item \textbf{Search for existing work}: have any similar projects already been published?
+    \item \textbf{Inclusion and exclusion criteria}: which terms have to be reviewed, and which ones are not included? 
+    \item \textbf{List data sources}: how and where to get data?
+    \item \textbf{Extract relevant data}: how to identify data that can help to answer to the research question?
+    \item \textbf{Evaluate data quality and bias}: how to evaluate whether the data is objective and relevant for our knowledge collection?
+    \item \textbf{Assess Data}: how to select and/or combine the most adequate findings for each topic?
+    \item \textbf{Present and explain the findings}: how to explain the whole findings and how to combine them to create knowledge?
+    \item \textbf{Review update}: will the review be updated in the future?
+\end{enumerate}
+
+Apart from the thesis supervisors, we do not need to identify any other actors: indeed, this thesis is independent of any funds or companies. The said supervisors are also completely independent.
+
+\subsubsection{Research Question}
+\label{subsubsec:state_methodology_approach_question}
+
+The research question has already been defined in \fullrefnametype{sec:introduction_contribution}. It guides the whole thesis scope and direction, including the review. 
+
+\subsubsection{Research Scope}
+\label{subsubsec:state_methodology_approach_scope}
+
+Regarding the security field, its selected timeframe will limit our review from what we consider a modern \gls{ict} context until now. We define modern \gls{ict} as the area of web services such as we know them: we fixed its arbitrary beginning around the 2000s. We will prioritize more recent data over its older equivalent. Please note that ground knowledges defined before this period but still relevant nowadays can be used. 
+
+The \gls{ai} research field has been present for several decades, but its broad adoption by the industry and fully usable \gls{ml} and \gls{dl} models are more recent. The \gls{ict} privacy field is also quite young, because related problems have been especially raised lately.
+
+There will be no coverage for immature technologies or topics such as quantum \gls{ict}. This kind of topics is not fully developed which means that it can not be correctly assessed and evaluated. However, advices and warnings can be made based on current knowledge. Please note that the \gls{ict} field is not officially considered as fully mature, but is considered sufficiently stable enough by its community.
+
+No specific limitation on locations and languages will be applied, as no data will be collected based on populations and no cultural and/or ethnic aspects come into account.
+
+\subsubsection{Existing Work}
+\label{subsubsec:state_methodology_approach_existing}
+
+In order to find existing work similar to our review, we searched for academical papers and articles using specialized search engines. To do so, we entered a mix of keywords related to this thesis such as \gls{ict} security, user privacy, confidentiality, web services, \gls{ai}, \gls{ml} and \gls{dl} models, et cetera. While trying various combinations, we played with the search engine parameters by specifying mandatory terms, dates of publication, languages, and other filters.
+
+Some academic papers already assessed our two generic subjects, being the \gls{ict} security and user confidentiality or privacy. However, none of them are oriented towards web services. In contrast, we found resources that directly concern web services, although specialized in a particular topic such as servers architecture. Some resources we found could however be useful for our review, our approach being to gather several topics altogether, not to establish a deep, specialized and exhaustive study of only one topic.
+
+Some papers are similar to what we want to achieve with our review and represent similar approaches:
+\begin{itemize}
+    \item \textbf{A \gls{framework} for \citeproper{Android} applications}: how to enhance user control on privacy when accessing to user resources by Ricardo Naisse et al.~\cite{NEISSE2016257}. Paper scope limited to mobile platforms.
+    \item \textbf{Preserving user privacy}: definition of a \gls{framework} that abstracts the privacy and the utility requirements of smart meter data by Rajagopalan et al.~\cite{6102315}, and an equivalent in the mobile healthcare and home-care systems fields by Kotz et al.~\cite{10.1145/1655084.1655086}.
+\end{itemize}
+
+\subsubsection{Inclusion and Exclusion Criteria}
+\label{subsubsec:state_methodology_approach_topic}
+
+To respond to the research question, criteria to classify topics must be defined before the review. Indeed, some topics must be included in the review, others must not. The two lists must be build by browsing all possible topics that compose the generic \gls{ict} field.
+
+In order to be included in the review, each topic must concern the research question and be within the thesis scope. Included topic will be formally defined during the review by briefly describing them.
+
+Topics that are not compliant with those two conditions will be placed in the exclusion list, being irrelevant to our thesis scope. The list is not exhaustive and could hold other topics not concerned by our scope according to the specificity of the topics research.
+
+\subsubsection{Data Sources}
+\label{subsubsec:state_methodology_approach_sources}
+
+Data sources must meet four quality criteria to allow them to be used for our knowledge collection:
+\begin{itemize}
+    \item \textbf{Official source}: must not relay information from an official source, except if new relevant material is added to the original data.
+    \item \textbf{Trusted source}: must be reviewed by legitimate pairs.
+    \item \textbf{Best practices}: must be both demonstrated and accepted by the community, with evidences. 
+    \item \textbf{Standardized source}: standards, regulations and laws must be defined by legitimate organizations and be adapted to the context.
+\end{itemize}
+
+There is no restriction on the format of the sources: sources can come from academic research through papers and articles, grey literature, websites, companies networks, et cetera.
+
+\subsubsection{Relevant Data}
+\label{subsubsec:state_methodology_approach_relevant}
+
+To be included to the review, the assessed data must respond to the question and included in the scope. If not, it is not relevant and must be discarded from the review.
+
+Too specific or specialized data will not be considered. Indeed, our approach is to bring together the biggest risks regarding security and end users privacy. Therefore, we can not deeply explore each topic, but we can provide resources for developers and decision makers to go deeper.
+
+\subsubsection{Evaluate Data}
+\label{subsubsec:state_methodology_approach_evaluate}
+
+Data quality must be validated by various evaluations:
+\begin{itemize}
+    \item \textbf{Arbitrary decisions}: only include data because of its ability to answer the research question, not because it supports our opinion. The same goes for its ouster because it contrasts with our opinion.
+    \item \textbf{Points of view}: if a topic has multiple perspectives, all of them must be considered.
+    \item \textbf{References}: consider the qualification, amount, and relevance of the data references to avoid unsubstantiated selection.
+\end{itemize}
+
+If the data passes the three points of this evaluation, it can be included in the review.
+
+\subsubsection{Data Assessment}
+\label{subsubsec:state_methodology_approach_assessment}
+
+When multiple data have been found for the same topic, several approaches can be applied to determine the knowledge to be collected. Each unique situation will be assessed by the most adapted approach, which will be one of the following:
+\begin{enumerate}
+    \item \textbf{Keep the most established finding}: if the data from different sources is evaluated as different, the most established source will be kept. This choice will be done following the evaluation process defined in \fullrefnametype{subsubsec:state_methodology_approach_evaluate}.
+    \item \textbf{Mix of findings}: if the data of different sources is evaluated as equivalent, both sources must be combined in a manner that preserve their different perspectives.
+    \item \textbf{One finding}: if only one source is found for a topic, this source will be used as it.
+\end{enumerate}
+
+\subsubsection{Present and Explain Findings}
+\label{subsubsec:state_methodology_approach_communication}
+
+The final step of the review will consist of exposing the findings in an understandable manner to create the knowledge collection. To this end, each topic to be defined must have a dedicated space which explains the current state of the art, using findings previously found.
+
+Additional sublevels of details and categories can be defined if they facilitate the interpretation of the findings.
+
+Knowledge will be presented using plain text. It can be illustrated if needed. Collections of items that can be compared between each other will be formatted into tables which will expose their differences. 
+
+The result of this step will be the content of \fullrefnametype{subsec:state_review_results}.
+
+\subsubsection{Updates}
+\label{subsubsec:state_methodology_approach_updates}
+
+There is no plan to extend the state-of-the-art review in the immediate future, at least not during the thesis timeframe. However, the author might proceed to one or multiple updates in his personal time afterwards. No guarantee is given and updates can be realized in an informal manner.
+
+% -----------------------------------------------------------------------------
+\section{Review}
+\label{sec:state_review}
+
+The following Subsections will expose the results of our review. To do so, we applied the protocol as explained in \fullrefnametype{subsec:state_methodology_approach}. We started with the topics inclusion and exclusion lists and continued with the knowledge collection on the included ones.
+
+\subsection{Topics Inclusion and Exclusion}
+\label{subsec:state_review_topics}
+
+The topics inclusion and exclusion lists have been defined based on the various criteria stated in the review protocol. We browsed the Internet to establish the most complete lists as possible.
+
+\newpage
+
+\subsubsection{Included Topics}
+\label{subsubsec:state_review_topics_included}
+
+The following list shows all the topics we have to assess.
+
+\begin{enumerate}
+    \setlength\itemsep{-0.5em}
+    \item \textbf{Access Control}: how to provide an adapted and enforced data and system access control?
+    \item \textbf{Anonymization}: when anonymization must be applied? How to ensure a proper anonymization process?
+    \item \textbf{\acrlong*{api}}: how to ensure that the endpoints are secure?
+    \item \textbf{\acrlong*{ai}}: how to preserve user data privacy while using \gls{ml} and \gls{dl} models? How to avoid attacks on those models?
+    \item \textbf{Authentication}: how to design a secure and complete authentication process?
+    \item \textbf{Authorization}: how to design a secure and complete authorization process?
+    \item \textbf{Best Practices}: are there generic advices to enforce security and privacy levels?
+    \item \textbf{Big Data Privacy}: how to handle large quantity of data while ensuring that user privacy is guaranteed?
+    \item \textbf{Cloud Hosting}: does its adoption bring additional security and privacy issues?
+    \item \textbf{Dark Patterns}: how to avoid end users manipulation?
+    \item \textbf{Data Management}: how to define data management policies that assure proper privacy and security levels?
+    \item \textbf{Dependencies}: are my dependencies secure?
+    \item \textbf{Distributed Computing}: how to securely and privately use several computers to collaborate on the same task?
+    \item \textbf{Encryption}: which methods are considered as secure? When does data need encryption?
+    \item \textbf{Hardware}: how to avoid data leaks and intrusions?
+    \item \textbf{Identification}: how to provide secure identification processes for users or external parties?
+    \item \textbf{Instant Messaging and Communication}: how to assess privacy and security issues?
+    \item \textbf{Intelligence}: how to stay up-to-date with the latest issues and risks?
+    \item \textbf{Legislation}: which laws the organizations must be compliant with?
+    \item \textbf{Mobile}: what are the security and privacy issues on the major platforms?
+    \item \textbf{Network}: how to limit security issues and intrusions on networks?
+    \item \textbf{\acrlong*{os}}: what are the biggest security and privacy issues with the major \glspl{os}? How to mitigate them?
+    \item \textbf{Policies}: what types of policies the organizations must define? How to define them?
+    \item \textbf{Pseudonymization}: when pseudonymization must be applied? How to ensure a proper pseudonymization process?
+    \item \textbf{Sandboxing}: how to isolate processes to enforce security?
+    \item \textbf{Server Architecture}: how can the server architecture choice impact the security and privacy levels?
+    \item \textbf{Social Engineering}: how to define policies that mitigate the risks of social engineering attacks?
+    \item \textbf{Software}: how to limit security and privacy issues while developing software?
+    \item \textbf{Storage}: how to handle data security at rest?
+    \item \textbf{System Administration}: how to limit security issues on systems?
+    \item \textbf{Web Browsers}: do browsers have privacy and security issues? Are they all equal on those issues? 
+\end{enumerate}
+
+\subsubsection{Excluded Topics}
+\label{subsubsec:state_review_topics_excluded}
+
+As for the inclusion list, we defined the topics which must not be considered. Indeed, it is unnecessary for us to go deeper than their security or privacy aspects, or they are unrelated to our project scope.
+
+\begin{enumerate}
+    \setlength\itemsep{-0.5em}
+    \item \textbf{Advanced Compiling}
+    \item \textbf{Advanced Concurrency}
+    \item \textbf{Advanced Cryptography}
+    \item \textbf{Advanced Mobile}
+    \item \textbf{Advanced Virtualization}
+    \item \textbf{Assembly}
+    \item \textbf{\Glspl{blockchain}}
+    \item \textbf{Efficiency and Optimization}
+    \item \textbf{Electronics}
+    \item \textbf{Embedded \gls{ict}}
+    \item \textbf{\gls{gui}}
+    \item \textbf{\gls{hci}}
+    \item \textbf{\gls{iot}}
+    \item \textbf{Quantum \gls{ict}}
+    \item \textbf{\gls{ux}}
+\end{enumerate}
+
+\subsection{Review Results}
+\label{subsec:state_review_results}
+
+This Subsection shows the knowledge collection built during the review, as defined by the protocol explained in \fullrefnametype{subsec:state_methodology_approach}.
+
+\subsubsection{Access Control}
+\label{subsubsec:state_review_results_accesscontrol}
+
+Broadly speaking, access control is a set of policies that restrict access to virtual or physical resources. A proper access management must also support its implementation.
+
+This topic is strongly related to user and administration roles, as to the notion of trust.
+
+As explained by Schneider, \say{Access control mechanisms are intended to protect programs and data from corruption, yet still allow sharing of these resources}~\cite{schneider_least_2003}.
+
+A good practice is to apply the principle of least privilege: every entity of a system, which can be users, software modules or processes, must only have access to resources they explicitly need for their purpose. Any other resources access must be denied by default. 
+
+Blankstein and Freedman studied in 2014 how to correctly apply isolation and least privilege patterns~\cite{blankstein_automating_2014}. Some principles must be followed during system design. First, the portions of the application must be split in isolated components with isolation boundaries. Then, the amount of privilege given to each component must be minimized. Finally, the required privileges of each component must be inferred using dynamic analysis, which is an automated version of the least privilege pattern. %item1.5.1.1
+
+Colombo and Ferrari reviewed in 2018 the particularities of access control for \gls{big-data} contexts~\cite{colombo_access_2018}. The majority of platforms have basic access control mechanisms, which lead to multiple problems. Unconstrained access are given to high volume of data from multiple data sources, some sensitive and private data are illegitimately accessible, and advanced analysis and prediction capabilities are limited. Multiple requirements must be met for great access control: define fine-grained access control, allow context management, and guarantee the efficiency of access control without any compromises on the platform usability. Some issues are still open in the research field: how to unify the access control model and mechanism, how to provide policy analysis tools, to ensure \gls{gdpr} fulfilment, or for federated environments, and how to define appropriate access control for streaming analytics, including adaptation for continuous flows. %item4.1.2.1
+
+A comparison of the \gls{abac} policy has been made in \fullrefnametype{table:state_review_results_accesscontrol}. Some papers contradict others, some of them are complementary: we will combine them appropriately for our collection of knowledge.
+
+\subsubsection{Anonymization}
+\label{subsubsec:state_review_results_anonymization}
+
+Anonymization on data is a process that aims to remove all links related to an entity to its real identity, by modifying its content or structure. Such process is often applied on critical personal data collected from users of an information system.
+
+Anonymization may be made mandatory in certain situations, such as in the medical field or when publishing data for an academic study. Various approaches can be used, but not all of them can be considered as secured.
+
+This process must not be confused with pseudonymization, which is treated in \fullrefnametype{subsubsec:state_review_results_pseudonymization}.
+
+Liew et al. used in 1985 a probability distortion to protect the privacy of individuals~\cite{liew_data_1985}. The authors defined three steps: first, the underlying density function must be identified with its parameters on the original dataset. Then, series of data must be generated using the estimated function. Finally, the original data must be mapped and replaced with the generated ones. Both datasets have asymptotically the same statistical properties. % not considered, too old and unspecific
+
+Domingo-Ferrer and Torra defined in 2002 an approach to handle sensitive information in tabular data~\cite{domingo-ferrer_critique_2002}. Sensitivity rules are used to decide whether table cells are sensitive or not, which means that sensitive cells must not be published. Examples have shown that publishing non-sensitive cells may also disclose sensitive information. An a priori assessment on disclosure risks must be made using sensitivity rules, such as $(n, k)$-dominance, $pq$-rule or $p\%$-rule. This is explainable by the fact that disclosure risks of contributions increase as the percent within which they can be estimated by an intruder decreases. Two alternatives to sensitivity rules are proposed by the authors: entropy-based sensitivity rule, and complement the a priori risk assessment using a posteriori assessment. %item1.3.6.1
+
+Pfitzmann and Hansen defined in 2010 what are the different privacy-preserving techniques using data minimization~\cite{pfitzmann_terminology_2010}. Anonymity of a subject from an attacker's perspective means that the attacker cannot sufficiently identify the subject within a set of subjects, know as the anonymity set. Unlinkability of two or more items of interest from an attacker's perspective means that within the system, the attacker cannot sufficiently distinguish whether these items are related or not. Linkability is the negation of unlinkability. Undetectability of an item of interest from an attacker's perspective means that the attacker cannot sufficiently distinguish whether it exists or not. Unobservability of an item of interest means that the item is not detectable against all subjects not involved with it. A pseudonym is an identifier given to a subject that is different from of the subject's real names. %item1.3.6.2
+
+Kotschy studied in 2016 the requirements to be compliant with the \gls{gdpr}~\cite{kotschy_new_2016}. If the data is anonymized, the \gls{gdpr} is not applicable. However, there is still a risk of data being not fully anonymized, and no clear requirement is given in the regulation. If the data is pseudonymized, there is no precise legal consequences. Pseudonymization has no clear and immediate legal advantages. %item1.3.3.3
+
+Yüksel et al. reviewed in 2017 how anonymity is implemented in electronic health services~\cite{yuksel_research_2017}. Five approaches has been found by the authors. Data anonymity, which assures that no relationship can be made between users and their data. User anonymity, guarantees that messages do not give information about their users' identity. Communication anonymity, which hides the link between users and the system. This technique can use onion routing systems like \gls{tor}. Ensure unlinkability between users' exchanges. Usage of \gls{differential_privacy} by adding noise in the data. %item1.3.6.2
+
+Murthy et al. studied in 2019 some data anonymization techniques with their characteristics~\cite{murthy_comparative_2019}. The generalization technique replaces data values with less specific ones, but keeps them semantically consistent. The suppression technique removes entire parts of data. The swapping technique randomly rearranges the variables. The masking technique changes the characters in attributes. The distortion technique changes the data itself, which a possibility of being reverted. Some techniques are more suitable for specific types of variables. %item1.3.6.2
+
+A comparison of the anonymization techniques has been made in \fullrefnametype{table:state_review_results_anonymization}. Some papers contradict others, some of them are complementary: we will combine them appropriately for our collection of knowledge.
+
+\subsubsection{\acrlong*{api}}
+\label{subsubsec:state_review_results_api}
+
+An \gls{api} is an interface used for communication between software. It usually exposes endpoints to realize actions in a given service, using the web. An \gls{api} can be public or private, authenticated or anonymous.
+
+The access of such interfaces can be a problem, both for end users than for the service provider. Sensitive information could be accessed, or unwanted actions could be made by malicious parties.
+
+Several mechanisms can be implemented to restrict access and limit rights to the proper resources. Furthermore, a complete documentation should be designed before building an \gls{api}.
+
+Hussain et al. studied in 2020 the state of enterprises' \gls{api} security and their \gls{gdpr} compliance~\cite{hussain_enterprise_2020}. An \gls{api} can be designed to perform actions or to provide access to objects. They can be one of three types: private with a closed access, for partners, designed with efficient access control and authorization mechanisms including rules and policies, or public, which bring potential security threats. An \gls{api} can be implemented by following either \gls{rest} or \gls{soap} approaches. \gls{soap} is more adapted for sensitive data. \gls{ml} security can fill various security gaps such as addressing new threats, identifying past attacks behaviour, or making predictions. However, it must be compliant with the \gls{gdpr}, which restricts automated decision-making and profiling, causing an increase into \gls{ai}-enabled services costs. This regulation requires explaining details of algorithmic decisions, ensuring right of data portability, ensuring the trade-off between algorithmic transparency and accuracy, and allowing users' right of data erasure. Automated decision-making is prohibited without human intervention with the need to be transparent to users. This issue brings new technical challenges, particularly on how to explain those black-boxes to users and on intellectual properties. The data can be localized anywhere, but the in-house approach is a more appropriate solution compared to public \gls{cloud}. In general, data processing needs consent of data subjects. %item2.3.1.1 %item2.3.1.3
+
+Bonne et al. studied in 2017 how to increase transparency and legibility for users~\cite{bonne_privacy_2017}. If data are shared with third parties, an \gls{api} can be given to users for them to consult how their own data are being shared. User should be able to decide if a service is worth to be used by knowing how and what data is shared. They could accept or not such sharing thanks to an assessment of the value of their data, which is difficult to guess without actually knowing what is shared. Three limitations appear with such system: the sharing retroactivity must be handled, the users must use the system to have access to the \gls{api}, and it does not show internal usage of data. %item2.3.2.1
+
+Ichario and Maarek studied in 2020 which terms of service and privacy policies should be defined for an \gls{api}~\cite{ichario_vision_2020}. \gls{api} providers must define the terms of service and privacy policies for developers that will use the said \gls{api}. Developers can then assess the services compatibility and avoid breaches and threats of termination for non-compliance. The terms should include the guaranteed \gls{sla} level, the conditions to agree to before usage, the privacy policies, the indications on terms changes, the liability, or third parties usage conditions. The authors defined privacy policies as \say{the channel through which internet services communicate to their users the data they collect from them and what it is used for}: users can either accept them, which means that they lose control of their data but obtain an access, or reject them, which guarantee them to keep control but without any granted access to the \gls{api}. Privacy policies define provider's terms that \gls{api} users must comply to. \Fullrefnametype{fig:ch2_api_ichario_maarek} shows the biggest issues and their related mitigations. %item2.3.1.1
+
+\newsourcedimage{1}{ch2_api_ichario_maarek.png}{Concept map of perceptions emerging from content analysis of discourse~\cite{ichario_vision_2020}}{http://bit.ly/3w1GkRO}{2023}{01}{14}{ch2_api_ichario_maarek}
+
+Sharieh and Ferworn studied in 2021 how to reinforce security using chaos engineering~\cite{sharieh_securing_2021}. Security chaos engineering can be used to both expose vulnerabilities and enhance security. Multiple techniques exist to detect automated attacks, such as monitoring the traffic, apply a quota management, whitelisting~[sic], or traffic throttling. \gls{http} header fields can be used to achieve code injection attacks. Chaos engineering is a method that simulates unpredictable failures to make systems more resilient. \gls{ddos} attacks are difficult to identify: each malicious client sends normal traffic volume, while adapting the said volume by detecting rate-limiting controls to avoid any detection. Bots can be detected by searching for patterns such as abnormal behaviour, persistent attempts, unusual error rates, suspicious client requests, or by using \gls{ml} models. Those models need historical data and more research to achieve greater results. Chaos security applies empirical exploration to verify how a system behaves. It is implemented by building a hypothesis around steady-state behaviour, varying real-world events, running experiments in production, automating experiments to run continuously, and minimizing blast radius. %item2.3.1.4
+
+A comparison of the vulnerabilities, attacks and mitigations mentioned by the papers has been made in \fullrefnametype{table:state_review_results_api}. The sources being complementary, their combined knowledge will be used for our collection of knowledge. The \texttt{Summary} column has been removed for readability purposes.
+
+\subsubsection{\acrlong*{ai}}
+\label{subsubsec:state_review_results_artificialintelligence}
+
+\gls{ai} brought broad and novel possibilities to a lot of different fields. It can enable new ways of exploiting data in order to gain knowledge on particular topics. The mastery of this technology has led to its adoption in many services today.
+
+\gls{ai} models require a big amount of data in order to be accurate in their classifications or predictions. This characteristic includes privacy risks for users, whose data is being collected from service providers in order to improve their models. New ways of protecting user data are being studied to improve the user privacy of services. 
+
+Shokri and Shmatikov studied in 2015 how to preserve privacy on \gls{dl} models~\cite{shokri_privacy-preserving_2015}. \gls{dl} models require massive data collection, including sensitive user data which are kept indefinitely. A system can be designed to learn a model without sharing input datasets, using the characteristic of \gls{sgd} that can be parallelized and executed asynchronously. Only small subsets of key \gls{parameters} are exchanged, whilst improving accuracy with external data without having access to them. Evaluations shown an accuracy close to centralized models, with negligible utility loss. The \gls{nn} \gls{parameters} leak risks is mitigated using \gls{differential_privacy} on their updates, thanks to the sparse vector technique. %item4.2.2.3
+
+Li studied in 2018 the \gls{ai}-specific cybersecurity defences~\cite{li_cyber_2018}. \gls{ai}-powered systems can be attacked or deceived, resulting in incorrect classification or prediction results. \Gls{federated_learning} uses terminal devices that use their own data for the training phase. However, the user privacy must be assured and model manipulation and/or steal must be mitigated. There are various ways for building safe distributed models: One of them is to avoid \glspl{gradient} leakages using \gls{homomorphic_encryption}, based on the approach defined by Shokri and Shmatikov~\cite{shokri_privacy-preserving_2015}. This method adds a large computational overhead. Otherwise, a \gls{federated_learning} environment can be built including an aggregation protocol which securely computes the sum of \gls{parameters} computed by devices. Or, \gls{ml} classifications can be done over encrypted data, but it lowers the model accuracy. %item4.3.1.1
+
+Phong et al. studied in 2018 how to preserve privacy using \gls{homomorphic_encryption} for \gls{dl} models~\cite{phong_privacy-preserving_2018}. The authors' goal is to enable collaborative learning of a \gls{nn} using local dataset of all participants, without actually sharing the data. All participant compute their local \glspl{gradient}, by training their local model, and then send a portion of their \glspl{gradient} to a central server. The latter use additively \gls{homomorphic_encryption} and asynchronous \gls{sgd} to compute a general model. However, a trade-off must be taken care of between accuracy and privacy, which consists of finding the correct amount of local \glspl{gradient} to share. Because a small faction of \glspl{gradient} can leak useful and therefore private information, \gls{homomorphic_encryption} is used to enable computation on the data without being able to know its value as a \gls{plaintext}. This approach has three effects. On the security side, the central server can not leak any data. On the accuracy side, an identical accuracy is achieved compared to a corresponding model trained on a global dataset built from the joint local datasets. Finally, on the overheads side, an increase in communication is caused by the sharing of the \glspl{gradient}, and an increased computation time is required to achieve the same model accuracy. %item4.3.1.2
+
+Vellido studied in 2019 the societal issues brought by \gls{ai} usages~\cite{vellido_societal_2019}. The \gls{gdpr} mandates a \say{right to explanation} made by \say{automated or artificially intelligent algorithmic systems}, which legally binds the data controller to provide explanation about \gls{ai} tools to requesting citizens if their personal data are used. There is therefore a need for interpretable and explainable models in order to justify their decisions. \gls{dl} models can be compared to opaque black boxes: such systems are not capable to self-explain their operating processes. %item2.3.2.1
+
+Xue et al. \cite{xue_machine_2020} listed in 2020 the threats and countermeasures on \gls{ml}. Models security can be evaluated by testing their design, by using testing \glspl{framework}, by performing \gls{ai} specialized penetration tests, and by choosing the most appropriate metrics to test models. Some of those metrics are the accuracy, confusion matrix, precision, recall, \gls{roc} curve, or the \gls{auc}.
+
+Zhang et al. reviewed in 2021 the ethical and privacy issues discussed in papers around \gls{ai}~\cite{zhang_ethics_2021}. The most concerned technologies that could cause ethical issues are \gls{ml}, data analysis, robots, intelligent systems, and \gls{cloud} technologies. The key concerns are to ensure fairness, discrimination barriers, data privacy, cybercrime mitigations, fraudulent behaviour detections, and machine ethics. %not relevent for guide
+
+Liu et al. reviewed in 2021 how to design privacy-friendly \gls{ml} models~\cite{liu_when_2021}. The authors found three private learning schemes: by applying \gls{homomorphic_encryption} on data or model, by applying obfuscation using \gls{differential_privacy}, which adds noise, and by using aggregation, which guarantees that parties keep their own dataset private whilst still being able to learn collaboratively. %item4.2.1.1
+
+Liu et al. reviewed in 2021 how to ensure privacy and security with \gls{dl} models~\cite{liu_privacy_2021}. Future directions to improve \gls{dl} models security and privacy has been found: lightweight privacy-preserving techniques, intellectual property protection of \gls{dl} model, generic privacy-preserving techniques, and systematic evaluation of adversarial defences. % not relvent to scope
+
+Zhu, et al. \cite{zhu_more_2021} studied in 2021 how to add \gls{differential_privacy} in \gls{ai} processes. The calibrated randomization embedded in \gls{differential_privacy} brings benefits to some \gls{ai} algorithms because of multiple properties: it preserves privacy, which is its original purpose, it improves stability, thanks to the unchanged models output probability if an individual record is changed, it brings better security by reducing the impact of malicious participants, it guarantees fairness by re-sampling the training data from the universe, and it enables composition, which means that any step that satisfies \gls{differential_privacy} principles can be integrated in the algorithm. All properties do not have the same effect on the different types of \gls{ai}. For \gls{ml}, it preserves privacy and improves both stability and fairness. In the other hand, an optimal trade-off between privacy and utility needs to be found and optimized. Furthermore, it is only suitable for \glspl{loss_function} that do not contain any \gls{regularization} steps. Moreover, some situations do not have knowledge of the utility of each sample, which is used by the exponential mechanisms of the re-sampling step. Regarding \gls{dl} models, which include both distributed \gls{dl} and \gls{federated_learning}, \gls{differential_privacy} can be applied locally. A global implementation would not protect the system against an attacker pretending to be trustful. It can also be used to destroy redundancy in order to avoid model inversion attacks. More specifically for \gls{federated_learning}, an aggregate of re-weighted \glspl{loss_function} can be used with clients having different weights to improve their learning accuracy, and then joint using \gls{differential_privacy} to make different model updates according to client's requirements. %item4.2.1.3
+
+A list and comparison of all attacks and mitigations that have been mentioned by the related papers has been made in \fullrefnametype{table:state_review_results_artificialintelligence}. The sources do not contradict themselves: we will combine their data for our collection of knowledge. The \texttt{Summary} column has been removed for readability purposes.
+
+\subsubsection{Authentication}
+\label{subsubsec:state_review_results_authentication}
+
+Authentication is an action done by a system that verify whether the identity given by an entity is valid and trusted or not. Such evaluation must ensure that this identity can not be falsified.
+
+This is mainly focused on security issues, the privacy being more related to user identification which must follow company policies.
+
+Rabkin listed in 2008 the issues on security questions for lost passwords~\cite{rabkin_personal_2008}. The author realized tests on personal banking websites using security questions as a lost password retrieval: many of them rely partially on security questions with serious usability and security weaknesses. The hardness of this method is weakened as personal information becomes ubiquitously available online. Two kinds of security questions have been found: sensitive questions, which are not necessary private, and personal questions, related to users' background or to their family. Allowing users to define their own questions is not very common. Alternatives exist, such as email-based resets, often considered as secured, use data already held by the organization, which imply that the level of security depends on nature of the source, or asking for a series of preferences judgements, technique not used in the industry. Automatic attacks must be blocked, by using for example \glspl{captcha}. The author found that personal questions are more secured than the sensitive ones because of questions being more varied and of public leaks of sensitive data. The biggest weaknesses in personal security question are that they are inapplicable, not memorable, ambiguous, guessable, attackable, and automatically attackable. Users treat memorability rather than security as the dominant factor in choosing security questions. Some well-known attacks are random guessing, automatically using online information, dedicated human attackers, and personal acquaintance. Some mitigations can be enforced, such as survey distribution of answers, users' education, usage of ephemeral answers, and ask users for durable and offline answers. %item1.2.2.1
+
+Schechter et al. reviewed in 2009 the security and reliability of authentication using secret questions~\cite{schechter_its_2009}. The authors found that 17\% of users' security answers can be found by their acquaintances. Users forget 20\% of their own answers within six months, and 13\% of answers could be guessed within five attempts by guessing the most popular answers of other participants. A single personal question is not sufficiently secure for authenticating users. User-written questions could be harder to attack, but only if they are sufficiently private and unpopular. The proportion of popular questions should be reduced. %desc1.2.2.1.1
+
+Jain and Nandakumar studied in 2012 security and privacy concerns of biometric authentication~\cite{jain_biometric_2012}. Biometric systems recognize individuals based on their anatomical or behavioural traits. They are used to ensure that only legitimate or authorized users can get access to an entity. Their unique advantages are their deterrence against repudiation, and their multiple identity detection. Biometric systems rely on similarities between two biometric samples, not on a perfect match: challenges can lead to false non-matches or false matches. This approach leads to vulnerabilities such as denials of service, with legitimate users being not recognized, or intrusions, with impostors being incorrectly identified as legitimate. Multiple adversary attacks exists: coercing or colluding with insiders, exploiting insiders' negligence, manipulating the procedures of enrolment and exception processing, direct attacks on sensors, feature extractor, or matcher module. Those attacks can be carried out using trojan horses, man in the middle or replay attacks. They are also applicable to password-based authentication. The major vulnerabilities are spoof attacks on users' interfaces and template database leakages. A mitigation against spoofing is to detect liveness during the tests. Data leakages are sensitives because of biometric traits being irrevocable. A mitigation against template database leakages is to enforce template security by applying a trade-off between non-invertibility, discriminability and revocability. To this end, two generic approaches be be applied: biometric feature transformation and biometric cryptosystems. Generating a secure sketch of traits can be realized by using fuzzy commitment and fuzzy vault. However, biometric systems include some major issues that need to be answered: who own biometric data? Is this usage proportional to the need? What is the optimal trade-off between service security and user privacy? %item1.2.3.1 %item1.2.3.2
+
+Velásquez et al. listed in 2018 various authentication schemes and methods~\cite{velasquez_authentication_2018}. Multifactor authentication is a combination of different authentication factors. Choosing the adequate authentication schemes or methods depends on the contexts. The authentication factors come from knowledge, what users know, possession, what they physically own, or inherence, what users are. The combination of the knowledge and possession factors is very predominant in multifactor authentication methods. Three-factor authentication is well researched but less applied. For both methods, the combination of text passwords and smart cards is the most popular. The comparison and selection of schemes are made with usability, security and cost-related criteria. The authors gave advices on which \glspl{framework} can help in the decision of authentication schemes or methods, according to different contexts. %item1.2.4.1
+
+Ibrokhimov et al. studied in 2019 the details about multifactor authentication~\cite{ibrokhimov_multi-factor_2019}. Digital multifactor authentication is one of the best method to implement a secure authentication, but can be frustrating for users. Some greatly used multifactor authentication methods are fingerprints and user-specific random projection, threshold cryptography (\gls{otp} approach), multimodal biometrics, or cloud-based infrastructure. The latter can use third parties authentication. Different entities can be used for authentication, such as smart cards, \gls{otp}, cryptographic techniques, multi-modal biometric systems, or \glspl{token}. %item1.2.4.1
+
+\subsubsection{Authorization}
+\label{subsubsec:state_review_results_authorization}
+
+Authorization is a process that verify an entity access request in order to grant its access to resources, by following rules from the access control policy. The main challenge of authentication is to ensure that every access made to system resources must pass by its verification, without exception.
+
+This process mainly concerns the security aspect of a system: authorizing a user must not be lightened in order to preserve their privacy. Indeed, collecting proof of access requests is a great method to fight an intrusion in a system. However, authorization details must not be accessible by a party without valid reasons. 
+
+Kagal et al. reviewed in 2004 the privacy and security concerns in semantic web services by defining semantically rich security and policy annotations for \gls{owl-s} service descriptions~\cite{kagal_authorization_2004}. Policies should be part of the representation of (semantic) web services and respond to a bunch of questions, such as who can use a service under which conditions, how information should be provided to the service, and how provided information will be used later. Those policies should be of different kinds: privacy policies, that define under what conditions information can be exchanged and what are the legitimate uses of that information, and authorization policies. Single requests can have policies of their own. Ontologies and markup are some proposed approaches to capture security information of web service input and output parameters. The authors defined policies that are transformed into informal contracts represented in Rei (\gls{rdfs} based language) that also include a prioritization mechanism to resolve conflicts. Providers can be discovered and selected using the policies. A way of enforcing privacy and authentication is to use encryption standards for \gls{owl-s} communication independently of the transport protocol security. %item1.4.1.1
+
+Fett et al. studied in 2016 how to secure the \gls{oauth} \gls{framework}~\cite{fett_comprehensive_2016}. \gls{oauth} allows users to grant websites access to their resources, which can be data or services, at other websites. This operation is called an authorization. Its central security properties are authorization, authentication, and session integrity. Four exploitable attacks have been found, but mitigations are given for new and existing deployments: multiple new \acrshortpl{rfc} have been drafted from the respective working group, with guidelines given to secure \gls{oauth} implementations. A complete security model is given to enforce \gls{oauth} processes. %item1.4.1.2
+
+\subsubsection{Best Practices}
+\label{subsubsec:state_review_results_bestpractices}
+
+A best practice is a piece of advice given by a party, which has usually no official status in the concerned field but generally trusted because of its background or by past events. There is no obligation to apply such advices, but doing so is considered better than ignoring them.
+
+They can concern both privacy advices than security ones. We did not find big amounts of generic best practices in the academic field.
+
+Larsson and Sigholm studied in 2016 security issues of the web ecosystem~\cite{larsson_papering_2016}. The authors found three sources of problems that can affect the introduction of best practices. First, insecure configurations can remain widespread for over a decade. Secondly, introduction of best practices only affects moderately the decline of insecure configurations. However, highly publicized security flaws have a significant impact. Thirdly, economic incentives for website owners to provide secure services are too weak. Other levers of influence as legislation or blocking noncompliant sites have a bigger impact. %item6.4.1.1
+
+Ma and Pearson \cite{ma_iso_2005} listed in 2005 the best practices ensuring information security, initially released by the \gls{iso} 17799 document. It answers questions such as which standards should an organization implement to achieve their information security objectives, or what management practices are perceived as critical by information technology professionals. \gls{iso} 17799 is widely accepted and recognized as best practices being applied by information security professionals. The authors found that most of the security dimensions and items covered under the \gls{iso} 17799 document are highly valid. This resource has nowadays been replaced by \gls{iso} 27002 with updated content. %item6.4.1.2
+
+\subsubsection{Big Data Privacy}
+\label{subsubsec:state_review_results_bigdata}
+
+This topic is mainly focused on privacy, because security aspects can be compared to regular storage, processing or transport of data. Indeed, there is mainly changes on the amount of data attributes and on data quantity.
+
+The security concerns of this topic is mainly brought by the distribution model: to process such amount of data, several computers must be used in parallel, which include this additional task to the whole data usage. This will be treated in the \fullrefnametype{subsubsec:state_review_results_distribution}
+
+Jain et al. studied in 2016 the major privacy and security concerns, with their requirements~\cite{jain_big_2016}. The data generation phase must restrict the access to data and allow data falsification. The data storage phase must perform attribute-based encryption, enforce homomorphic encryption, encrypt storage paths, use hybrid clouds, and allow data integrity checks. The data processing phase must be able to extract information without violating user privacy using de-identification. Various techniques exist to this end, such as K-anonymity, L-diversity, T-closeness, HybrEx model, privacy-preserving aggregation (homomorphism), \gls{differential_privacy} or identity-based anonymization. The data publishing phase must also include privacy-preserving techniques. %item4.1.1.1 %item4.1.1.2 %item4.1.1.3 %item4.1.1.4 %item4.1.1.5
+
+Abouelmehdi et al. studied in 2017 the health industry limitations on big data resources~\cite{ABOUELMEHDI201773}. The authors found that the health industry is one of the most susceptible ones to publicly disclose data breaches. Possible mitigations are strong authentication, enabling encryption, data masking and strong access control. Some legislations regulate user privacy, but different countries have different policies and laws. Some privacy-preserving techniques can be used, such as de-identification (K-anonymity, L-diversity, T-closeness), the HybrEx model, and identity based anonymization. %item4.1.1.6
+
+Mehmood et al. made an overview of the big data privacy preservation mechanisms with their challenges~\cite{ieee-7460114}. Mitigations to avoid privacies breach have been defined by the authors. The data generation phase needs access restrictions and data falsifications. The data storage needs various schemes of encryption, a usage of hybrid clouds, and various schemas to ensure proper integrity verifications. The processing phase needs \gls{ppdp} techniques, realize knowledge extraction using privacy preserving clustering or classification, and association rule mining techniques. %item4.1.1.4.1
+
+Soria-Comas and Domingo-Ferrer listed in 2015 the challenges raised by big data in privacy-preserving data management~\cite{soria-comas_big_2016}. Some principles are requested in regulations that aim to protect personally identifiable information: lawfulness, consent, purpose limitation, necessity and data minimization, transparency and openness, individual rights, information security, accountability, and data protection by design and by default. Threats can appear if no anonymization is enforced, such as data breach, internal misuse by employees, unwanted secondary use, changes in company practices, or government access. Anonymization is a solution, but it must be effective. However, it can remove the purpose of big data analysis. Privacy models must comply with volume, variety and velocity, and satisfy the composability, computational cost, and linkability principles. %desc4.1.1.6.1
+
+\subsubsection{Cloud Hosting}
+\label{subsubsec:state_review_results_cloud}
+
+Nowadays, a lot of services are hosted in the \gls{cloud}. This paradigm brings new issues in terms of security, but more particularly for user and company privacies. Indeed, the data storage, transport and processing are made on someone else's computers. A new bond of trust must be established between service providers and \gls{cloud} providers.
+
+Organizations leasing shared resources from cloud providers become infrastructure tenants rather than owners.
+
+Molnar and Schechter studied in 2010 the issues and mitigations of self-hosting environments versus \gls{cloud} hosting~\cite{molnar_self_2010}. Multiple threats appear when migrating from owning to housing:
+\begin{itemize}
+	\item \textbf{Risks on the infrastructure assembly}: physical threats, which can be avoided by testing the components, using \gls{tpm}, or making audits, or on software and human resources that fails to meet the promised standards or being compromised: can be mitigated by defining multiple admins, limiting admins' access, and carrying out background checks of employees.
+	\item \textbf{Contractual threats}: cost-overrun attacks, can be avoided by setting quotas or ensuring that the provider absorbs bulks, deceptive billing, avoidable by enabling tenants to do their own infrastructure tests, or by reporting resource consumption, captivity, avoidable by ensuring providers homogeneity and by reviewing long-term contracts cost prediction, or bankruptcy, which need to assure that the rights to access infrastructure, and the funds to continue short operation are guaranteed.
+	\item \textbf{Legal threats}: can create indirect legal coercion, secret search, or direct and indirect jurisdictional exposure. Can be avoided by enabling data location choice.
+\end{itemize} %item3.2.4.1
+Some threats also appear when migrating from dedicated to shared infrastructure: 
+\begin{itemize}
+	\item \textbf{Threats from other tenants}: by direct breaches, can be mitigated by hypervisor and network isolations, by side channel attacks, avoidable using the same isolation techniques, or by denial of resources, resource thefts, and collateral damage to shared reputation. Those last threats can be mitigated by securing the mapping between communications and tenants.
+	\item \textbf{Threats from legislation}: jurisdictional collateral damages
+	\item \textbf{Threats on availability and costs of shared resources}, by under provisioning, avoidable with attestation-based audit mechanisms and spare capacity audits, or by collateral denial of shared resources, mitigated using resource quotas.
+	\item \textbf{Threats caused by diminished audit, detection, or incident response capabilities}: can be caused by forensic restrictions, can be avoided by forcing providers to investigate breaches.
+\end{itemize} %item3.2.4.2
+Some security benefits are brought by the economies of scale principle: providers can amortize fixed costs, which brings more specialization, adapted infrastructure, full service security, leverage data from multiple tenants, relationships through recurring interactions with regulators and law enforcement. % not relevent
+
+Zhou et al. investigated in 2021 what are providers concerns on security and privacy issues~\cite{zhou_security_2010}. Providers have five goals to achieve adequate security: ensure availability, confidentiality, data integrity, control and audit. Some legal issues can be mitigated by creating additional roles from \gls{cloud} infrastructures and by great handling of third parties. Some acts fail to protect user privacy from the  government and third parties in a \gls{cloud} environment. Multi location can bring issues in a legislation perspective. %item3.2.1.4
+
+Mathisen studied in 2011 the security-related challenges and solutions for \gls{cloud} environments~\cite{mathisen_security_2011}. The author found various policies issues, such as inside threats, avoidable by creating adapted employees' governance, access control, can be mitigated by enabling additional authentication factors or by creating confidence between provider and tenant, system portability issues, avoidable by avoiding provider link-in or by using open standards. The software security issues are caused by virtualization technologies, which can be mitigated by applying updates and keeping tenants isolated, by host \gls{os}, avoidable by choosing a simple and with minimal services \gls{os}, by guest \gls{os}, whose issues can be mitigated by giving tenant responsibility and informing them about risks, or by weak data encryption. Some physical security-related issues can be caused by backups, that should be done by tenant directly and also by using offline storage, by the server location, avoidable by choosing adapted rooms, backup power and controlling entrances, or by firewalls, avoidable by activating a default deny mode, defining additional per-instance filters, and by enabling \gls{ddos} protections. %item3.2.1.4
+
+Sengupta et al. listed in 2011 the most important research directions in the \gls{cloud} market~\cite{sengupta_cloud_2011} The most common concerns are related to cloud infrastructures, platforms and shared codes, data, accesses or compliances. To be mitigated, concerns related to those points should be addressed. Some more advanced issues are abstraction problems, lack of execution controls, third party control of data, and multi-party processing. A strong model to secure operations would be to enforce trust, to create context specific access model within data and to preserve privacy. The authors defined a \gls{framework} that characterizes the security requirements of the application, then characterizes and reviews the cloud provider's security strengths and vulnerabilities, and finally maps the two previous steps to perform a fit analysis. % not relevent for our targeted assessors
+
+JPC Rodrigues studied in 2013 the electronic health records concerns when using the \gls{cloud}~\cite{jpc_rodrigues_analysis_2013}. The author defined suggestions to be considered before adopting the \gls{cloud}: how are handled the data security, the regulatory compliances, the user authentication, the data separation, and the legal issues. Providers' certifications must be reviewed: it could include \citeproper{SAS70 Type II}, \citeproper{PCI DSS Level 1}, \citeproper{ISO 27001}, or \citeproper{FISMA} certifications. The employee lifecycle policies must also be reviewed: how are defined the account provisioning, account review, access removal, and password policy. The business continuity management must also be known, such as the provider's availability, incident response, and company-wide executive review. Finally, the network security should be considered, with mitigations for \gls{ddos}, man in the middle, \gls{ip} spoofing, or port scanning attacks. %item3.2.1.2
+
+Xiao and Xiao reviewed in 2013 the threats related to the security and privacy in \gls{cloud}~\cite{xiao_security_2013}. The author found that the most representative security and privacy attributes are confidentiality, integrity, availability, accountability, and privacy preservability. The biggest challenges building secure and trustworthy \gls{cloud} systems are outsourcing, multi-tenancy, massive data and intense computation issues. The security ecosystem should be modelled considering the three participants: the service user, the service instance, and the cloud provider. The authors found four kinds of vulnerabilities, with threats and mitigations: \glspl{vm} co-residence, loss of physical control, bandwidth under-provisionning, cloud pricing model. \Fullrefnametype{fig:ch2_cloud_xiao} shows threats and mitigations in a summarized overview. % more adapted to cloud providers
+
+\newsourcedimage{1}{ch2_cloud_xiao.png}{A summary of research advances in cloud security and privacy~\cite{xiao_security_2013}}{https://bit.ly/3k15Zaq}{2023}{01}{10}{ch2_cloud_xiao}
+
+Jathanna and Jagli studied in 2017 what are the threats in \gls{cloud} computing~\cite{jathanna_cloud_2017}. The author found that the biggest threats are compromised credentials and broken authentication, data breaches, hacked interfaces and \glspl{api}, exploited system vulnerabilities, account hijacking, permanent data loss, inadequate diligence, cloud service abuses, and \gls{ddos} attacks. Designing a service model includes some security challenges such as malicious attacks, backup and storage issues, service hijacking, and \gls{vm} hopping. The deployment model also integrates security challenges like \gls{paas} security issues, third-parties relationship management, development life cycle issues, underlying infrastructure security, cloning and resource pooling, unencrypted data, authentication and identity management, network issues, \gls{xml} signature element wrapping, browser security, flooding attacks, and \gls{sql} injection attack. %item3.2.1.4
+
+Because of the high complexity of showing information on \gls{cloud} security issues, threats and mitigations, we did not use a table to compare them. A blend of those points will be made directly for our collection of knowledge.
+
+\subsubsection{Dark Patterns}
+\label{subsubsec:state_review_results_darkpatterns}
+
+Dark patterns are \glspl{ui} that have been optimized to manipulate or mislead the users. This method aims to increase profits of the service provider, whether it is financial or in terms of time of use. Cognitive biases are often used to conceive such \glspl{ui}.
+
+Dark patterns are unethical, and can overtake on user privacy, mainly because of their optimizations to consume more time while using services, and therefore collecting more user data.
+
+Two useful online sources on dark patterns: the \citeproperref{privacypatterns.eu}{https://privacypatterns.eu}{2022}{10}{31} and  \citeproperref{privacypatterns.org}{https://privacypatterns.org}{2022}{10}{31} websites.
+
+Bösch et al. studied in 2016 what are the privacy dark strategies and patterns~\cite{bosch_tales_2016}. First, the privacy by design principle must be applied. In order to avoid to design interfaces that include dark patterns, some rules must be applied into the development process: proactive not reactive, privacy as the default setting, privacy embedded into design, ensure full functionality, enforce end-to-end security, assure visibility and transparency, and guarantee respect for user privacy. Privacy considerations must be included into the entire development process. Some strategies take advantage of the psychological constitution of human beings, which often cause users to not have the motivation or opportunity to resist them. Hoepman defined multiple privacy design strategies: minimize, hide, separate, aggregate, inform, control, enforce, demonstrate.  %item2.1.6.1 %desc2.1.6.1.4
+
+Mathur et al. reviewed in 2019 all the dark patterns used in eleven thousand shopping websites~\cite{mathur_dark_2019}. The authors' study is one of the firsts large-scale evidences for the most used dark patterns: \texttt{1818} instances of them have been found on \texttt{1254} websites, which represents 11.1\% of the data set. The dark patterns most relevant characteristics are that they are asymmetric, covert, deceptive, hides information, and restrictive. The human biases that are used are anchoring effects, bandwagon effects, default effects, framing effects, scarcity biases, and sunk cost fallacies. Third-party entities can provide websites the ability to implement dark patterns. %item2.1.6.1
+
+Di Geronimo et al. studied in 2020 the most applied dark patterns into mobile applications~\cite{di_geronimo_ui_2020}. The authors have tested \texttt{240} \citeproper{Android} applications: 95\% of them contain one or more dark patterns. Most of the time. users can not perceive the presence of malicious designs. This study included 584 respondents. %desc2.1.6.1.5
+
+Luguri and Strahilevitz studied in 2021 what is the power of dark patterns~\cite{luguri_shining_2021}. The authors found that users exposed to mild dark patterns are more than twice as likely to sign up for a dubious service than a control group used in an experiment. Users in aggressive dark pattern conditions are almost four times as likely to subscribe. Aggressive dark patterns generate a powerful backlash, mild dark patterns do not. Less educated user are more susceptible to mild dark patterns than their well-educated ones. Some legal frameworks exist for addressing dark patterns, such as the Federal Trade Commission in the United States. %desc2.1.6.1.7
+
+A comparison of the different dark patterns mentioned by the related papers has been made in \fullrefnametype{table:state_review_results_darkpatterns}. All sources do not contradict themselves: we will therefore use their combined knowledge, including blending of similar data.
+
+\subsubsection{Data Management}
+\label{subsubsec:state_review_results_datamanagement}
+
+Data management includes various aspects that handle data in a system, such as its storage, security, architecture or quality. 
+
+Our scope is restrained on security and privacy, but through the whole concerned aspects. Some of those aspects are review in topics of their own, because of data management being a broad concept.
+
+A comprehensive guide to data management technologies has been published by Petković and Jonker~\cite{petkovic_security_2007} and is well recognized within practitioners. 
+
+Ashley et al. defined in 2002 how to manage collected personal data in a sensitive, trustworthy way~\cite{ashley_privacy_2002}. The authors found that risks when personal information are not well handled, and can cause legislative penalties, brand and reputation erosions, or lawsuits. The \gls{oecd} defined what are the privacy phases: notice, collection, cataloguing, control, release, recording, response. The authors created a \gls{framework} with data management building blocks: 
+\begin{itemize}
+	\item Define an enterprise privacy policy
+	\item Deploy a policy to the \gls{ict} systems 
+	\item Record consent of end users
+	\item Enforce the privacy policy and create an audit trail of access to privacy-sensitive information
+	\item Generate both enterprise wide and individualized reports showing accesses to privacy-sensitive information and their conformance to the governing privacy policy
+\end{itemize} %item1.3.5.1
+
+Efraimidis et al. reviewed in 2009 how to integrate privacy in personal data management~\cite{efraimidis_towards_2009}. Data protection can be enforced by either the owner side or the provider side. Different schemes for representing personal data and policies exist, such as \citeproper{P3P}, \citeproper{CPExchange}, and \citeproper{DISCREET}. Hierarchical categories have been defined to organize personal data, including some sub categories. The related policy components are principals (entities), data (every single item), purpose (entitles principals to retrieve data), and usage restrictions (limit access rights). The policy includes the usage of licences which define the data involved, the valid purposes of data retrieval, and the rules to provide full or restricted access. Contracts are also included, which are arbitrary sets of licences. The paper exposes a system applying those concepts. %item1.3.5.2
+
+Squicciarini et al. studied in 2009 the problems of collaborative enforcement of privacy policies on shared data~\cite{squicciarini_collective_2009}. Two solution could be used. The first is to map the user collaborative policy specification to an auction based on the Clarke-Tax mechanism. This approach selects the privacy policy that maximizes the social utility using truthfulness among co-owners. The second solution is to apply data co-ownership. The potential owners of posted data can be identified using tagging features or files \gls{metadata}. Some requirements must be met for valid collaborative privacy management: must ensure content integrity, is semi-automated, must be adaptive, and integrates group-preference. The private box implementation is proposed by the authors, which is a collaborative management of shared data based on pictures. % item6.3.4.2
+
+Mansour et al. created in 2016 a decentralized platform to share personal data~\cite{mansour_demonstration_2016}. User data is stored in web-accessible personal online datastores named pods. One or more pods can be used and easily switched across different providers. Applications can get access to the data using well-defined protocols, a decentralized authentication and access control mechanism to guarantee data privacy. This technology allows similar applications switching, applications on multiple platforms, and the advantages of decentralized architectures. The \citeproperref{Solid project}{https://solidproject.org}{2023}{01}{11} implements this technology. %item1.3.4.1
+
+\subsubsection{Dependencies}
+\label{subsubsec:state_review_results_dependencies}
+
+Software dependencies are a major component of almost every service, with features, capabilities or toolboxes that can directly used after their integration. A lot of time and energy are saved, but a new bond of trust must be established with such integrations. However, specialized libraries can bring more security to a module than trying to implement the feature ourselves.
+
+There is also a domino effect: a dependency may include others. Such situations may lead to major security issues, or even \citeproperref{stability issues}{https://xkcd.com/2347/}{2022}{10}{17}.
+
+The \citeproperref{\gls{owasp} organization}{https://owasp.org}{2022}{10}{31} has published two useful tools to mitigate dependencies risks: \citeproperref{Project Dependency Check}{https://owasp.org/www-project-dependency-check/}{2022}{10}{31} and \citeproperref{Project Dependency Track}{https://owasp.org/www-project-dependency-track/}{2022}{10}{31}.
+
+Zimmermann et al. studied in 2019 the security threats in the \gls{npm} ecosystem~\cite{zimmermann_small_2019}. The openness of \gls{npm} has boosted its growth: more than \texttt{800,000} free and reusable packages available. This popularity brought security risks, as recent incidents of single packages have broken or attacked targets using software running on millions of computers. Individual packages can impact lots of projects, using maintainer accounts that can inject malicious code into the majority of all packages. A lack of packages maintenance causes many packages to depend on vulnerable code. \gls{npm} suffers from single points of failure and unmaintained packages which threaten large code bases. One average package gives implicit trust on 79 third-party packages and 39 maintainers, which bring a large surface attack. Highly popular packages influence many other packages: often more than 100,000. Up to 40\% of all packages depend on code with at least one publicly known vulnerability. The major security risks are locked dependencies, heavy reuse, micro-packages, no privilege separation (all packages have complete access to the application), no systematic vetting, and publishing model. The most known threat models are malicious packages, exploiting unmaintained legacy code, package takeover, account takeover, collusion attack. The authors defined some potential mitigations: raise developer awareness, warning about vulnerable packages, code vetting, training and vetting maintainers. %item2.1.5.1
+
+Wang et al. defined in 2022 a novel approach that integrates the interdependency among high-level security requirements~\cite{wang_detecting_2022}. Dependencies between security requirements may cause additional vulnerabilities. Vulnerabilities should be identified using static analysis, even if it raises high false positives and misses true vulnerabilities, and security testing, which is highly precise such as dynamic taint analysis and penetration testing. Precise tests should be launched when software is isolated, but security requirements may be violated on interactions. Up to 70\% of total software errors are caused by interacting requirements. 20\% of most dependent requirements are responsible for 75\% of all dependencies. Another approach is to use automated requirements traceability based on information retrieval algorithms. The authors proposed a new approach to integrate horizontal and vertical traceability, using two levels of security requirements: a higher level for requirements specified in policies and regulations, a lower level for ones concretely implemented. A mixture of manual dependency is first done among higher level requirements, then automatically trace them with the lower level ones. %item2.1.2.8
+
+\subsubsection{Distributed Computing}
+\label{subsubsec:state_review_results_distribution}
+
+Distributed computing consists of sharing data and processes through multiple hosts using a network in order to complete a common task. Such methods must be handled by trusted hosts, even if they do not necessarily hold the whole data knowledge by themselves.
+
+Privacy issues are caused by the trustworthiness of the participating nodes, which can access to complete or incomplete data that can concern sensitive information about the users. Security issues can emerge due to the data being shared across different nodes, that can have different policies or software stacks.
+
+Georgiev and Georgiev studied in 2001 how to establish the trustworthiness and role of each component in distributed computing environments~\cite{georgiev_security_2001}. The authors found two categories of security threats: centralized systems threats, amplified by distribution, and distributed-specific threats, brought by distribution requirements such as scalability, interoperability, interconnection, untrusted nodes, different \gls{os} and applications suites, and multiple security policies. Security policies should be designed without regards to leaks and weaknesses of the nodes: they must be addressed independently. To this end, social and technical aspects must be considered. The authors stated a common security model optimized to provide interoperability, must establish the degree of trustworthiness of each component. It includes identification and authentication, access control, confidentiality, non-repudiation, and availability. The issues that components face are untrusted partners (workstations or servers), untrusted communication media (physical links), untrusted intermediate systems (routers, gateways), untrusted clients (software), trusted user/client identity (unique identity), trusted server identity, trusted administration. Components can migrate between categories, for example with mobile roaming or changes on the network trust. The third parties' authentication services are one of the largest controversial and challenging issues. All distributed application servers and database servers should trust servers using two-way authentication, certificates, message addresses, or content certification. Partners should be trusted using levels of trust, with different evaluations of used software. All partners must be untrusted by default, except for security administrator and third-party authentication services. %item3.1.1.3
+
+Wang et al. analysed in 2004 how to handle security policies reconciliation~\cite{wang_security_2004}. A collaboration between two organizations includes that their policies must be resolved. Reconciliation algorithms find a policy that is consistent with all domain policies. If unsuccessful, requirements altering or abstinence can be applied. Policies provisioning includes complex dependencies which include decisions about some particular aspects of the policy that can affect subsequent options. Such processes are also subjects to preferential behaviours. Other reconciliation approaches exist, but are limited according to the authors. The authors' \gls{framework} is defined using hierarchical graphs, including multiple partial orders resolution and preferences reconciliation. An implementation showed that inherent overhead is negligible in real-field applications. %item6.3.4.1
+
+Kher and Kim listed in 2005 the main challenges, techniques and systems regarding secured distributed storage~\cite{kher_securing_2005}. Humongous quantities of generated data, which must be shared, replicated, and kept online for various performance, availability, and recovery requirements make systems more vulnerable to security breaches. Several security features should be considered:
+\begin{itemize}
+	\item Authentication and authorization, through all data life cycle
+	\item Availability, which includes backup and recovery
+	\item Data confidentiality and integrity
+	\item Key sharing and key management with an efficient and scalable management
+	\item Auditing and intrusion detection
+	\item Usability, manageability and performance
+\end{itemize}
+The authors defined three storage systems classification. The first is networked file systems: a server authenticates users and checks any access privileges. It assumes the file servers and the system administrators are trusted. It does not include end-to-end data security. The second is cryptographic file systems: they enable end-to-end security using cryptographic operations natively in the file system, on the client side in order to protect data from both the server and unauthorized users. The server is minimally trusted, and not included in the process. The third is storage-based intrusion detection systems: they monitor activities related to data and look for manifestation of an attack. Security issues are exposed into the paper for each category of storage. Categories can be compared using the following criteria: used authentication for entities and messages, access control type, end-to-end data and \gls{metadata} confidentiality support, end-to-end key management, revocation, non-repudiation, key storage, and long-term key management. %item3.1.2.1
+
+Tyagi studied in 2012 the problems of distributed function computation under privacy constraints~\cite{tyagi_distributed_2012}. A collective computation over correlated data must not reveal the value of a specified private function computed by each of the terminals. If so, such functions are therefore "securely computable". The paper gives necessary and sufficient conditions for secure computation of given functions. A class of functions are securely computable if and only if the conditional entropy of data given the value of private function is greater than the least rate of interactive communication required for an appropriately chosen multiterminal source coding task. %item3.1.1.2
+
+\subsubsection{Encryption}
+\label{subsubsec:state_review_results_encrption}
+
+Multiple algorithms can be used to encrypt data. The main issue is to ensure that the used algorithms, protocols and parameters are up-to-date with the current context.
+
+Putting encryption is place do not resolve all privacy issues: \gls{metadata} can still be useful to intruders or third parties to gain knowledge about users. For example, a service provider can easily understand why a female user called an abortion clinic number without being able to listen to the actual conversation, which can bring privacy disclosures.
+
+El Makkaoui et al. studied in 2015 how to enable \gls{homomorphic_encryption} inside \gls{cloud} environments~\cite{el_makkaoui_challenges_2015}. Providers' ability to access sensitive user data is a major obstacle in the adoption of \gls{cloud} services. \Gls{homomorphic_encryption} allows operations on encrypted data with the same results after treatment as with raw data. Several categories of encryption can be used, some of them have limited available operations or limited representation of data. The three main challenges of this technology is its efficiency with limited operations and performances, its robustness which is based on the size of the key, and its delay due by great encryption, decryption and processing times. %item3.2.2.4
+
+Yassein et al. reviewed in 2017 the major asymmetric and asymmetric key encryption algorithms~\cite{yassein_comprehensive_2017}. Symmetric encryption uses one single secret key for encrypting and decrypting data between the sender and the receiver. Symmetric encryption uses public keys for encryption and different keys (secret) for decryption. Asymmetric encryption not very efficient for small devices due to more computations needed. Therefore, symmetric encryption algorithms are almost a thousand times faster than asymmetric algorithms, because of less processing power required. Some of the most used symmetric algorithms: \gls{des}, the first standard, 3\gls{des} which uses keys that are three time larger, \gls{aes}, which is the \gls{des} replacement recommanded by \gls{nist} using different key lengths, Blowfish, that supports different key lengths, is licence free and the fastest of them. Some of the most used asymmetric algorithms: \gls{rsa}, supports variable length of key and block, Diffie-Hellmann, the first public key algorithm that exchanges keys under insecure channel, \gls{dsa}, developed by \gls{nist} and for authentication and signature integrity verification, \gls{ecc}, applies the elliptic curve theory that can be used to enhance other algorithms, designed to improve performances, power and battery consumption. The most useful attribute of compare them are: the block sizes, the larger block sizes for symmetric algorithms give faster speed time, the key sizes, larger key sizes need more battery consumption and time processing, and the algorithm speed, which Blowfish often being the fastest depending on the used parameters. %item1.1.2.1
+
+\subsubsection{Hardware}
+\label{subsubsec:state_review_results_hardware}
+
+This topic is mainly focused on security, because privacy leaks occur through security issues in this particular context.
+
+Web services are not really concerned by advanced hardware aspects: they often only use pre-designed servers and client devices without any particular needs, not like \gls{iot} or embedded projects. 
+
+Something to verify as a company is the trust placed into vendors and manufacturer, that they propose legit and audited products. Politics can also interfere in manufacturer processes to enable industry intelligence and surveillance, such as \citeproperref{China's infiltration into U.S. companies}{https://bloom.bg/3FqhBwf}{2022}{10}{28}.
+
+Potlapally listed in 2011 the main challenges when one wants to correctly implement security in commercial hardware platforms~\cite{potlapally_hardware_2011}. Hardware security is getting increasingly more complex because of two trends. First, the skills and resources to counter well-funded criminals aiming for economic goals have been raising. Secondly, an increase of hardware-based attacks has been noticed: this kind of attacks leads to the most privileged entities, with lots of flexibility and power that can also escape \gls{os} detections. %item3.7.1.1
+
+In 2014, Rostami et al. reviewed threat models, metrics, and remedies on hardware attacks~\cite{rostami_primer_2014}. Algorithmically secure cryptographic processes rely on a hardware root of trust to deliver the expected protections when implemented in software. Critical control and communication functions assume that the hardware is resilient to attacks. \Glspl{backdoor} have been found in various systems, even military ones. Cost, power consumption, performance, and reliability are considered first while designing hardware, which leads to security issues being relocated as an afterthought. Several metrics can be used to evaluate them, some of them can be used for multiple threats. The location of the attackers can be anywhere, such as 3PIP vendors, \gls{soc} integrators, foundries, PCB assembly units, test facilities, end users, or the recycling/repackaging facilities. %desc3.7.1.1.2
+
+Jin listed in 2015 the key concepts of hardware security~\cite{jin_introduction_2015}. One had the original assumption that the supply chain was well-protected, but it is actually spread around the globe and involves lots of third parties which make it difficult to fully verify and control processes. The research evolution is going towards trustworthy hardware development for the construction of the root of trust, security-enhanced hardware infrastructure for device protection, and various security-enhanced architectures under development. New protection schemes operating at the system-level such as \citeproper{ARM TrustZone}, \citeproper{Intel SGX}, \citeproper{CHERI} or \citeproper{LowRISK}, which bring new possibilities to secure processes. %item3.7.1.2
+
+A comparison of hardware attacks and mitigations that have been mentioned by the related papers has been made in \fullrefnametype{table:state_review_results_hardware}. The two sources do not contradict themselves: we will therefore use their combined knowledge.
+
+\subsubsection{Identification}
+\label{subsubsec:state_review_results_identification}
+
+No relevant knowledge has been found for this topic. Indeed, if a service is privacy-friendly and does not generate profit by tracking its users, there is no legitimate need to identify them apart for their authentication.
+
+\subsubsection{Instant Messaging and Communication}
+\label{subsubsec:state_review_results_imcommunication}
+
+Email and instant messaging applications have become a common way to communicate, for both individuals than companies employees. Those channels carry a broad variety of data, some of which that might be sensitive or confidential. Choosing an adapted service, provider and channel is therefore very important.
+
+The \gls{ncsc} from the United Kingdom government have published a guidance on this topic~\cite{ncsc_2020} for companies.
+
+Solomon studied in 2007 the means of workplace issues~\cite{solomon_balancing_2007}. Workplace issues such as disputes, harassment, employee performance, and others can be supported by e-messages. Organizations do not know which messages are of interest for this kind of problems until issues surface and restored messages are requested. This raises the question of how long backups must be kept. Backups can be of two types, either online or offline of the system. The biggest challenge is that expectations of privacy for company messages sent by employees vary between territories: the United States forces companies to store them, whilst the \gls{eu} states that messages are private, unless a disclosure is requested with appropriate reasons. %item6.3.3.1
+
+Ayodele and Adeegbe listed in 2013 what are the \Gls{cloud} based emails boundaries and vulnerabilities~\cite{ayodele_cloud_2013}. The major issue is that users do not know where emails and sensitive data are stored. The data boundaries vary depending on laws, access privileges, data protection and privacy requirements. An interesting mitigation would be to use an intelligent \gls{cloud} based machine encryption and decryption system. % generalized into cloud assets, item3.2.2.3
+
+Foster et al. studied in 2015 the native and embedded security features in the email technology and emails providers~\cite{foster_security_2015}. Emails have no \gls{cia} guarantees: users must use their own tools, such as \gls{pgp}, but few of them actually do. Transport-layer security mechanisms can protect users' privacy, but they are limited to transport. Sender protections also exist, such as \gls{dkim} and \gls{spf}. The authors made a survey on major providers with the following results: half of them supports \gls{tls} (increasing part), servers do not check certificates, the \gls{spf} enforcement is limited, few senders use \gls{dkim}, and even fewer reject invalid \gls{dkim} signatures. The global email system has some protection against passive eavesdropping, but has limited protection against unprivileged peer message forgery, and no protection at all against active network-based attacks. Proper enforcement is possible for the latter. %item5.2.1.1
+
+In 2015, Rana et al. reviewed the problems and issues of instant messaging in businesses~\cite{rana_enterprise_2015}. The main problems are security-related risks, legal-related risks, information leakages, and productivity decreases. The authors have found essential features to be enforced by instant messaging applications: security, stability, efficiency, versatility (effective and rich set of features), compatibility, scalability, simplicity, affordability. Both the set of features and the architecture of the instant messaging applications must comply to the organization needs. %item5.2.1.2
+
+Chawathe defined in 2018 some fuzzy rules to classify malicious emails~\cite{chawathe_improving_2018}: a semi-automated, rule-based system for detecting malicious email messages which aims to fill gaps left by other security mechanisms. This classifier is amenable to human understanding and modification. The author proved a competitive performance compared to other alternatives. %item5.2.1.3
+
+Englehardt et al. reviewed in 2018 the major privacy implications of email tracking~\cite{englehardt_i_2018}. The mere action of viewing emails contains privacy pitfalls for the unwary. Hundreds of third parties track email recipients via methods such as embedded pixels, with 30\% of emails that also leak the recipient \gls{ip}. Additional leaks occur if recipients click on links in emails. Some third parties can link email tracking to users' web cookies. 62\% of senders intentionally leak email addresses to third parties. 85\% of emails in the authors' corpus contain embedded third-party content, and 70\% contain trackers with an average of 5.2 trackers by email and a median of 2 third parties per email. 900 third parties were contacted at least once during the study. Some defences can be implemented: content proxying, \gls{html} filtering, cookie blocking, referrer blocking, and request blocking. Reopening emails can also bring in new third parties. No email servers or clients offers complete protection. Emails provide much of same tracking opportunities as the web. Two improvements could be made: enable server-side email content filtering, and fill gaps in tracking-protection lists. %item5.1.2.3
+
+Huang et al. defined in 2018 a classification system to categorize emails into different security levels to avoid leaks~\cite{huang_email_2018}. The goal is to avoid that sensitive information from emails sent to external parties is exposed to the public or to competitive companies. The author proposed a tool which parses emails content and prevents sensitive information from leaking based on emails label. If classified security level does not reach the one of user email label, the message is not sent and is reported. Two issue have been found: no \gls{metadata} can be used because of privacy policies, and the data can be imbalanced because of different email lengths. The authors tested their tool and obtained a high accuracy, which they claim proves that it can be used in the real-field. %item5.2.1.4
+
+Reisinger studied in 2022 the security and privacy risks in unified communication tool~\cite{reisinger_security_2022}. The author used two threat modelling methodologies: \gls{stride} and \gls{linddun}. The mitigation controls must be put in relation with the threats. Ten major platforms have been evaluated on their security and privacy features and most of them provide the obvious security features, but most do not provide privacy properties. The author defined guidelines to improve security and privacy: enforcing encryption by default and making sure it is end-to-end, locking and password-protecting meetings, holding unauthenticated users in a waiting room, monitoring the participant list, acquiring consent from participants for meeting recordings, being aware that audio-only participants calling via a regular phone dial-in option or protocol gateways could disable end-to-end encryption, being aware that file and screen-sharing capabilities could accidentally disclose sensitive information or be used to spread malicious programs. End-to-end encryption and \gls{opensource} architectures are two fundamental security and privacy mitigations. Finally, the author found that mitigations against privacy threats are far less available than the security ones. %desc5.2.1.2.3
+
+\subsubsection{Intelligence}
+\label{subsubsec:state_review_results_intelligence}
+
+Usually, companies use intelligence to monitor their competitors, in order to obtain or preserve technological or commercial knowledge. In our context, we talk about intelligence as the fact of staying informed about the latest news in the security field.
+
+In sensitive environments, being quickly informed is critical. To this end, companies must find adapted ways to be alerted about issues, vulnerabilities or public attacks in an acceptable timeframe.
+
+Here are some relevant sources for security issues:
+\begin{itemize}
+    \item \citeproperref{Cybersecurity \& Infrastructure Security Agency (CISA)}{https://www.cisa.gov/uscert/ncas/alerts}{2022}{10}{26}, from the United States government
+    \item \citeproperref{\gls{ncsc}}{https://bit.ly/3DA2aAi}{2022}{10}{26}, from the United Kingdom government
+    \item \citeproperref{Computer Emergency Response Team (CERT)}{https://bit.ly/3DzNlxH}{2022}{10}{26}, from the European Union Commission
+    \item \citeproperref{The CVE project}{https://cve.mitre.org/cve/}{2022}{10}{26}, from the \citeproperref{MITRE}{https://www.mitre.org}{2022}{20}{26} company
+\end{itemize}
+
+The \citeproperref{OpenCVE project}{https://github.com/opencve/opencve}{2022}{11}{06} can be used to optimize the security intelligence on the tools, software, or anything used in a company. This tool is \gls{opensource}.
+
+Hodgson et al. listed in 2008 some technology watch review, with their corresponding techniques~\cite{hodgson_intelligent_2008}. The author found that the two major methods are bibliometric analyses and data mining. The relevant sources must be found both internally and externally to the organization. An evaluation of the company risks should be made, resulting with a ranked list. %desc6.1.3.1.5 % desc6.1.3.1.1
+
+Rovira analysed in 2008 how to realize technology watches and how to apply corresponding techniques~\cite{rovira_technology_2008}. A technology watch consists of obtaining technical information to make decisions in a company production department. It can also be applied to commercial decision-making processes. A strategic planning must be defined with the following steps:
+\begin{enumerate}
+	\item Analyse the internal and external activities of a company
+	\item Perform a \gls{swot} analysis
+	\item Create a strategy plan (short and midterms)
+	\item Define the critical watch factors
+\end{enumerate}
+Five watch phases are executed continuously and cyclically:
+\begin{enumerate}
+	\item Identify and analyse the company information needs defining the critical watch factors
+	\item Search and obtain the necessary information to track the \glspl{cwf}
+	\item Evaluate and analyse the information obtained
+	\item Internally disseminate the results
+	\item Use the information in the decision-making process
+\end{enumerate}
+Some of the most used tools for sources: service alerts, webpage software monitoring, adding agents, search agents, search engines, \gls{rss} feeds, data mining procedures, bibliographic databases, patent databases, distribution lists, and invisible web databases. %item6.1.3.1
+
+\subsubsection{Legislation}
+\label{subsubsec:state_review_results_legislation}
+
+Companies must comply to several laws and directives when they commercialize products or services. Regarding web services, personal data rules must be respected.
+
+Good advice is to always analyse and verify the country and territories legislations that must be enforced, whether it is for the local state were the company is registered or for the foreign markets the company covers. The company must then comply to those legislations.
+
+Different levels of regulations, directives or laws can concern a specific usage, such as local states, federated state or internation laws. Having an adapted service or contact of legal advisors or lawyers is a good practice.
+
+Poullet questioned in 2009 what were the main privacy challenges raised by the at the time present and future information society~\cite{poullet_data_2009}. The author found numerous important changes, such as Moore's law (growth of the computers capacity, increases analysis and the quantity of data), the Internet revolution (convergence of networks around a single platform), and the arrival of ambient intelligence (puts technology into the everyday life). The main tendencies are the privatization of the cyberspace, with private corporations being the major deciders, and increased service provider responsibility in everyday behaviour and interactions. Author gave three advices: first, we must look at the social impact and the transformation of human relations created by new developments, then keep in mind that although technology has risk, it can also offer solutions, and finally that developers must think about proportionality and transparency in their work. % irrelevent for direct guide content.
+
+In 2016, Albrecht studied the effects of the \gls{gdpr} on personal data~\cite{albrecht_how_2016}. The \gls{gdpr} regulates almost all the personal data questions directly: it only leaves exceptional and limited specification powers to \gls{eu} Member States which then have to always justify any divergence from the aim of a fully harmonized legal frame. It brought two major changes: the major players of numerous markets have changed their strategies to become leaders on data protection friendly services, and the regulation added legal certainty and coherence. % Guide targets are companies, not countries: irrelevent.
+
+Goddard studied in 2017 the impact of the \gls{gdpr}~\cite{goddard_eu_2017}. The regulation covers all personal data, which encompasses data that can directly or indirectly identify an individual including identifiers. It concerns all \gls{eu} residents regardless of the location of the data processing. It encourages both ethical approaches to data collection and public trust. This regulation brings multiple principles: fairness and lawfulness, purpose limitation, data minimization, accuracy, storage limitation, integrity and confidentiality. Its core attributes are data protection by design and by default, user consent must be freely given, any data processing is only fair if it is transparent, has a wide jurisdictional scope, and is user-centric. Two challenges remain for involved entities: there is a limited scope for countries to impose their own rules, and some uncertainties about legislative derogations still stand. % item1.3.3.1
+
+Jäntti made a study in 2020 about small and medium \gls{ict} companies on their actions and feelings on data privacy~\cite{jantti_studying_2020}. The author found that the top privacy-related challenges are the lack of commitment from the top management, weak management on stored personal data in the \gls{cloud}, underestimations of the \gls{gdpr} effects on the organizations, and a lack of \gls{gdpr} understanding and bad interpretation of authoritative legal texts. The companies have prepared themselves for \gls{gdpr} regulations by identifying data registers, outsourcing the maintenance of data registers, a better monitoring of applications, participating in \gls{gdpr} training events, creating data balance sheets, reviewing contracts with suppliers, and analysing \gls{gdpr} from the business perspective. The major challenges for ensuring data privacy are delivering enough data privacy related information and communicating with business users, having sufficient resources for \gls{gdpr} preparation, and proceeding to the verification of many systems for \gls{gdpr} compliance. Implementations of the \Gls{gdpr} have been made with companies' own resources: they relied on guidelines for national authorities, changed some traditional ways to work, and defined data privacy roadmaps. % item1.3.3.2
+
+\subsubsection{Mobile}
+\label{subsubsec:state_review_results_mobile}
+
+Mobile devices are now almost mandatory in our modern lifestyle. They bring us new opportunities and full access to the whole Internet, but also carry our personal and sensitive information. Moreover, the current context is oriented towards the collection of user data in order to improve applications or to resell personal data to data brokers.
+
+Nowadays, we have two major providers of smartphone ecosystems, \citeproper{Google} and \citeproper{Apple}, that share \citeproperref{99\%}{https://bit.ly/3W0bHIf}{2022}{10}{25} of the market.
+
+Security is a major issue for mobile phones, because of their sensitive and personal data holding. A lot of attackers are specialized in this particular field. Furthermore, the preservation of users' privacy must be done on applications level as much as on the \gls{os} one.
+
+Garg and Baliyan made in 2021 a comparison of the security features of \citeproper{Android} and \citeproper{iOS}~\cite{garg_comparative_2021}. Generally speaking, \citeproper{iOS} has stronger security mechanisms than \citeproper{Android}. \citeproper{Android} is \gls{opensource}, use the \gls{linux} kernel (applies user restriction on system resources), and use the \citeproper{Application Sandbox} mechanism which gives a unique user identifier for each application. \citeproper{iOS} is more restrictive, is a closed system, implements device-level locking mechanisms, has a remote wipe feature, has a secure boot chain process, implements secure enclaves, a mandatory file encryption methodology, and is not easy to \citeproper{jailbreak}. The permissions are more controllable on \citeproper{Android}, but application origins are more controlled on the \citeproper{iOS} store. \citeproper{Android} lacks control over device manufacturers, whilst Apple controls both the hardware and the software of its products. Based on recent reports from \gls{cve}, \citeproper{Android} has more vulnerabilities than \citeproper{iOS}, and \citeproper{Android} ones are more severe. \citeproper{iOS} has more remote vulnerabilities, but are more complex to exploit. The increasing market shares and the \gls{opensource} nature of \citeproper{Android} influence its increasing vulnerabilities amount. Most used malware attacks: trojan, ransomware, \gls{backdoor}, spyware, adware. % not directly useful for the guide, but for the general choice of both OSes
+
+Mos and Chowdhury listed in 2020 how users can protect their \citeproper{Android} phone~\cite{mos_mobile_2020}. The most common threats and weaknesses are premium call rates and \gls{sms}, search engine optimization, botnets, and ransomware. There are two main types of countermeasures to improve safety. The first are static approaches which disassemble and analyse the source code, either with signature matches using a dictionary or with permission checks. The second one are dynamic approaches which examine the application behaviour during its execution. It uses anomaly detection, data and control flow monitoring, emulation techniques, permissions management, device locking (avoid device tampering), antiviruses installation, and verification that applications are only installed from trusted packages repositories. % item2.1.2.8
+
+Wijesekera et al. studied in 2017 how to align mobile privacy with user preferences~\cite{wijesekera_feasibility_2017}. The authors found that if users are asked to make privacy decisions too frequently or under circumstances that are seen as low-risk, they may become habituated to future, more serious, privacy decisions. But if they are asked to make too few privacy decisions, they may perceive that the system is acting against their wishes. There is permission types that are seen as more dangerous, which are the ones related to personal data. Others are seen as more regular ones. %item1.3.2.1
+
+Wu et al. studied the effects of the design on users' security perceptions~\cite{wu_effects_2020}. Great interface usability and adapted design of notifications positively impact users' perceived application security. Furthermore, disruptive notifications irritate users and negatively influence those perceptions. %item2.1.1.3
+
+In 2012, Boyles et al. \cite{boyles_privacy_2012} realized a survey about smartphone usage. The authors have found that 57\% of mobile users have uninstalled or decided not to install an application due to concerns about how their personal information is processed. %desc2.1.1.3.2
+
+Poniszewska-Marańda et al. defined in 2021 a secure development model to overcome common mobile platforms threats~\cite{poniszewska-maranda_secure_2021}. The authors have listed security standards for each data cycle. In the data storage state, locally stored data must be limited, and alternatives for key stores must be used. For data access, developers' attention must be focused on features using geolocation, application-device identifiers, and user sessions. During data transfer, adapted encryption must be enforced, digital signatures must be used, as well as security keys. Data transfer is the weakest link of the chain. A security \gls{framework} is proposed in the paper. % item2.1.4.1
+
+An investigation of data shared by the mobile phones \glspl{os} with their developers has been made in 2021 by Leith~\cite{garcia-alfaro_mobile_2021}. To this end, the author used an iPhone and a \citeproper{Google Pixel}, and they did not enable the optional services (mapping, \gls{cloud} or photo applications), leaving the settings at their default values. The kind of shared data depends on the \gls{os}. Both systems transmit telemetry, even with opt-out configurations. \citeproper{Google} collects around 20 times more mobile data than \citeproper{Apple}. Both systems make devices periodically connect to their \gls{backend} servers with an average of 4.5 minutes, even when the device is not used. Inserting a \gls{sim} card into the device generates connections that share the \gls{sim} details with \citeproper{Apple/Google}. Browsing activities also generate multiple network connections to \gls{backend} servers. Some pre-installed applications make network connections despite having never been opened or used. Two major concerns have been listed. First, device data can be linked to other data sources with other personal details, and potentially with other devices. Secondly, every connection with a \gls{backend} server disclose the device \gls{ip} address, which is a rough proxy that can be used for location. Two mitigations have been found: using an alternate \gls{os} for \citeproper{Android} devices, and disable Internet access by default for all application plus manually disable problematic applications. Alternatives must then be installed via alternative stores, but they could therefore not use Google Play Services. %item5.1.3.1
+
+\subsubsection{Network}
+\label{subsubsec:state_review_results_network}
+
+Connecting services to a network allows remote access for a public or private usage. In all cases, it brings new threats in a system with the possibility for external parties to collect knowledge or to exploit vulnerabilities.
+
+A network must be well configured to avoid those new threats. The difficulty is to restrict the possible actions or accesses as much as possible without disrupting or impacting the services.
+
+Marin listed in 2005 the most important network security basic design and configuration issues~\cite{marin_network_2005}. The network traffic must be analysed, both on the flows and formats. Be aware that attackers can know the protocols intent and their rules to interpret the associated formats and flows. Network intrusions can be used for several goals, including to consume the resources uselessly, to interfere with the system or to gain knowledge. \gls{ddos} attacks intent to slow or to interrupt services. There is no single technique to detect network intrusion: signatures or anomaly detection are the most common. %item3.6.1.1
+
+Pawar and Anuradha listed the most known types of network attacks~\cite{pawar_network_2015}. There is three type of them: active, passive and advanced. Active attacks are initiated by commands. They include spoofing (play on identity), routes modification, wormhole (tunnelling traffic), fabrication (false routing message), denial of services, sinkhole (prevent node to exchange information), and Sybil (insert multiple malicious nodes). Passive attacks do not require any action. They could be traffic analysis, eavesdropping (find credentials in communication), or monitoring access. Advanced attacks are more difficult to realize. Some of them are black hole (replace the best paths), rushing (make receiver busy), replay (repeat or delay data), Byzantine (disrupt or degrade routing), or location disclosure. %item3.6.1.1
+
+In 2016, Ghafir et al. listed the most appropriate approaches to securely monitor networks~\cite{ghafir_survey_2016}. Three tool approaches can be used to find, report and resolve problems. The first is packet capture: it intercepts data packets that are crossing a node or moving over it. The second is \gls{dpi}: actions on packets are applied when they match specific data or code payloads. Finally, there is flow-based observation, that analyse packets in a specific transport connection or a media stream. The criteria for \gls{dpi} tools are prototype support, developer friendliness, and extensibility. According to the authors using those criteria, the best \gls{dpi} tool is \citeproper{Bro}{https://zeek.org/}{2023}{01}{07}. % item3.6.2.1
+
+Kavianpour and Anderson reviewed in 2017 what are the threats, vulnerabilities and mitigations of wireless networking~\cite{kavianpour_overview_2017}. Wireless communications imply additional threats: introduction of malicious activities, interception of data transmission, or passive eavesdrop. List of some attacks: malicious association (mock a legitimate access point), ad hoc networks attack (no central access point: access control issues), man in the middle, rogue access point (unsanctioned by administrator), lack of encryption. Some mitigations: chose good encryption parameters, educate users, limit access with explicit allowance, change factory router configuration, change default router identifier, disable broadcasting of identifiers, apply \gls{mac} filtering, keep firmwares up to date. % item3.6.1.2
+
+Dimitrakos et al. explained in 2005 how to design great network access control policies~\cite{dimitrakos_formal_2005}. The authors identified that the main problem with firewalls is the difficulty to configure them appropriately. To do so, administrators need a clear methodology and adapted supporting tools. They should use high level languages to specify a network security policy in order to avoid mistakes and to help further edits in the future. It is recommended to apply dual security policy, which specify both permission and prohibition rules. However, it requires rules ordering, which is difficult to assess. An alternative could be to apply closed access control policy, with permissions only. A complete concept is given in the paper. %item3.6.1.3
+
+\subsubsection{\acrlong*{os}}
+\label{subsubsec:state_review_results_operatingsystems}
+
+\Glspl{os} are mandatory to handle all the operations in a machine. It brings lots of interfaces for the users, resources and hardware management, and runs programs. The current market includes several competitors: \citeproper{Windows} and \citeproper{macOS} are leading the personal computer market, \gls{linux} and \citeproper{Windows} the server market, \citeproper{Android} and \citeproper{iOS} the mobile market.
+
+\Glspl{os} have different security mechanisms and implementations, but their general health and robustness are being periodically improved for several years.
+
+On the privacy side, we can split them in two categories: the free systems (as in freedom) and the proprietary ones. The firsts are generally more privacy-friendly than the others. Moreover, such systems require user accounts to be either configured or to unlock access to all the features of the \gls{os}.
+
+User privacy varies a lot among \gls{linux} distributions: some of them are focused on strong, complete privacy, some of them are oriented towards other goals. %desc3.5.1.4.1
+
+Although \citeproper{Android} is initially a free and \gls{opensource} project, its most used and commercially distributed version include modifications and applications from \citeproper{Google}, including a large part of tracking technologies.
+
+Bassil made in 2012 a comparison of security features on the two most widespread and successful desktop and server \glspl{os}, (\citeproper{Windows} and \gls{linux})~\cite{bassil_windows_2012}. They both uniquely identify each entity. On access tokens, \citeproper{Windows} stores restrictions where \gls{linux} uses \gls{dac} and \gls{mac}. Furthermore, it does not store tokens type. Impersonation design is more secure in \citeproper{Windows} than \gls{linux}. Regarding \gls{acl}, \citeproper{Windows} uses privileges and restrictions, \gls{linux} uses \gls{mac} and \gls{dac} and do not handle logging. For privileges and user rights, \citeproper{Windows} uses a separate process where \gls{linux} uses \gls{mac} and handles restrictions with separate daemon. They both have similar auditing and logging features. \citeproper{Windows} implements a more secure but complicated authentication system than \gls{linux}. \Gls{linux} has no native file system encryption. \citeproper{Windows} has more security components within its kernel and is more complicated, where \gls{linux} use user-mode processes and is more efficient. % item3.5.1.1
+
+Adekotujo et al. made a comparative study of strengths and weaknesses of major \glspl{os}~\cite{adekotujo_comparative_2020}, back in 2020. Author found that more malware targets \citeproper{Android} devices than \citeproper{iOS} ones. \citeproper{Windows} 10, \gls{linux}, \gls{unix} and \citeproper{macOS} are the most secured and reliable. \citeproper{Windows} 10 and \citeproper{macOS} have integrated firewalls. The following list summarizes facts about \glspl{os}:
+\begin{itemize}
+	\item \textbf{\citeproper{Windows}}: has great support and compatibility with lots of functions, but costly, slow and exposed to viruses.
+	\item \textbf{\gls{unix}}: comes with a great user control, is very reliable, but needs expertize with a large learning curve.
+	\item \textbf{\gls{linux}}: free, less vulnerable, great variety, but is complicated, has low applications compatibility and few vendors.
+	\item \textbf{\citeproper{macOS}}: few viruses, high reliability, but is expensive, needs \citeproper{Apple} computers and has a low application compatibility. % item3.5.1.2
+	\item \textbf{\citeproper{Android}}: \gls{opensource} platform, with easy access to applications, continuous upgrades, adapted for programmers, but unstable, has lots of bugs in applications, has limited administrator access (rooting), and lots of applications need Internet access.
+	\item \textbf{\citeproper{iOS}}: stable and safe, minimal viruses exposure thanks to a strong applications policy, but has a low operability because of mandatory \citeproper{Apple} hardware which is also costly. 
+\end{itemize}
+
+Yaswinski et al. listed in 2019 methods to secure a \gls{linux} system from internal and external threats~\cite{yaswinski_linux_2019}. First, administrators must apply security through repositories: they must avoid software from other sources than the repositories provided by the distribution. Then, usage of antivirus is recommended, such as \citeproperref{ClamAV}{https://www.clamav.net}{2022}{10}{24}. Precautions must be taken if compatibility layers as used, such as \citeproperref{Wine}{https://www.winehq.org/}{2023}{01}{07}. Administrators must always keep software up-to-date for security patches. They must also set up firewalls to avoid access gains. Different accounts with unique passwords must be provided for each person, including separate usages such as root access and regular users. Finally, adapted file access permissions must be enforced. %3.5.1.3.1
+
+in 2007, Zhai and Li \cite{zhai_analysis_2008} studied some security mechanisms inside \gls{linux}. The biggest addition is \gls{selinux}, which has been developed to implement \gls{mac} policies. It supports multiple security models, is extensive but have low flexibility and difficult to manage. %desc3.5.1.3.2
+
+\subsubsection{Policies}
+\label{subsubsec:state_review_results_policies}
+
+Information security policies allow organizations to avoid data breaches, which are often caused by employees. Those are considered as the weakest point in organizations. Establishing and enforcing a complete and adapted policy is one of the most effective mitigations.
+
+In general, the whole family of \citeproperref{\gls{iso} 27000 standards}{http://bit.ly/3fEdLW0}{2022}{11}{06} is the best yet one of the heaviest ways to comply to a great policy. 
+
+Knapp et al. \cite{knapp_information_2009} (2009) defined in 2009 an information security policy process model for professionals. Information security policies are the first step to protect organizations against attacks, and are used to implement effective deterrents for data \gls{cia}. A policy is a general rule implemented in an organization to limit the discretion of subordinates. The study showed ten internal and external influences, alongside of their relationships and influences. The model is repeatable. %item7.3.1.1
+
+Bulgurcu et al. studied in 2010 the role of employees on information security policies~\cite{bulgurcu_information_2010}. Author found that employees' compliance with policies is significantly influenced by attitude, normative beliefs, and self-efficacy to comply to them. Policies positively affects both attitude and outcome beliefs, and organizations security compliance increases if employees follow policies. % item7.3.1.2
+
+In 2015, Safa et al. defined Information security model to consider employees behaviour~\cite{safa_information_2015}. The authors found that users' poor information security behaviour is the main cause of security breaches. Such model leads to positive effects on information security awareness, information security organization policy, information security experience and involvement, attitude towards information security, subjective norms, threat appraisal, and information security self-efficacy. %item7.3.1.2
+
+Alotaibi et al. listed in 2016 the challenges for a successful implementation of information security policies~\cite{alotaibi_information_2016}. Employees are seen as the biggest potential threats to organization cybersecurity: non-compliance with the policy is one of the main issue. Main challenges: 
+\begin{itemize}
+	\item \textbf{Security policy promotion}: dissemination, awareness raising, training, enforcement and monitoring
+	\item \textbf{Non-compliance with security policy}: malicious and negligent behaviour, unawareness
+	\item \textbf{Security policy management and updating}: regular review and update, policy management, technology advances, designing good policy
+	\item \textbf{Shadow security}: unclear security policies, unusable security mechanisms, high compliance costs
+\end{itemize} %desc7.3.1.1.2
+Two factors can influence the behaviour. It can be organizational with poor information quality, motivation, sanction, awareness and training, computer monitoring, or persuasion. It can also be human with personal traits that can impact the compliance such as perception, personality, technology democracy, cultural factors, gender, satisfaction, habits. % iead already integrated into desc7.3.1.2.1
+
+Soomro et al. reviewed in 2016 what are the roles and activities needed from management to handle information security ~\cite{soomro_information_2016}. The authors defined five aspects: information security and management, information security policy awareness and training, integration of technical and managerial activities for information security management, human aspects of information security management, information security as a business issue. %desc6.3.1.1.3
+
+In 2020, Hina and Dominic analysed what makes sensitive infrastructure under risk~\cite{hina_information_2020}, using a high education institutions context. The authors found several lacks in policy guidelines, in awareness of information security threats, and in irregular monitoring of misuse behaviour. Those items lead to threatening situations. A security framework to implement strategic security procedures for users should be defined to ensure compliance with security policies and protection of vital resources. An information security culture developed in organizations can reduce the risk of security breaches and potential incidents, given that compliance with rules and regulations becomes a habit. %desc7.3.1.1.4
+
+\subsubsection{Pseudonymization}
+\label{subsubsec:state_review_results_pseudonymization}
+
+Pseudonymization protects the privacy of users by paying on their identity in a way that their become unrecognizable even if the corresponding service has been compromised. All identification data is replaced by a specifier which can not be linked to the original user without the corresponding secret. Pseudonymization provides a form of traceable anonymity and requires legal, organizational or technical procedures \cite{riedl_secure_2007}. In the scope of health data, data storage that guarantees privacy and strict control of access by the patient is a special and strong need. Pseudonymization is one way to fulfil this need.
+
+Riegl et al. defined in 2007 a new architecture for the pseudonymization of medical data, using a two steps process~\cite{riedl_secure_2007}: service providers should identify all information uniquely associated with a certain person, and separate this information from the remaining data. Pseudonyms can be calculated by either encryption, using symmetric or asymmetric keys which enable reversal of the operation, or hashing, but it needs a list which is a weak point. Those approaches can be differentiated by how pseudonyms are created and shared, by used security techniques, or the owner of the secret. Author proposed an architecture with a central system which allows key recovering, with users in full control of their data. % techniques %desc1.3.1.1.2
+
+Privacy preservation techniques in e-healthcare have been explored by Sahi et al.~\cite{sahi_privacy_2018} in 2018. The authors used hybrid protocols to reach healthcare requirements. Access control and stored data security must be mixed with pseudonymization. Hash functions are limited for data sharing purposes. Usage of blank pseudo-identities is useful to avoid pseudonym correlation. Two-level pseudonymization should be designed to allow multiple pseudonyms for one identity, using an authority for correlation. Add control to patient: group identities for users to allow fine sharing with parties. Pseudo-identities which are derived from primary ones must be used independently. Data anonymization, de-identification and pseudonymization are necessary to share health data outside a patient's privacy and trust sphere. % item1.3.1.3 %item1.3.1.4 %desc1.3.1.2.1
+
+In the same spirit, Fernández-Alemán et al. studied pseudonymization techniques used in health systems~\cite{fernandez-aleman_security_2013} in 2013. They stated that reversible pseudonym generation can be achieved using \gls{aes}. Pseudonym alteration can be avoided by using integrity protection. Same pseudonym generation regardless of data source origin can be computed using a dual-pass pseudonymization scheme. Pseudonym trees can be used to differ identity sent to each provider. %desc1.3.1.3.2
+
+In 2019, Ribeiro and Nakamura found a technique~\cite{ribeiro_privacy_2019} to avoid problems in case of database leaks: store hashed pseudonyms, and use salts for password generation to avoid collisions. %...
+
+Rai made an analysis of different pseudonymization techniques~\cite{rai_pseudonymization_2016} in 2016. There are multiple ways of generating pseudonyms: they can be created remotely by a centralized third party or locally by the holder of identity. Some approaches: Peterson (keys stored in the database), pseudonymization of information in e-health (hull architecture), electronic health card (service-oriented architecture), Thielscher (identification data and anamnesis data stored in two different databases, using decentralized keys), Pommerening (two approaches, for one-time usage or re-linkable patients), Slamanig and Stingl (centralized database with smart cards for authentication). %desc1.3.1.1.3 %desc1.3.1.1.1
+
+\subsubsection{Sandboxing}
+\label{subsubsec:state_review_results_sandboxing}
+
+Sandboxing is addressed to malware threats by containing their malicious behaviour in controlled and isolated environments. All processes or instances contained in a sandbox can not communicate with other processes or instances.
+
+Greamo and Ghosh studied in 2011 how to use sandboxing and virtualization to fight against malware in applications~\cite{greamo_sandboxing_2011}. Multiple techniques exist to encapsulate processes: restrict account privileges, separate the file systems of applications, run applications in their own \gls{vm}, separate untrusted code from the system. Several approaches exist with various level of protection: in-browser security, sandboxing (partial virtualization), full virtualization, secure virtualization. The latter is the most secured, it must have the following attributes: host and network isolation, real-time detection (previously unseen attacks), fast and complete recovery to a known clean state, forensic data collection on infection, hypervisor integrity checks. % item2.2.1.1 % item2.2.1.2
+
+Sandboxes are used in healthcare: Leckenby et al. have assessed their potential~\cite{leckenby_sandbox_2021} in 2021. Sandbox is a safe space to test innovative products, services, business models and delivery mechanisms without immediately incurring all the normal regulatory consequences: this approach is called test beds or testing labs. It confirms software compliance with existing regulation before implementing them in production. Real-world test beds are therefore controlled environment with real-world conditions. There are different categories of approaches: advisory, adaptive and anticipatory. % irrelevent to our scope as item % review: todo see if useful for testing
+
+Damshenas et al. analysed in 2022 how to prevent malware propagation using virtualization~\cite{damshenas_survey_2013}. To do so, \gls{vm} environments must detect malware and prevent its propagation: it uses undocumented \citeproper{VMWare} options to avoid its recognition, and alter the magic value of the \citeproper{VMX} \gls{cpu} flag, related to \gls{vtx} the communication channel. % not related.
+
+In 2011, Delport et al. listed new techniques to isolate instances on a \gls{cloud} environment~\cite{delport_isolating_2011}. It includes instance relocation, suspicious instance isolation without interruption, failover (backup the instance), address relocation for network traffic when problems occur, sandboxing (no interaction), let's hope for the best (terminate node, move to a controlled environment and make images). % item3.2.3.1 % item3.2.3.2 % item3.2.3.3 % item3.2.3.4
+
+\subsubsection{Server Architecture}
+\label{subsubsec:state_review_results_serverarchitecture}
+
+Nowadays, the two major and almost two only server architectures are the monolith and the \gls{microservice} ones. The first architecture is the legacy approach, which consists of building all features into a single program. The second one is a more recent approach that have the following characteristics~\cite{almeida_survey_2017}:
+\begin{itemize}
+    \item Isolation from other services, as well as from the execution environment based on a virtualized container.
+    \item Autonomy: services can be deployed, destroyed, moved or duplicated independently. 
+    \item Open and standardized interface that describes all specific goals with effectiveness, efficiency and available communication methods.
+    \item Fine-grained: each service should handle its own task.
+\end{itemize}
+
+Migrating monolithic architectures to the \gls{cloud} is a complicated task, especially to gain access to the advantages of this kind of platform. Moreover, scaling monolithic applications is suboptimal because they include several services that might not need the same scaling factor. \Glspl{microservice} have therefore been adopted as the optimal and natural solution in their replacement.
+
+The monolith architecture is the regular ground when talking about generic security or privacy features, which is why no specific paper have been found about this approach: the other topics already cover its scope.
+
+Almeida et al. defined in 2017 which elements must be considered for the construction of solutions based on \glspl{microservice}~\cite{almeida_survey_2017}. Several and interconnected points of access blur the boundaries but do not obscure security vulnerabilities. Routine completions require services to communicate over network, which exposes more data and information (expands attack surfaces). Developer teams must define how services are interconnected and interacting to mitigate this concern. Network complexity makes it difficult to establish a complete view (debugging, monitoring, auditing and forensic analysis). Relationships trust can use the \gls{oauth} standard between services. Service fragmentation brings a better availability (one failure do not impact the whole app) and better code portability (automation, independence, version management). \Glspl{microservice} are mainly deployed in \glspl{cloud} environments, which means additional security and privacy concerns. Some layers can be implemented to secure and privatize cloud models: physical and environmental security, cloud infrastructure security, network security, data and access control and privilege management. % item3.4.1.3
+
+A security \gls{framework} for \gls{microservice}~\cite{yarygina_overcoming_2018} has been defined by Yarygina and Bagge in 2018. The main concern is to decompose \glspl{microservice} security into their components. Categories of security: hardware, virtualization, \gls{cloud}, communication, service, and orchestration. The price of mitigations for each category is not the same. Particular perimeter of security: assume that other services may be compromised and hostile ("trust no one"). Particular security properties: do one thing and do it well, realize automated and immutable deployment, isolate through loose coupling, diversity through system heterogeneity (use N-version programming), fail fast (tolerate partial failures). Security practices: mutual authentication of services using \gls{mtls}, principal propagation via security tokens, fine-grained authorization. Proposed security \gls{framework} to establishing trust and securing \gls{microservice} communication with \gls{mtls}, self-hosted \gls{pki} and security tokens. % item3.4.1.3 % item3.4.1.1 %item3.4.1.2 %item3.4.1.4
+
+Finally, a complete book of specialized knowledge for \gls{microservice}-based application systems has been created by Chandramouli~\cite{chandramouli_security_2019} in 2019. It has been commanded by the \gls{nist} institution and contains specialized security strategies.
+
+\subsubsection{Social Engineering}
+\label{subsubsec:state_review_results_socialengineering}
+
+This kind of attacks exploits the human tendency to trust people, which is the weakest link in the whole security chain. It is realized by psychologically influence and manipulate key people to divulge confidential information or to break the security procedures, which threaten all systems and networks. Attacks can be easily automated, which enable large case scenarios. Social engineering is therefore a threat that can not be mitigated using technical ways.
+
+In 2019, Salahdine and Kaabouch made a survey on social engineering attacks, classifications, detection strategies, and prevention procedures~\cite{salahdine_social_2019}. Social engineering phases: collect target information, develop relationship with it, exploit the information and attack, exit with no trace. Classification: human or computer based. Categories: social, technical or physical, and also directly or indirectly. Some prevention should be made in companies' risk management strategy, and also rise awareness within the employees. Defence approaches: encourage security education and training, increase social awareness, provide required detection tools, keep confidential information safe, report suspect activities, train new employees, advertise employees using sensitization and fraudulent emails. % used in item7.3.2.1
+
+Krombholz et al. made an overview of advanced social engineering attacks on the knowledge worker~\cite{krombholz_advanced_2015}. Author found multiple categories: social, technical, physical or reversed (sabotage, advertising and assisting). Most attacks often combine several or all categories. Computer-supported collaboration is a main entry point: office and external communication tools are increasingly used. Most used channels: e-mails, instant messaging, telephone, social networks, \gls{cloud} services, websites. Attacks' operators can be human or software. Attacks: online social networks (wealth of personal information), social phishing and context-aware spam, fake profiles, cloud services (shared resources), mobile applications (vulnerable applications). % included in other papers % used in item7.3.2.1
+
+Researches regarding mitigation of social engineering have been carried out by Chizari et al.~\cite{chizari_social_2015} in 2015. The main goal is to gain victim's trust by various manners: reciprocation, commitment, social proof, friendliness, authority and scarcity. Attackers use public sources such as web search to perform profiling of the targets. A primary tactic used by attackers is impersonation. % not useful, all in table.
+
+A comparison of social engineering attacks mentioned by the related papers has been made in \fullrefnametype{table:state_review_results_socialengineering}. The two sources do not contradict themselves: we will therefore use their combined knowledge.
+
+\subsubsection{Software}
+\label{subsubsec:state_review_results_software}
+
+To be functional, a piece of software go through multiple phases realized by multiple people. Considering security and privacy issues during its whole scope is therefore a mitigation to avoid late and expensive corrections.
+
+Hochheiser defined in 2000 which strengths then-existing tools must clarify for their next generation~\cite{hochheiser_principles_2000}. The author found necessary principles for privacy protection systems (perhaps insufficient): simplicity, privacy by default, no penalities for privacy, users fully, accurately, and fairly informed, services built on trust must be accountable, and treat privacy as part of security. % parts processed in paper hadar_privacy_2018 %item2.1.3.3
+
+Hadar et al. \cite{hadar_privacy_2018} made interviews of developers in 2018 to figure out how to apply better \gls{pbd}. The \gls{pbd} main challenge is to introduce privacy considerations into the technological design: translating the general abstract notion and the meaning of informational privacy into concrete guidelines. Interviews were made to understand what developers think of privacy. Developers hold a partial understanding of privacy, mostly limited to security concerns, prefer policy-based solutions to architectural solutions, are highly influenced by organizational privacy climate, are willing to trade off the level of privacy to achieve better usability. \gls{fipp} guidelines is a common ground to enforce privacy. Many developers do not have sufficient knowledge and understanding of privacy concepts, nor do they sufficiently know how to develop privacy preserving technologies. Other privacy challenges: testing, bug reporting, sharing information of defects. %item2.1.2.1 %item2.1.2.2 %item2.1.2.3 %item2.1.3.1.1 %item2.1.3.2 %item7.1.2.1
+
+McGraw studied in 2004 the software security domain~\cite{mcgraw_software_2004}: he stated that systems must continue to function correctly under malicious attack. Developers must think about security early in the software life cycle, plus identify and understand common threats. All parties must be educated. Security should be explicit at the requirements level and must cover functional security plus emergent characteristics. Implementation flaws can be avoided using static analysis tools. Testing must be done with standard techniques, plus risk-based security testing. Use penetration testing and monitoring. %item2.1.3.4 %item2.1.2.4 %item2.1.2.5
+
+In the same spirit, Jones and Rastogi have studied~\cite{jones_secure_2004} in 2004 how to integrate security into the \gls{sdlc} process. Developers not having a security view from inception through deployment and beyond are identified as the root of most security and privacy breaches, despite efforts of their organizations. A solution is to fully integrate security in the \gls{sdlc} process. Several points are listed and explained in the paper. %already treated in mcgraw_software_2004
+
+Finally, Potter and McGraw used and analysed~\cite{potter_software_2004} risk-based approaches to test systems in 2004. Author found that risk analyses help to identify potential security problems and their impact. Tasks should be defined to manage software security risks. The security testing approach must define who must do it, and how to think like attackers. Automating testing can be used for minimal human intervention and qualitative results. Furthermore, functional and nonfunctional testing should be made. %item2.1.2.6 %item2.1.2.7
+
+\subsubsection{Storage}
+\label{subsubsec:state_review_results_storage}
+
+Stored data must have sufficient layers of protections to avoid any leaks or attacks. This topic also mentions \gls{cloud} storage because it is used for a lot of services nowadays, but this approach can also be applied to personal servers. It only adds new security and privacy aspects, not removing ones.
+
+Note that if anonymization or pseudonymization have been applied to the data, user privacy is improved as well for the storage perspective. 
+
+Issues and solutions regarding cloud data storage have been reviewed by Vurukonda and Rao in 2016~\cite{vurukonda_study_2016}: the main challenges are data breaches, data theft, and unavailability. \Gls{cloud} providers have full of control over stored data, and bring virtualization and multi tenancy related security issues:
+\begin{itemize}
+	\item \textbf{Storage issues}: data privacy, integrity, recoverability and vulnerability, improper media refinement, data backups. % review: todo with data access % item3.3.1.1 % item3.3.1.2 % item3.3.1.3 % item3.3.2.1 % item3.3.2.2
+	\item \textbf{Identity management and access control issues}: malicious insiders, outside intruders. % item3.2.2.1 % item3.2.2.2
+	\item \textbf{Contractual and Legal issues}: \gls{sla} and legal issues. % item3.2.1.1 %item3.1.1.2
+\end{itemize}
+
+Some solutions found in literature are given for each issue.
+
+Syed et al. showed multiple storage security concerns~\cite{syed_cloud_2020} back in 2020, with related implementations to prevent damages. First, the type of \gls{cloud} must be chosen carefully. Threats: account control, malicious insiders, data control, management console security, multi-tenancy. Activity patterns and business reputation also need attention. Due to multiple implementations, a standardized security model is convoluted and inefficient. Risks: lack of control, shared servers, data leakage, \gls{api} access and storage sinks. Some security practices: assessing \gls{cloud} using \glspl{framework}, encryption, data classification, multifactor authentication, private encryption, in-transit encryption, ransomware protection. % item3.2.1.1 % item3.2.1.3 %item1.2.1.1 % item1.1.1.2 %item1.1.1.1
+
+In 2010, Hubis and Hibbart listed~\cite{hubis_ieee_nodate} standard for secured data storage. They described a method of encryption for data stored in sector-based devices, where the threat model includes possible access to stored data by the adversary. Specifies the encryption transformation, but not the encryption of data in transit. % out of scope, too specific.
+
+Wang et al. made in 2010 recommendations on the usage of public auditability for cloud data storage security to check outsourced data integrity~\cite{wang_privacy-preserving_2010}. For third party auditing on cloud data storage, it must be done without demanding local copies, and must bring in no new vulnerabilities towards user data privacy. Utilization of homomorphic authenticator and random masking to guarantee can be good to guarantee that parties can not learn any knowledge about the data. % Techniques when it comes to audits. %item7.1.1.1
+
+More specific technologies challenges must also be taken into account, which have been analysed by Thain et al.~\cite{thain_consequences_2005} in 2005: it includes distributed file systems, third party transfer, active storage, and group management. To be effective, all security mechanisms must be distributed with the nodes (decentralized). But specific problems appear: side effects on the file systems semantics and on active storage, securing third party transfers. Challenges appear with decentralized systems: unbounded set of users, multiple identities per user, new decision points, unexpected policy coupling. The main security mechanisms are great authentication and authorization. Recommendations: systems should store meaningful identities deep in the software stack, clients must be prepared for a wide array of failures, and users need tools for debugging security mechanisms. %item3.1.1.1 %item2.1.1.1 %item2.1.1.2 % review: todo with "multiple identities per user" with auth + autor.
+
+\subsubsection{System Administration}
+\label{subsubsec:state_review_results_systemadministration}
+
+A system must support a web service, and must therefore be secured. Some aspects of this topic have already been processed in other topics. Furthermore, complete guides~\cite{frisch_essential_2002}\cite{white_computer_2017} can be useful for system administrators, with their security parts.
+
+Yeh and Chang made a list of threats and countermeasures regarding information system security~\cite{yeh_threats_2007} back in 2007. They listed multiple categories of countermeasures: software, hardware, data, network, physical facilities and environment, personnel, regulation and legality. Each one has specific mitigations. A study has also been made on countermeasure adoption in companies, and several problems were found:
+\begin{itemize}
+	\item Lack of relationship between the severity of the perceived threats and the scope of the countermeasures adopted. % use threat-countermesure standardized way for their evaluation. % item7.1.1.1
+	\item The protections of assets do not increase with greater managerial perceptions of threats severity. % same that above % item7.1.1.2
+	\item Countermeasures adoption is greatly influenced by the industry field of the company and organizational computerization level. % hard to express rule, included in policies to avoid differences: just proof that we need standards.
+\end{itemize}
+
+\subsubsection{Web Browsers}
+\label{subsubsec:state_review_results_webbrowsers}
+
+Although not directly linked to an information system, a web browser is nowadays the entry point to a majority of web services. This kind of application is used daily, even hourly, by both end users and developers. Its security must be strong to avoid attacks while visiting websites, and the browsing habits must be protected to avoid user tracking: indeed, a lot of knowledge can be extracted from browsing history, downloads, frequency, et cetera.
+
+For the developer side, critical information about the company must be protected. For the end users, their privacy must be respected to avoid tracking. For both of them, malicious attacks must be impossible to conduct. 
+
+An opened, exhaustive and community \citeproperref{comparison of modern browser}{https://privacytests.org}{2022}{10}{18} can be a good indication about their current privacy and security levels.
+
+Aggarwal et al. studied the security and privacy of private browsing in 2010~\cite{aggarwal_analysis_2010}: they noticed that this mode is used differently from their marketed message. This mode should not leave any traces on the user computer, and also complicate remote parties to identify users. However, the authors have noticed inconsistency between browsers and additional complexity are brought by additional plug-ins and extensions installed on browsers. Browsers fail to provide appropriate protections in various ways, which imply that corrections must be made by the browsers maintainers. Please note that this study was made a few years ago: we only kept the concerns, not the technical parts. %item6.1.1.1 + item6.1.1.2
+
+Snyder et al. found some risks~\cite{snyder_most_2017} for users privacy and security with the new features that are implemented into browsers. This study made in 2017 shows that browsers compete on performance, security, and compatibility: this race imply that users and developers expect a large set of features into their browsers. However, each feature adds a benefit (capabilities) and a cost (security/privacy issues). The authors proved that removing over 60\% of the standards had no noticeable effect on users' experience, with \gls{webgl} having the highest cost with the lowest benefit of all features. The authors concluded by saying that disabling all risky features is not necessary, but giving users the knowledge and possibility to chose is the best thing to do. %item6.1.1.3
+
+Englehardt and Narayanan measured in 2016 the tracking on the top one million websites~\cite{englehardt_online_2016}. Users are tracked by first parties (visited website) and third parties (hidden trackers) by being uniquely identified by a combination of tracking techniques. Third parties tracking is growing and diversifying in their techniques: \citeproper{Google} can track users across nearly 80\% of websites. Device fingerprinting can identify a user by its computer properties, without any trackers. Users can reduce their exposure with browsers' privacy features and extensions for regular tracking. % review: not included, limited impact and already included in other items. % item6.1.2.1 + item6.1.2.2
+
+Virvilis et al. found limitations and related countermeasures to avoid rogue website using blocklists in 2015~\cite{virvilis_security_2015}. Threats can come from both nefarious and benign websites which are compromised: yet, lots of web users do not know any security solution to mitigate those risks. A secured \gls{proxy} that aggregate multiple blocklists could be used in order to block attacks on all devices. % review: todo to include in network for blocklists
+
+Leith listed~\cite{leith_web_2021} in 2021 the privacy risks implied by data exchanges between a browser and its \gls{backend} servers. Browsers operate locally and with their backend infrastructure, with discloses unique identifier of users. The browsers can be configured more privately: they are not privacy-friendly by default. All browsers do not track users using the same identifiers, persistency and use cases. Privacy risks can be reduced by configuring browsers properly, and by choosing the most adapted ones. %item6.1.1.4
+
+Bielova explained in 2017~\cite{bielova_web_2017} what users can do to protect themselves online. First, by tweaking the browser configuration and by explicitly blocking third-party cookies. Then, by installing specialized extensions \cite{7961988}, which can often being limited to rule sets. Finally, disabling JavaScript to avoid fingerprinting could be done, although being very heavy for the browsing experience. %item6.1.1.5 + item6.1.1.6
+
+\begin{small}
+\begin{landscape}
+
+	\begin{longtable}{p{1.5cm}|p{3cm}p{17.35cm}}
+		\toprule[0.8mm]
+		\textbf{Paper} & \textbf{Summary} & \textbf{Useful Data} \\
+		\midrule[0.8mm]
+		\endhead
+		Li et al. \cite{li_design_2002} & Design of sole-based trust management languages & Such languages are useful for \gls{abac} in decentralized collaborative systems: access control based on identity can be ineffective if entities do not know each other. \gls{abac} systems have multiple capabilities. They can handle decentralized attributes, using entity asserts that another entity has a certain attribute. They can give delegations of attribute authority, which allow to trust another entities judgements. \gls{abac} systems can control the inference of attributes and attributes fields. Finally, they handle attributes-based delegation of attributes authority, which gives them the ability of delegating to strangers whose trustworthiness is determined based on their own certified attributes. \\ %item1.5.1.2
+		\midrule
+		Yuan and Tong \cite{yuan_attributed_2005} & Study of the \gls{abac} model for web services & This model is based on subjects, objects, environments and attributes. \gls{abac} is both mandatory and discretionary, and it can not predict how data must be shared in \gls{soa} environments: it is ad-hoc and dynamic in nature. Web services have rich semantics, which means that simple, static, and coarse-grained access control models should be avoided. Two access control models exist. The first one is \gls{dac}, which can restrict access to objects based on the identity and need-to-know of entities. The permissions can be passed from a subject to other entities. The second one is \gls{mac}, which can restrict access to objects following fixed security attributes given to users and objects. The controls are system-enforced, and it can not be modified. Both models can be used in conjunction. Three models are based on those two models. The \gls{ibac} model uses permissions linked to identities. The \gls{rbac} model uses permissions linked to business functions or roles, including levels of indirection. The \gls{lbac} model solves the \gls{mac} problem of non-modification by using an ordered set of security labels combined with a set of categories. However, it has a lack of flexibility and scalability. Two main aspects are defined within \gls{abac}: the policy model, which defines policies, and the architecture model, which applies the policies. The \gls{abac} model defines permissions on any security relevant characteristics (attributes), includes both \gls{ibac} and \gls{rbac} functionalities and is more flexible with the attribute approach. Compared to the other models, \gls{abac} is intuitive, more flexible and powerful, the security management can be distributed, and it uses a divide and conquer approach. \\ %item1.5.1.2
+		\midrule
+		Hu et al. \cite{hu_attribute-based_2015} & The \gls{abac} model explained & The authors stated that \say{\gls{abac} is a logical access control model that controls access to objects by evaluating rules against the attributes of entities (subject and object), operations, and the environment relevant to a request}. It allows a high amount of inputs in the evaluation process, which brings an almost infinite amount of possible combinations. The relationships are not modified if updates must be done on access decisions, only the attributes are altered. The \gls{nist} has published the \gls{sp} \texttt{800-162} to help companies to understand and implement the \gls{abac} model. However, it can be complex to apply in large organizations. \\ %item1.5.1.2
+		\midrule
+		Servos and Osborn \cite{servos_current_2017} & The limitations in the \gls{abac} model & No standardization of \gls{abac} has been published, but an acceptation of high level descriptions (\gls{nist} \gls{sp} \texttt{800-162}) has been accepted into the community. Some problems are caused by its infancy. No references are made to foundational models. The capability of emulating \gls{abac} models has only been demonstrated informally in research context. The support of hierarchy is lacking, which is emulated by either using complex data types in attributes or by unmaintainable complex policies. A solution would be to use attribute user groups. Compliance is complicated to prove during audits. Would be simpler with hybrid models. The separation of duties is still unclear in research. The delegation feature is limited, must be done in the implementation. The attribute storage and sharing make it hard to evaluate trustworthiness of attributes and their compatibility when multiple attribute sources exist. It would require a commonly accepted namespace or ontology. The scalability must still be proven. The administration and user comprehension must be understood. Formal security analyses can be difficult to realize, some tools are compatible, but none are specialized for the \gls{abac} model. \\ %item1.5.1.2
+		\bottomrule[0.8mm]
+		\caption{Attribute-based access control policies comparison}
+		\label{table:state_review_results_accesscontrol}
+	\end{longtable}
+
+	\newpage
+
+	\begin{tabularx}{\linewidth}{p{1.5cm}|p{3cm}X}
+		\toprule[0.8mm]
+		\textbf{Paper} & \textbf{Summary} & \textbf{Useful Data} \\
+		\midrule[0.8mm] % had to split name manually
+		Machana- vajjhala et al. \cite{machanavajjhala_l-diversity_2006} & Privacy problems of $k$-anonymization & The values of sensitive attributes can be recovered if they have little diversity. Privacy can not be guaranteed against attackers who have background knowledge. The main mitigation is to use an extension of $k$-anonymization named $l$-diversity which adds diversity in data groups attributes. \\
+		\midrule
+		Li et al. \cite{li_slicing_2012} & How to use slicing to preserve privacy & The $k$-anonymity technique looses considerable amount of information, especially for high-dimensional data. Bucketization does not prevent membership disclosures and breaks attribute correlation between sensitive attributes and quasi-identifiers. The slicing technique partitions data both horizontally by grouping tuples into buckets and then randomly permuting them, and vertically by grouping attributes into columns based on correlations. Slicing has a better data preservation utility compared to generalization, can be used for membership disclosure protection, can handle high-dimensional data, and can respect the $l$-diversity requirements. \\ 
+		\midrule
+		Kumar et al. \cite{kumar_comparative_2018} & Comparison of multiple privacy preservation techniques & An additional approach to $k$-anonymization and $l$-diversity has been found by the authors, which is the $t$-closeness approach. It expends the $l$-diversity by reducing the granularity of data representations. $t$-closeness can use various techniques: generalization, multi set-based generalization, one-attribute-per-column slicing, slicing, or slicing with suppression. Those techniques give different results depending on the considered parameters, with variations on revealed correlation on quantity, the information loss, the data type, the level of privacy preservation, or membership disclosures. \\
+		\bottomrule[0.8mm]
+		\caption{Anonymization techniques comparison}
+		\label{table:state_review_results_anonymization}
+	\end{tabularx} %item1.3.6.3
+
+
+	\newpage
+
+	\begin{tabularx}{\linewidth}{p{1.5cm}|X}
+		\toprule[0.8mm]
+		\textbf{Paper} & \textbf{Useful Data} \\
+		\midrule[0.8mm]
+		Hussain et al. \cite{hussain_enterprise_2020} & The major vulnerabilities of \glspl{api} are script insertions, \gls{sql} injections, bound of buffer overflows, \glspl{ddos}, login attacks, and application or data attacks. Some security models can help to mitigate those vulnerabilities, such as authentication, throttling, communication security, or anomaly detection. The access control management can be enforced following the \gls{oauth} or \gls{openid} standards. Communication security can be enforced using \gls{https} for \gls{json} transfers for the \gls{rest} approach, or by using web services security and \gls{xml} built-in security for the \gls{soap} approach. Client throttling can be implemented in order to avoid attacks. The gateways security can be enforced by performing message analysis, by granting access tokens and authorization parameters, by acting like a traffic police, and by only authorizing legitimate users. A major limitation has been found by the authors on some \glspl{api}: a traditional approach is to limit access to the \gls{api} instead of mitigating the attacks. An improvement into general security would be to integrate \gls{ai} into \gls{api} security. \gls{ml} security consists of identifying malicious intents in data transactions. The models must learn patterns of normal behaviours for each context. \\
+		\midrule
+		Diaz-Rojas et al. \cite{diaz-rojas_web_2021} & The authors found \texttt{68} security threats. The most common are eavesdropping, leakage of sensitive information, code injection, denial of service attack, man in the middle attacks, \gls{api} hijacking, replay attack, brute forcing credentials, and broken authentication. \texttt{66} design advices have been found to harden security based on those threats, which are mainly focused on the network channels. The major mitigation techniques are to ensure separation of entities, strong authentication, strong authorization, strong encryption, strong access control, access revocation, validation of messages, enforce logging, input validation, input sanitization, set up rate limits, set up redirections, appropriate testing, realize design reviews, ensure high availability, great role engineering, regulate the traffic, enable load balancing, set up service degradation, and ensure proper monitoring. Multiple patterns can help to design secure \glspl{api}, such as the principle of least privilege, parameter forest, one factor security, two factor security, three factor security, client-server basic security, using \gls{api} gateway, defence in depth, default denial, command pattern, and data minimization. Multiple methods can be used during implementation: the most used and appropriate are \gls{token}-based authentication, digital signing, \gls{rbac}, \gls{abac}, \gls{token}-based authorization, and multifactor authentication. Threat modelling can be done using various schemes, such as \gls{stride}, \gls{dread}, \gls{osstmm}, sequence diagram, use case, user story, the \gls{nist} guide to cybersecurity, or \gls{owasp} testing guide. \\
+		\midrule
+		Sharieh and Ferworn \cite{sharieh_securing_2021} & The authors determined a list of the most critical vulnerabilities for \glspl{api}: broken authentication, sensitive data exposure, using vulnerable components, improper use of \gls{cors}, and \gls{ddos}. Three categories of attacks have been found by the authors: post-login attacks, that aim for data and the application, pre-login attacks, which use authentication services, credential stuffing, fuzzing, or stolen credentials, and fundamental \gls{api} security attacks, using resources such as access control, \glspl{token}, authorization, authentication, rate limiting, client throttling, quotas, network privacy, and \gls{tls} configuration issues. \\
+		\bottomrule[0.8mm]
+		\caption{Application programming interface vulnerabilities, attacks and mitigations comparison}
+		\label{table:state_review_results_api}
+	\end{tabularx} %item2.3.1.5
+
+	% I know it is too long, but at least the caption is well placed :)
+
+	\newpage
+
+	\begin{longtable}{p{1.5cm}|p{20.7cm}}
+		\toprule[0.8mm]
+		\textbf{Paper} & \textbf{Useful Data} \\
+		\midrule[0.8mm]
+		\endhead
+		Li \cite{li_cyber_2018} & An adversarial attack can be done by injecting poisoned data in order to manipulate data distribution, which can lead to incorrect classifications or predictions. Among others, three defence methods can be applied. First, the training process and input data can be modified by continuously adding new adversarial samples, which requires a lot of data and could deceive network. Random rescaling on inputs can be introduced, or foveation mechanism can be used. Secondly, the network can be modified in several ways, such as by applying input \gls{gradient} \gls{regularization}, by using nonlinear activation functions, or by using dense associative memory models. Thirdly, an additional network which is separately trained can be used. \\ %item4.2.3.4
+		\midrule
+		Xue et al. \cite{xue_machine_2020} & The authors found multiple vulnerabilities, such as outsourced training procedures, usage of pre-trained models that include intellectual properties, or unvalidated data sources coming from third parties. One example based on those vulnerabilities are adversarial attacks that use incompletion in training data, or that use overfitting and influence mechanisms to recover the sensitive data used for training. Some major security threats have been found by the authors. Data poisoning can lead to mislead predictions. \glspl{backdoor} implemented into training data can lead to misclassifications for specific trigger conditions. Adversarial attacks can be realized, either in an error-generic way which make models go wrong, or by an error-specific way that makes misclassifications based of adversarial examples. Model extraction attacks can be done in order to steal the model by observing the output labels and confidence levels with respect to used inputs. A recovery of sensitive training data can be realized using membership inference to determine if a sample is used in training phase, or by inversion attacks that infer information on the training data. Some defences exist against poisoning attacks and \gls{backdoor} attacks, such as data sanitization and anomaly detectors. One possible defence against adversarial examples attacks is model outputs smoothing, which reduces the model output sensitivity regarding its input. Multiple defences can be enforced against sensitive information leakage: distributed learning \glspl{framework}, traditional cryptographic primitives-based approaches such as \gls{differential_privacy} or homomorphic encryption, and trusted platform-based approaches. Actual defence implementations depend on the type of models and the approaches. \\ %item4.2.3.4
+		\midrule
+		Hu et al. \cite{hu_artificial_2021} & Different categories of threats exist during the data collection phase. It could be software-based, with data biases, fake data, data breaches, or it could be hardware-based using sensor spoofing. The data pre-processing phase is mainly concerned by scaling attack with images. Some mitigation include data randomization, quality monitoring, or image reconstruction. The training phase has two major threats: poisonous data injection combined with availability attacks, which deteriorate the general performances of the model, and integrity attacks, which only deteriorate specific inputs. Some mitigations exist, such as data sanitization, robustness training, or certified defences. Regarding the inference phase, the biggest threat are evasion attacks, that degrade or interfere the predictive performances using adversarial attacks that alter the input without changing the targeted model. Some mitigations can be used, such as distillation, detectors, network validation, adversarial training, data randomization, or input reconstruction. Finally, the integration phase includes threats on the confidentiality of the model or on the data, vulnerabilities brought by the code, \gls{ai} biases, and generic \gls{ict} threats. \\ %item4.2.3.3
+		\midrule
+		Liu et al. \cite{liu_when_2021} & The most known model attacks are model extraction, feature estimation, membership inference, and model memorization. The major privacy attacks are (re)identification, inference, which allows to illegitimately gain knowledge, and linkage, which gathers information by correlating data sources. Some privacy protection schemes exist, such as obfuscation, anonymization, reducing information sharing, cryptography, privacy risk assessment and prediction, personal privacy management assistant, and private data release, which consists of publishing data with guaranteed privacy. \\ %item4.2.3.1 %item4.2.3.2
+		\midrule
+		Liu et al. \cite{liu_privacy_2021} & The most used privacy attacks are model extraction, which duplicates the model \gls{parameters} or \gls{hyperparameters}, and model inversion, which infers sensitive information by utilizing available information. Some well-known security threats are adversarial attacks, which are invisible perturbations that mislead predictions, and poisoning attacks which brings training data pollution crafted by adversaries that misclassify malicious samples or activities. Several privacy-preserving techniques exist, such as \gls{differential_privacy}, \gls{homomorphic_encryption}, secure \gls{mpc}, or \gls{tee} usage. Those techniques can bring one or multiple drawbacks, such as a significant increase of the computational overhead, or they can require customizing specific incompatible models. The authors found no universal approach to ensure privacy and/or security. Multiple defences have been found for adversarial attacks: apply input pre-processing, which reduces the influence of immunity, enable malware detection, which introduces regulations, adversarial training, feature denoising, models robustness improvement, or models modification and retraining, or improve the model robustness by detecting attacks using stateful detection, image transformation detection, or adaptive denoising detection. Again, no universal defence method has been found by the authors. Two defences for poisoning attacks has also been found, such as outlier detection mechanism, which removes outliers outside the applicable set, and improving the \gls{nn} robustness. \\ %desc4.2.2.1.1 %item4.2.3.1 %item4.2.3.2
+		\bottomrule[0.8mm]
+		\caption{Artificial intelligence attacks and mitigations comparison}
+		\label{table:state_review_results_artificialintelligence} 
+	\end{longtable}
+
+	\newpage
+
+	\begin{tabularx}{\linewidth}{p{1.5cm}|p{3cm}X}
+		\toprule[0.8mm]
+		\textbf{Paper} & \textbf{Summary} & \textbf{Useful Data} \\
+		\midrule[0.8mm]
+		Bösch et al. \cite{bosch_tales_2016} & Study of the privacy dark strategies and patterns & Some of the most used dark patterns are privacy zuckering, bad defaults, forced registration, hidden legalese stipulations, immortal accounts, address book leeching, and user profiles shadowing. \\
+		\midrule
+		Gray et al. \cite{gray_dark_2018} & Ethical concerns in \gls{ux} dark patterns & The authors found multiple general types of dark patterns: baits and switch, disguised ad, forced continuity, friend spam, hidden costs, misdirection, price comparison, prevention, privacy zuckering, roach motel, sneak into basket, and trick questions. The primary dark patterns, which are strategic motivators for designers, are nagging, obstruction, sneaking, interface interference, and forced action. Dark patterns are not always intentional. \\
+		\midrule
+		Mathur et al. \cite{mathur_dark_2019} & Review of dark patterns used in eleven thousand shopping websites & The authors have found seven categories for fifteen types of dark patterns: sneaking (sneak into basket, hidden costs, hidden subscription), urgency (countdown timer, limited-time message), misdirection (confirm shaming, visual interference, trick questions, pressured selling), social proof (activity message, testimonials), scarcity (low-stock message, high-demand message), obstruction (difficulties to cancel actions), and forced action (forced enrolment). \\
+		\midrule
+		Luguri and Strahilevitz \cite{luguri_shining_2021} & The power of dark patterns & The authors defined dark patterns taxonomies: nagging, social proof (activity messages, testimonials), obstruction (roach model, price comparison prevention, intermediate currency, immortal accounts), sneaking (sneak into basket, hidden costs, hidden subscription/forced continuity, baits and switch), interface interference (hidden information/aesthetic manipulation, preselection, toying with emotion, false hierarchy/pressured selling, trick question, disguised ad, confirm shaming, cuteness), forced action (friend spam/social pyramid/address book leeching, privacy zuckering, gamification, forced registration), scarcity (low stock message, high demand message), urgency (countdown timer, limited time message). \\
+		\bottomrule[0.8mm]
+		\caption{Dark patterns categories comparison}
+		\label{table:state_review_results_darkpatterns}
+	\end{tabularx} %desc2.1.6.1.3
+
+	\newpage
+
+	\begin{tabularx}{\linewidth}{p{1.5cm}|p{3cm}X}
+		\toprule[0.8mm]
+		\textbf{Paper} & \textbf{Summary} & \textbf{Useful Data} \\
+		\midrule[0.8mm]
+		Potlapally \cite{potlapally_hardware_2011} & Main challenges to correctly implement security in commercial hardware platforms & The most known attacks types are active adversarial manipulation of control signals, exploit security gaps in interactions of multiple platform features, insecure platform initialization by boot-up firmware, ability of untrusted or lesser privileged entities to maliciously influence operation. A mitigation would be to apply secured \gls{sdlc}. \\
+		\midrule
+		Jin \cite{jin_introduction_2015} & Key concepts of hardware security & The most common threats are hardware trojan, intellectual property piracy and integrated circuit overbuilding, reverse engineering, side-channel analysis, and counterfeiting. The most useful countermeasures are design obfuscation, intellectual property watermarking, intellectual property fingerprinting, integrated circuit metering, split manufacturing, integrated circuit camouflaging, integrated circuit information leakage reduction, key-based authentication, noise injection, secure-scan, physical non-clonable function or unique ID(s), and ageing sensors. \\
+		\bottomrule[0.8mm]
+		\caption{Hardware attacks and mitigations comparison}
+		\label{table:state_review_results_hardware}
+	\end{tabularx} %the two sources: desc3.7.1.1.3 + desc3.7.1.1.3
+
+	\newpage
+	
+	\begin{tabularx}{\linewidth}{p{1.5cm}|p{3cm}X}
+		\toprule[0.8mm]
+		\textbf{Paper} & \textbf{Summary} & \textbf{Useful Data} \\
+		\midrule[0.8mm]
+		Salahdine and Kaabouch \cite{salahdine_social_2019} & Survey made on parts of social engineering & How to detect attacks: verify call sources, assign PINs to help desk callers, set up honeypot for spam, verify the emails sources, use anti-phishing tools, use \gls{ml} algorithms, make employees aware of their environment, destroy discarded documents, limit personal computers access and USB ports, monitor the network, use \citeproperref{SERA}{https://bit.ly/3s8egdH}{2022}{10}{20}, apply allowlists and blocklists, identify vulnerable users. Other mitigations: report all the attacks (stops the spread), spread awareness about the psychological triggers, apply human techniques (auditing and policy, plus education, training, and awareness), apply technology techniques (biometrics, sensors, artificial intelligence, and social honeypot), have a ransomware policy (preparation, detection, containment, eradication, recovery). \\
+		\midrule %review: monitor the network / ransomware policy
+		Chizari et al. \cite{chizari_social_2015} (2015) & Researches regarding mitigation of social engineering. & Some human based detections and mitigations: education, training and awareness approach, policy and auditing approach. Human judgement is subjective, and such approaches suffer from lacks of details, leads to technology based techniques: biometrics, \gls{ai}, social \glspl{honeypot}, sensors. Issues with technical approaches: adding cost and complexity to the system, increase attack surface, find large and up-to-date datasets. \\
+		\bottomrule[0.8mm]
+		\caption{Social engineering attacks comparison}
+		\label{table:state_review_results_socialengineering}
+	\end{tabularx} 
+
+    
+\end{landscape}
+\end{small}
+% -----------------------------------------------------------------------------
+\section{Summary}
+\label{sec:state_summary}
+
+In this Chapter, we explained all the tasks we conducted in order to complete our knowledge collection by doing a state-of-the-art review.
+
+The methodology we used to build the whole collection of knowledge was adapted. We managed to do more than a literature review by adding additional steps ensuring a better quality and bias management, while managing to do it in our limited timeframe.
+
+The protocol we defined could be used for similar project in the \gls{ict} field. We designed it in the most generic way possible to make it possible.
+
+Although being convinced by our methodology, we are fully aware of the limitations of our knowledge collection. Indeed, each topic we assessed could be explored more deeply, other sources could have been included, and specific issues can have been unprocessed. However, this approach is adapted to our thesis scope, and those compromises were necessary given our limited timeframe. Nevertheless, we are satisfied with our results. In addition, the knowledge collection can be expended in the future following the same methodology.

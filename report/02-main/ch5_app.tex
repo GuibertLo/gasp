@@ -1,0 +1,936 @@
+\chapter{Web Application}
+\label{chap:app}
+
+The term \citeproper{web application} will be simplified as \citeproper{application} for readability purposes.
+
+Our proposal has been defined, and a guide content has been created using our said proposal. However, assessors still do not have an easy and accessible way of evaluating their web services if they only use the spreadsheet file we built. To this end, an application will be designed and implemented, as decided in \fullrefnametype{sec:proposal_medium}.
+
+We will start by explaining how to adapt the guide content to a readable format for the application. Then, we will analyse the needs, technologies and other important aspects before developing the application. Then, its design will be defined, followed by its implementation. Finally, technical tests will be made on all the software we developed.
+
+\minitoc
+
+\newpage
+
+% -----------------------------------------------------------------------------
+\section{Analyse}
+\label{sec:app_analyse}
+
+This Section will explain what our application must be able to do and which technologies will be chosen to implement it.
+
+\subsection{Needs and Capabilities}
+\label{subsec:app_analyse_needs}
+
+Our needs are the same as for the proposal: our guide must be accessible and easy to use. Furthermore, the application availability must cover most of the use cases: usable with or without an Internet connection on all the most used platforms included in our scope.
+
+We included the possibility for assessors to save and restore their results or their evaluation progress: by doing so, we enable them to keep their evaluation data, to perform their evaluations in instalments, or to share their results to other parties without storing any data on the application side. The latter is important to enable full confidentiality on the evaluation process, and to avoid any storage costs for the hosting side.
+
+We made the choice not to use any \gls{backend}. Indeed, the maintenance and workload of a two tiers architecture are too heavy. Moreover, there is no need to provide any centralized infrastructure: indeed, our data (the guide content) is static, without any state to keep on the \gls{backend} side, and does not include any data process steps.
+
+The following list defines the capabilities of our application:
+\begin{itemize}
+    \item \textbf{Compatibility}: the application must be usable on all the major desktop browsers.
+    \item \textbf{Expandability}: the application must be able to receive updates.
+    \item \textbf{Offline usage}: if previously downloaded, the application must be usable without any Internet connection.
+    \item \textbf{Online availability}: the application must be reachable using the web.
+    \item \textbf{Standalone}: the application must work without any \gls{backend}.
+    \item \textbf{Stateful capacity}: the application must be able to restore results of evaluations if desired by assessors.
+\end{itemize}
+
+Mobile platforms are not considered, as explained in \fullrefnametype{sec:proposal_medium}. However, we can integrate their support through browsers if this additional part is doable in minimal time and that no major changes must be done.
+
+\subsection{Technologies}
+\label{subsec:app_analyse_technologies}
+
+Multiple technologies have the ability to support the capabilities we defined. Nowadays, we have web \glspl{framework} that encapsulate lots of libraries, helpers and components that help developers to build complete and robust applications. Starting from scratch is a viable option for large, innovative and specific contexts carried out by entire teams. However, this is not necessary for more basic needs: we will therefore use one of them.
+
+There is three major web \glspl{framework}: \citeproperref{Angular}{https://angular.io}{2022}{12}{12}, \citeproperref{React}{https://reactjs.org}{2022}{12}{12} and \citeproperref{Vue}{https://vuejs.org}{2022}{12}{12}. All three of them are comparable in terms of performances and capabilities. Wohlgethan made an analysis and comparison~\cite{wohlgethan2018supportingweb} of those three \glspl{framework} in 2018 and stated that all of them are quite similar with a few disparities. Daityari made a similar analysis~\cite{codeinwp_2022} in a more recent context and came to a similar conclusion.
+
+Based on our past projects and experiences, we decided to choose \citeproper{Vue}: it is the most light, simple and flexible solution, although its poor code allowance. However, this aspect can be countered by well-designed components.
+
+% -----------------------------------------------------------------------------
+\section{Design}
+\label{sec:app_design}
+
+Before implementing the application, design steps must be conducted to ensure an appropriate and well-thought implementation. To this end, we will define our application the use cases, its data management, architecture, and mock-ups of its \glspl{ui}.
+
+\subsection{Use Cases}
+\label{subsec:app_design_use}
+
+\Fullrefnametype{fig:ch5_usecases} shows the interactions between the application and its actors. This diagram explains what the application must be able to do without any implementation specifics. Relationships are also represented. As designed, the application is standalone, without any external dependencies or connections to \gls{backend} servers. Furthermore, it will be used by only one type of actors, the assessors that evaluate their web services. 
+
+\newimage{0.8}{ch5_usecases.png}{The application use cases}{ch5_usecases}
+
+\subsection{Data Management}
+\label{subsec:app_design_data}
+
+Apart from the guide content, no additional data needs to be stored on the application side. To represent the guide content, the application will use its same structure using the \gls{typescript} language by implementing classes, interfaces and enumerations.
+
+In its \texttt{3.x} versions, \citeproper{Vue} natively supports the \citeproperref{Pinia}{https://pinia.vuejs.org}{2022}{12}{12} module which provides application-wide storing capabilities. One or multiple data stores that contains one or multiple states, which can be seen as data, are shared across the whole application in a simple and reactive way.
+
+\citeproper{Vue} components, which are reusable and independent pieces composing the application, can have access to those stores by using getters and setters implemented by the developers, that directly communicate with the states values. The store implementation details will be explained through \fullrefnametype{sec:app_implementation}.
+
+\subsection{Architecture}
+\label{subsec:app_design_architecture}
+
+The majority of \citeproper{Vue} applications have the same, original structure as shown in \fullrefnametype{table:app_design_architecture_basic}. By following our needs, we will use this same structure and develop our application parts into its corresponding folders.
+
+\begin{tabularx}{\linewidth}{l|lX}
+	\toprule[0.8mm]
+	\textbf{Name} & \textbf{Type} & \textbf{Description} \\ 
+	\midrule[0.8mm]
+	assets & Folder & Non-technical files needed by the application \\
+	components & Folder & Defines the independents pieces of the \gls{ui} \\
+	router & Folder & Used by the \citeproperref{Vue Router}{https://router.vuejs.org}{2022}{12}{12} module to declare the navigation routes through the application pages \\
+	stores & Folder & Used by the \citeproper{Pinia} module to manage the application state \\
+	tests & Folder & Used to declare the unit tests \\
+	views & Folder & Used to build the displayed pages using components \\
+	App.vue & File & The entry point for the \citeproper{Vue} application \\
+	main.ts & File & The entry point for the \citeproper{JavaScript} environment \\
+	\bottomrule[0.8mm]
+    \caption{Structure of a \citeproper{Vue} application}
+    \label{table:app_design_architecture_basic}
+\end{tabularx}
+
+Furthermore, additional information about the structure of the application can be seen on \fullrefnametype{fig:ch5_structure}.
+
+\subsection{User Interfaces}
+\label{subsec:app_design_ui}
+
+Based on the use cases, we have defined the \glspl{ui} that will compose the application. Their most significant mock-ups can be seen on \fullrefnametype{fig:ch5_wireframe_home} and \fullrefnametype{fig:ch5_wireframe_evaluation}.
+
+Mock-ups are defined in a way that does not consider any graphical design: they are used to represent the overall layout only. The graphical design part will be defined and done at the implementation time. Indeed, we decided that a thorough study of the \glspl{ui} is not necessary because our thesis scope is not focused  this concern. Furthermore, our knowledge built around past similar projects allows us to design appropriate layouts easily. Regarding the \gls{ux}, we will rely on something very simple yet accessible. However, those two aspects could be the subjects of studies for a separate project once this thesis completed.
+
+% Images and table
+
+\newimage{0.8}{ch5_wireframe_home.png}{Mock-up of the home page}{ch5_wireframe_home}
+
+\newimage{0.8}{ch5_wireframe_evaluation.png}{Mock-up of the evaluation page}{ch5_wireframe_evaluation}
+
+\newimage{1}{ch5_structure.png}{Architecture of the application}{ch5_structure}
+% -----------------------------------------------------------------------------
+\section{Implementation}
+\label{sec:app_implementation}
+
+During the whole implementation, we followed the \citeproperref{Vue official documentation}{https://vuejs.org/guide}{2022}{12}{9} in order to create an application that respects as much the recommendations from the development team as possible.
+
+Each Subsection will describe the most important, interesting and relevant parts of the application implementation process. The full code is browsable and available on the project repository~\cite{mt-forge}.
+
+\subsection{Data Conversion and Validation}
+\label{subsec:app_implementation_data}
+
+As explained in \fullrefnametype{sec:proposal_data}, we decided to define our guide content in a spreadsheet file: this support can be easily read by assessors, but is less adapted for systems. However, spreadsheet files can use the \citeproper{CSV} format which is a great support to transfer data between two different and independent systems. In the other hand, we wanted to design and implement data validation and integrity checks on the guide content to avoid invalid values in its definition. If those checks are performed, we can take advantage of the parsing steps through the spreadsheet to export the data in another format more suitable for applications.
+
+One of the most used data format in the web environment is the \gls{json} format: it has been initially designed for \citeproper{JavaScript} applications and is based on a key-value pattern. 
+
+We created a \citeproper{Python} script for this validation and conversion step, which is one of the most convenient and compatible scripting methods for all the major environments and \glspl{os}.
+
+\subsubsection{Script Environment}
+\label{subsubsec:app_implementation_data_environment}
+
+First, we used a library named \citeproperref{read-ods-with-odfpy}{https://bit.ly/3C835qu}{2022}{12}{29} to read the data from the \citeproper{ODS} file, with built-in functions to parse its data. The library can be installed using the following command:
+\mint{bash}|git clone https://github.com/marcoconti83/read-ods-with-odfpy ODSReader|
+
+\citeproperref{Pipenv}{https://bit.ly/3PYG7YC}{2022}{12}{29} is used as the package manager for our script. It allows developers to create and manage \citeproper{Python} virtual environments, and to add or remove packages from a \citeproper{Pipfile}. This \citeproper{Pipfile} lists all the needed packages and the appropriate \citeproper{Python} version in order to create a virtual environment as defined by the developers. Using this file, a new virtual environment can be initialized by running this following command:
+\mint{bash}|pipenv install|
+
+Once the environment created, it must be activated in the current terminal using the corresponding \texttt{shell} command. The script can be then launched inside the virtual environment by running the \texttt{convert.py} file.
+\mint{bash}|pipenv shell|
+\mint{bash}|python ./convert.py -i [input file] -o [output file]|
+
+The version \texttt{3.11} of \citeproper{Python} has been used, which is the latest stable release at the implementation time.
+
+\subsubsection{Script Features}
+\label{subsubsec:app_implementation_data_features}
+
+Here is a list of what the script must be able to do:
+\begin{itemize}
+	\item \textbf{Data conversion}: transfer data from raw data to a valid \gls{json} file
+	\item \textbf{Data verification}: verify whether each value is valid based on its type
+	\item \textbf{Error management}: handle the errors appropriately, and also show the error source
+	\item \textbf{Argument management}: support command arguments to specify the input and output files
+\end{itemize}
+
+\subsubsection{Script Development}
+\label{subsubsec:app_implementation_data_development}
+
+The script is designed in two files: one for the classes (\texttt{classes.py}) and one for the main script (\texttt{convert.py}). The first is imported into the second in order to lighten the scripting part by declaring classes in another file.
+
+An extract of the \texttt{classes.py} file is shown in \fullrefnametype{lst:app_converter_classes}. It contains two \citeproper{Python} \texttt{Exceptions} that we implemented, which allows us to manage errors with more granularity. One of those is shown from lines 1 to 2. The class file also defines three \texttt{Enumerations} that allows us to identify attributes and cell types more easily. One of those \texttt{Enumerations} can be seen from lines 5 to 10.
+
+% LTeX: enabled=false
+\begin{listing}[!ht] 
+	\begin{pythoncode}
+class ArgumentException(Exception):
+		Exception.args
+	
+	
+class SHEETS(Enum):
+	categories = "categories"
+	subcategories = "subcategories"
+	objectives = "objectives"
+	items = "items"
+	descriptions = "descriptions"
+	\end{pythoncode}
+	\caption{Extract of the data converter classes}
+	\label{lst:app_converter_classes}
+\end{listing}
+% LTeX: enabled=true
+
+The script is launched using an entry point, as shown in \fullrefnametype{lst:app_converter_entry}. The arguments are given to the \texttt{main} function using the \texttt{sys.argv} object, where they are then processed.
+
+\begin{listing}[!ht] 
+	\pythonfile[firstline=301, lastline=303]{02-main/listings/convert.py}
+\caption{The script entry point}
+\label{lst:app_converter_entry}
+\end{listing}
+
+The main function of the script is then called. All operations are wrapped into \texttt{try} and \texttt{except} blocks to allow us to catch the errors during the execution. Each type of error is processed adequately at the end of the main scripting part, as shown in \fullrefnametype{lst:app_converter_catch}. Additional information is displayed in the terminal according to the nature of the errors.
+
+\begin{listing}[!ht] 
+	\pythonfile[firstline=283, lastline=298]{02-main/listings/convert.py}
+\caption{The data converter error processing}
+\label{lst:app_converter_catch}
+\end{listing}
+
+The first process of the script is to parse and verify the given arguments, as shown in \fullrefnametype{lst:app_converter_arguments}. We have referred to the \citeproperref{OpenSourceOptions}{https://bit.ly/3WRYmBC}{2023}{01}{02} website. A help message is defined if needed, as well as a verification step to check whether each argument has been given. The \texttt{--input} or \texttt{-i} argument gives the \citeproper{ODS} file to be read, and the \texttt{--output} or \texttt{-o} argument gives the name of the \gls{json} file to be generated.
+
+\begin{listing}[!ht] 
+	\pythonfile[firstline=241, lastline=263]{02-main/listings/convert.py}
+\caption{The data converter argument management}
+\label{lst:app_converter_arguments}
+\end{listing}
+
+Then, some operations are done to prepare the data conversion and verification: each spreadsheet tab content will be stored into its corresponding key in a \citeproper{Python} \texttt{dictionary}.
+
+Each tab passes through a parsing of its values, as shown in \fullrefnametype{lst:app_converter_readsheet}. The attributes can be defined by reading the first row of the tab, as shown on line 208. Then, a dictionary is created, which will store each record found. From line 216 to 219, situations where the last attribute value is empty are handled. Afterwards, we parse through all the records and all their attributes to read their values, which are sent to the \texttt{integrity} function.
+
+\begin{listing}[!ht] 
+	\pythonfile[firstline=202, lastline=235]{02-main/listings/convert.py}
+\caption{The data converter part which reads the spreadsheet tabs}
+\label{lst:app_converter_readsheet}
+\end{listing}
+
+The \texttt{integrity} function tests whether the value it receives is valid given the tab and the attribute it comes from. If the value passes the tests, it is either returned as it or returned converted to another type if needed. If the value does not pass a single test, an \texttt{Exception} is raised and a verbose error message is shown in the terminal.
+
+Finally, a hash is computed on the whole guide content using the \texttt{SHA512} hash function, and is then stored into the \texttt{dictionary} into the \texttt{hash} key, alongside the guide content. This \texttt{dictionary} is exported in the \gls{json} format at the end of the script. 
+
+\newpage
+
+\subsection{Application Basics}
+\label{subsec:app_implementation_basics}
+
+Some setups and patterns have been defined when the application has been initialized. This Subsection describes those parts only, and the more specific processes will be presented by features in further Subsections.
+
+\subsubsection{Project Creation}
+\label{subsubsec:app_implementation_basics_creation}
+
+We used the official \gls{cli} command of Vue to create the basic environment. This creation method is based on the \citeproperref{Vite}{https://vitejs.dev}{2023}{01}{24} \gls{frontend} tooling. \citeproper{Vite} allows to improve the development process by optimizing various parts of the \citeproper{JavaScript} ecosystem. The official installer asks whether it should install other components (modules) to support specific development functionalities. We installed the following components:
+\begin{itemize}
+	\item \textbf{\gls{typescript} support}: to include typing support and new capabilities on top of \citeproper{JavaScript}
+	\item \textbf{\citeproper{JSX}}: to enable structure component rendering
+	\item \textbf{\citeproper{Vue Router}}: to enable a single-page application structure with built-in navigation
+	\item \textbf{\citeproper{Pinia}}: to manage application-wide data stores
+	\item \textbf{\citeproper{Vitest}}: to perform unit tests
+	\item \textbf{\citeproperref{ESLint}{https://eslint.org}{2023}{02}{08}}: to detect code errors by static code analysis
+	\item \textbf{\citeproperref{Prettier}{https://prettier.io}{2023}{02}{08}}: a code formatter
+\end{itemize}
+
+The \citeproperref{Cypress}{https://www.cypress.io}{2023}{02}{08} component could have been used as well. It is an end-to-end testing solution for web applications. We did not install it because of the sufficient coverage provided by \citeproper{Vitest} for testing capacities.
+
+As shown in \fullrefnametype{table:app_design_architecture_basic}, our application is contained in various folders. We added two new folders named \texttt{modules} and \texttt{types}. The first one is used for our customs modules. We only created one module, \texttt{dataHandler}, which uses the global store to manage the guide content. The second is used to define the \gls{typescript} classes, enumerations and interfaces. Elements from both folders will be described in further Subsections.
+
+\subsubsection{Data Storage}
+\label{subsubsec:app_implementation_basics_storage}
+
+The data storage is implemented using the \citeproper{Pinia} module, which enables application-wide data stores definition and usage. It is defined into the \texttt{store} folder.
+
+The module must be registered in the main definition of the \citeproper{Vue} application made in the \texttt{main.ts} file. Afterwards, one or multiple stores can be defined and can be made available for all the application components.
+
+Usually, one store is defined for each data origin: remote data can be handled in one store, application state in another, user data in another, et cetera. Our case includes only one origin, which is the one related to the guide. However, another store will be defined to provide data regarding the general state of the application.
+
+Splitting data into multiple stores does not change the general behaviour or performances of the application, but it brings more clarity in the code, especially for large applications. 
+
+A store consists of three components:
+\begin{itemize}
+	\item \textbf{The state}, structure that contains the store data using key-values pairs.
+	\item \textbf{The getters}, set of functions that use the state to provide information and values about it.
+	\item \textbf{The actions}, set of functions that alter the state with new data, bring changes on it, or remove either some parts or all of it.
+\end{itemize}
+
+Only using getters and actions from \citeproper{Pinia} allows the developers to implement safe, reactive and non-blocking operations on data. Those functions can then be used in \citeproper{Vue} components, and even in regular \gls{typescript} modules.
+
+Examples given for the application data state come from the store that contains the guide content. The other store managing the global application state follows the same structure and implementation details.
+
+\fullrefnametype{lst:state_definition} shows what the state contains. Each attribute can be seen as a standalone typed data, that is then used by getters and actions.
+
+\begin{listing}[!ht] 
+	\javascriptfile[firstline=20, lastline=28]{02-main/listings/evaluation.ts}
+	\caption{State definition}
+	\label{lst:state_definition}
+\end{listing}
+
+Getters and actions must be defined as functions in their own attribute, that is then passed to the \citeproper{Pinia} store controller that creates the store itself. An example of two getters is given in \fullrefnametype{lst:state_getter}.
+
+\begin{listing}[!ht] 
+	\javascriptfile[firstline=30, lastline=42]{02-main/listings/evaluation.ts}
+	\caption{An example of two store getters}
+	\label{lst:state_getter}
+\end{listing}
+
+\subsubsection{Modules}
+\label{subsubsec:app_implementation_basics_modules}
+
+\citeproper{JavaScript} or \gls{typescript} modules are useful to create new features or capabilities to a piece of software that are independent of the application components, or used by several of them. They are defined into the \texttt{modules} folder of the application, and are then imported by the components that need to use them.
+
+Our use case only needs one module, which is the data management part. Indeed, the \citeproper{Pinia} store should only define getters and setters that directly manipulate the data it manages. Any additional steps that have no direct impact on the state should be defined in the other parts of the applications.
+
+This module has three capabilities, each implemented as functions. They are then exported to make them callable by other components, except for a local one that is used several times. Those capacities are:
+\begin{itemize}
+	\item \textbf{initializeData}: handles the guide content verification before importing it into the store.
+	\item \textbf{restoreResultsFromFile}: reads a \gls{json} file given by assessors to restore their results or their evaluation progress.
+	\item \textbf{isIdValid}: local function used by the \texttt{initializeData} function to ensure that given identifiers are valid.
+\end{itemize}
+
+The \texttt{initializeData} function can be used in two different ways: if no argument is given, the local guide content contained in a \gls{json} file is used. Otherwise, custom guide content given in a string are used. This allows assessors to use their own guide contents directly into the application.
+
+\subsubsection{Pages}
+\label{subsubsec:app_implementation_basics_pages}
+
+A set of pages has been defined based on our features and needs. They all follow the same layout thanks to the components we defined, except for the \texttt{Evaluation} one that includes a \texttt{Sidebar} to enable subcategories navigation. \fullrefnametype{table:app_implementation_pages} shows the complete list of them.
+
+\begin{tabularx}{\textwidth}{l|lX}
+	\toprule[0.8mm]
+	\textbf{Name} & \textbf{Layout} & \textbf{Usage} \\
+	\midrule[0.8mm]
+	HomeView & One page & Displays links to either start an evaluation or to restore results and progress from a file. It also contains further information about the project, allows to download the report and explain how to install the application. \\
+	\midrule
+	ExplanationView & One page & Displays some information about how the guide works before accessing to it. Also allows assessors to change the guide content using a \gls{json} file. \\
+	\midrule
+	EvaluationView & \texttt{Sidebar} & Displays the objectives, items and descriptions of the subcategory selected by the assessors.  \\
+	\midrule
+	ResultsView & One page & Displays the global score and the category ones. It also allows to download the results and to browse all the non-compliant items. \\
+	\midrule
+	RestoreView & One page & Allows assessors to upload a \gls{json} file in order to restore their results or their progress. \\
+	\bottomrule[0.8mm]
+	\caption{Application pages}
+	\label{table:app_implementation_pages}
+\end{tabularx}
+
+Each page, also called view, is a collection of components. The pages themselves are components. They are all defined into the \texttt{views} folder of the application.
+
+\subsubsection{Navigation}
+\label{subsubsec:app_implementation_basics_navigation}
+
+The application navigation is managed by the \citeproper{Router} module. It allows defining paths between multiple routes that are displayed into a single basic page, just by changing its content. The navigation is defined into the \texttt{router} folder of the application.
+
+A \texttt{Router} instance must be created using a dedicated function, and its routes are then specified. A route must lead to a component, define a path, and can also have other specificities. \fullrefnametype{lst:app_router} shows an extract of some different routes we defined:
+\begin{itemize}
+	\item Lines 4 to 8: a basic route
+	\item Lines 9 to 13: a redirection to another route
+	\item Lines 14 to 18: a route with a dynamic argument named \texttt{subcategory}
+	\item Lines 19 to 28: a route with an access control, defined by the \texttt{beforeEnter} guard
+\end{itemize}
+
+% LTeX: enabled=false
+\begin{listing}[!ht] 
+	\begin{javascriptcode}
+const router = createRouter({
+	history: createWebHistory(),
+	routes: [
+		{
+			path: "/restore/",
+			name: "Restore",
+			component: RestoreView,
+		},
+		{
+			path: "/evaluation/",
+			name: "Evaluation Landpage",
+			redirect: { path: '/evaluation/1.1' }
+		},
+		{
+			path: "/evaluation/:subcategory",
+			name: "Evaluation",
+			component: EvaluationView,
+		},
+		{
+			path: "/results",
+			name: "Results",
+			component: ResultsView,
+			beforeEnter: (_to, _from, next) => {
+				const evaluationStore = useEvaluationStore();
+				if (!evaluationStore.isEvaluationComplete) return next('/evaluation');
+				else next()
+			}
+		},
+	],
+});
+	\end{javascriptcode}
+	\caption{Extract of our application Router}
+	\label{lst:app_router}
+\end{listing}
+% LTeX: enabled=true
+
+\subsubsection{Types}
+\label{subsubsec:app_implementation_basics_types}
+
+One major addition from \gls{typescript} to the \citeproper{JavaScript} language is the usage of types. It allows developers to work with typed data and attributes to allow more robust code and an improved error and exception management. We defined them into the \texttt{types} folder of the application.
+
+We defined three sorts of types, depending on our needs:
+\begin{itemize}
+	\item \textbf{Enumerations}, for basic enumerations to bring a better code readability
+	\item \textbf{Interfaces}, to specify which attributes must be included in \citeproper{JavaScript} objects
+	\item \textbf{Classes}, to create instances of a class by using the object-oriented pattern
+\end{itemize}
+
+\subsubsection{Documentation}
+\label{subsubsec:app_implementation_basics_documentation}
+
+The code documentation has been made with the \citeproperref{JSDoc}{https://jsdoc.app}{2023}{01}{02} markup language, which is the most used of its type for \citeproper{JavaScript} and \gls{typescript} source files. It allows a standardized and heterogeneous documentation through the application. through comments.
+
+All comments are not shown on some Listings for for readability reasons.
+
+\subsection{Store Guide Data}
+\label{subsec:app_implementation_store}
+
+As explained before in \fullrefnametype{subsec:app_implementation_basics}, a \citeproper{Pinia} store has been defined using \gls{typescript} types and our  \texttt{dataHandler} module. Their interactions and processes will be detailed here.
+
+\subsubsection{Types}
+\label{subsubsec:app_implementation_store_types}
+
+Two different types have been used for this specific step: interfaces when data is loaded from a \gls{json} file, and classes for their stored version. We made this choice because stored data must have a hierarchical structure that should allow us to store objects in their corresponding parents, and we need to instantiate this structure. This hierarchic approach allows us to optimize the amount of operations and the access time when retrieving stored objects, and to build a coherent structure. 
+
+\Fullrefnametype{lst:app_implementation_store_interface} and \fullrefnametype{lst:app_implementation_store_class} show an example with the \texttt{Category} objects. First, the interface defines which attributes must be given by the \gls{json} file, which acts as an integrity check on the attributes type and existence then importing the file. Then, the class implements the interface which means that all attributes must be existing as well, and a constructor instantiates an empty \texttt{Map} object for the object related children. The \texttt{Maps} use each child \texttt{id} as key and is corresponding class as a value. The same approach is used for the categories stored in the store, as shown in \fullrefnametype{lst:state_definition} on line 23.
+
+\begin{listing}[!ht] 
+	\javascriptfile{02-main/listings/CategoryData.ts}
+	\caption{An example of a \gls*{typescript} interface}
+	\label{lst:app_implementation_store_interface}
+\end{listing}
+\begin{listing}[!ht] 
+	\javascriptfile{02-main/listings/CategoryObject.ts}
+	\caption{An example of a \gls*{typescript} class}
+	\label{lst:app_implementation_store_class}
+\end{listing}
+
+\subsubsection{Data Verification}
+\label{subsubsec:app_implementation_features_store_verification}
+
+This part is done by the \texttt{dataHandler} module: it starts by importing a \texttt{string} representing a \gls{json} file of the guide content into the corresponding \gls{typescript} interfaces. This first step acts like a verification on each attribute, whether the value is null or not and if the type is correct.
+
+Afterwards, we browse the guide content as shown in \fullrefnametype{lst:app_implementation_store_iteration}. We verify that at least one category is defined, and then we iterate on each category, as shown on line 56.
+
+Then, each \texttt{id} is verified, and we use a custom integrity structure named \texttt{verification} to check the unicity of the object. If another object with the same \texttt{id} has already been defined, we cancel the process. Otherwise, we instantiate the integrity structure with another one in a recursive approach, for the further integrity check on the object children. This integrity process is shown on lines 61 to 67 of \fullrefnametype{lst:app_implementation_store_iteration}.
+
+If the two tests have been passed, we search for all the children of the object within the \gls{json} \texttt{string}, as shown on line 73. We then check whether at least one child exists: if so, the same process is started again with the related child or children.
+
+\begin{listing}[!ht] 
+	\javascriptfile[firstline=53, lastline=76]{02-main/listings/dataHandler.ts}
+	\caption{Two iterations made by the \texttt{dataHandler} module when loading a guide content}
+	\label{lst:app_implementation_store_iteration}
+\end{listing}
+
+Every child is then stored into an instance of the \texttt{Category} class, which is then sent to the store when all children have been browsed and defined. The counter is also incremented to keep a track of the amount of objects. An example of this process is shown from line 69 to 71 of \fullrefnametype{lst:app_implementation_store_iteration}, and another one is shown on \fullrefnametype{lst:app_implementation_store_iteration_saved}.
+
+% LTeX: enabled=false
+\begin{listing}[!ht] 
+	\begin{javascriptcode}
+newCategory.subcategories.get(subcategory.id)?.objectives
+.get(objective.id)?.items.set(item.id, new Item(item))
+	\end{javascriptcode}
+	\caption{An item being saved into a \texttt{Category} instance}
+	\label{lst:app_implementation_store_iteration_saved}
+\end{listing}
+% LTeX: enabled=true
+
+If every object has been successfully verified, the guide content is sent to the store, as well as its hash.
+
+
+\subsection{Evaluation Progress}
+\label{subsec:app_implementation_progress}
+
+The assessors progress in the evaluation process must always be known: it allows us them to know their current progress, but also to avoid any access to the \texttt{ResultView} page when the evaluation is not complete. To do so, several getters have been defined into the store: \fullrefnametype{lst:app_implementation_progress_store} shows them.
+
+\begin{listing}[!ht] 
+	\javascriptfile[firstline=129, lastline=165]{02-main/listings/evaluation.ts}
+	\caption{The evaluation progress computed by the store}
+	\label{lst:app_implementation_progress_store}
+\end{listing}
+
+The line 25 of \fullrefnametype{lst:state_definition} shows a \gls{typescript} \texttt{Map} that acts like a counter for the evaluation progress. The keys of the \texttt{Map} refer to \citeproper{ids} of each subcategory. The \texttt{NumberedCounter} class is used for this need. It has two attributes: \texttt{count} is used for the number of item being evaluated, and \texttt{amount} for the total amount of items into a subcategory. This class can be seen on \fullrefnametype{lst:app_implementation_progress_counter}.
+
+\begin{listing}[!ht] 
+	\javascriptfile{02-main/listings/NumberedCounter.ts}
+	\caption{The \texttt{NumberedCounter} class}
+	\label{lst:app_implementation_progress_counter}
+\end{listing}
+
+When the guide content is imported, all items are browsed depending on their subcategory and their total amount within each subcategory is calculated using the \texttt{NumberedCounter} class. This process can be seen on \fullrefnametype{lst:app_implementation_progress_populate}, were an instance of \texttt{NumberedCounter} is created if an item refers to a subcategory for the first time.
+
+\begin{listing}[!ht] 
+	\javascriptfile[firstline=198, lastline=216]{02-main/listings/evaluation.ts}
+	\caption{Definition of the counter for each subcategory}
+	\label{lst:app_implementation_progress_populate}
+\end{listing}
+
+Afterwards, the corresponding \texttt{NumberedCounter} is increased every time that an item is evaluated by the assessors. This is handled by the \texttt{setCheckbox} action of the store, visible on \fullrefnametype{lst:app_implementation_progress_setcheckbox}. The \texttt{Item} class has a method named \texttt{changeEvaluation} that changes the value of the item evaluation, based on the corresponding \texttt{Enumeration}.
+
+Lines 231 to 238 of \fullrefnametype{lst:app_implementation_progress_setcheckbox} show how the tracking of the subcategory count is realized: if the item was previously not evaluated, which can be determined whether its old value was \texttt{undefined}, we retrieve the parent subcategory of the item and increase the appropriate \texttt{NumberedCounter}. Since an item evaluation value can only be \texttt{undefined} when unchecked, there is no need to change the counter for other evaluation values.
+
+\begin{listing}[!ht] 
+	\javascriptfile[firstline=221, lastline=239]{02-main/listings/evaluation.ts}
+	\caption{The store action called when an item is evaluated}
+	\label{lst:app_implementation_progress_setcheckbox}
+\end{listing}
+
+The instances of \texttt{NumberedCounter} can be used to compute whether subcategories, categories or the whole evaluation are completed. \Fullrefnametype{lst:app_implementation_progress_store} shows the corresponding store getters.
+
+A subcategory progress status can be easily computed: we only need to retrieve the corresponding \texttt{NumberedCounter} instance and test whether its two attributes have the same value.
+
+A category progress status could have use the subcategory getter and iterate on it, but a limitation on \citeproper{Pinia} avoids us to do so. Instead, we parse all the \texttt{NumberedCounter} and select the ones that concern our category. Then, we compare the two attributes on all the \texttt{NumberedCounter} instances as for the subcategory verification.
+
+The entire evaluation progress status is computed using the same approach as for the categories one, but using all the \texttt{NumberedCounter} instances.
+
+The three store functions are watched during the whole evaluation process by multiple components, and are updated every time that an item is being evaluated for the first time only. For this reason, we implemented the \texttt{NumberedCounter} \texttt{Map} instead of assessing all items from the entire guide content to optimize the application workload.
+
+\subsection{Compute and Show Results}
+\label{subsec:app_implementation_results}
+
+Two getters have been developed to retrieve the scores, as shown in \fullrefnametype{lst:app_implementation_results_getters}. They behave almost in the same way: they both select the set of items that must be used to compute a score, which could be all of them from the guide or the ones coming from a specific category. Every related item is then stored in a variable, which is sent to the \texttt{computeScore} intern function shown in \Fullrefnametype{lst:app_implementation_results_computation} that computes the score. The approach was chosen to avoid code repetition between the two getters. The details of the score computation is explained in \fullrefnametype{subsec:proposal_scoring_calculations}.
+
+\begin{listing}[!ht] 
+	\javascriptfile[firstline=167, lastline=194]{02-main/listings/evaluation.ts}
+	\caption{The store getters to compute scores}
+	\label{lst:app_implementation_results_getters}
+\end{listing}
+
+For the numerator part, each item the evaluated web service is not compliant with will have a value of zero, and the others items will give a value equals to their risks level. This is done using a \texttt{map-reduce} approach.
+
+Almost the same operation is done for the denominator, which needs all the items risk levels. Then, we use the \texttt{Percentage} class that we created to express the score.
+
+\begin{listing}[!ht] 
+	\javascriptfile[firstline=243, lastline=262]{02-main/listings/evaluation.ts}
+	\caption{The score computation}
+	\label{lst:app_implementation_results_computation}
+\end{listing}
+
+\subsection{Save and Restore Results}
+\label{subsec:app_implementation_restore}
+
+The results of a completed evaluation can be saved on the \texttt{ResultsView} page. To do so, a download button can be clicked, and a \gls{json} file is downloaded using the function shown on \fullrefnametype{lst:app_implementation_save}. 
+
+This function retrieves all the guide items of the store and only keep their \texttt{PK} and \texttt{evaluation} attributes in order to avoid large files exports. This step can be seen from lines 2 to 4, with the data being saved into an array using the \texttt{StoredItems} interface. Then, we build an object using the \texttt{StoredResults} interface that will store both the items and the guide hash. Finally, the data are transformed into a \texttt{string} value following the \gls{json} format and made available to download.
+
+The two interfaces we used have been defined in order to standardize the save and restore process: the payloads we create and read at those two steps can then be verified when exported and imported.
+
+% LTeX: enabled=false
+\begin{listing}[!ht] 
+	\begin{javascriptcode}
+		download() {
+			let itemData = this.getAllItems.map((item) => {
+				return (({ PK, evaluation }) => ({ PK, evaluation }))(item);
+			}) as StoredItems[]
+
+			let storedItems = {
+				"checkHash": this.getHash,
+				"items": itemData
+			} as StoredResults
+			
+			const jsonData = encodeURIComponent(JSON.stringify(storedItems))
+			this.myUrl = `data:text/plain;charset=utf-8,${jsonData}`
+			this.myFilename = 'exportData.json'
+		},
+	\end{javascriptcode}
+	\caption{Save the results}
+	\label{lst:app_implementation_save}
+\end{listing}
+% LTeX: enabled=true
+
+The restoration process of the results is handled by the \texttt{dataHandler} module, using the \texttt{restoreResultsFromFile} function. This function is shown on \fullrefnametype{lst:app_implementation_restore_function}.
+
+The first thing the function does is to verify that the store holds a valid guide content. If so, the results are parsed and stored into a \texttt{StoredResult} interface. The structure is afterwards verified to ensure that the \gls{json} structure is valid. Then, the hash of the guide content used to generate the results is compared to the one that is stored into the application: if they are the same, the results have been obtained using the same guide content that the one that is currently stored, and the results are restored. To do so, we used the \texttt{setCheckbox} store function shown in \fullrefnametype{lst:app_implementation_progress_setcheckbox} to restore the evaluation values of each item.
+
+\begin{listing}[!ht] 
+	\javascriptfile[firstline=188, lastline=216]{02-main/listings/dataHandler.ts}
+	\caption{The \texttt{restoreResultsFromFile} function of \texttt{dataHandler}}
+	\label{lst:app_implementation_restore_function}
+\end{listing}
+
+\subsection{Save and Restore Progresses}
+\label{subsec:app_implementation_restoreprogress}
+
+The application has the ability to save and to restore the progress of an evaluation. The well-design structure of the application and the generic functions we created to handle the data allow this feature to use the same logic as for the feature to save and restore results, described in \fullrefnametype{subsec:app_implementation_restore}.
+
+A button is displayed in the \texttt{Sidebar} on the \texttt{EvaluationView} page, which allows assessors to download a \gls{json} file to save their progress.
+
+\subsection{Use Store Data}
+\label{subsec:app_implementation_use}
+
+The store getters are used by components to display data in their content. To this end, a component must import them from the store before using them. An example of this method will be presented using the \texttt{EvaluationView} component.
+
+First, the store must be imported by the component and its getters made available, as shown on \fullrefnametype{lst:app_implementation_use_setup}. This part is done in the \texttt{setup} section of components, which is where links to resources, methods, data or other \citeproper{JavaScript} processes are declared. Line 57 shows the reference to the store, line 59 shows the getters imports from the store and lines 61 to 65 show how to make them available for the whole component.
+
+\begin{listing}[!ht] 
+	\javascriptfile[firstline=55, lastline=67]{02-main/listings/EvaluationView.vue}
+	\caption{The \texttt{setup} part of the \texttt{EvaluationView} component}
+	\label{lst:app_implementation_use_setup}
+\end{listing}
+
+\Fullrefnametype{lst:app_implementation_use_template} shows how to use the data imported from the store using the getters. Data retrieved by getters must be placed between double curly brackets to show its computed value in the component content. The \texttt{v-for} attribute on line 11 shows how to generate components based on a list of objects. In this example, we use the \texttt{Objective} component that requests two parameters, the objective name and its PK, to build the view.
+
+\begin{listing}[!ht] 
+	\javascriptfile[firstline=5, lastline=15]{02-main/listings/EvaluationView.vue}
+	\caption{Extract of the \texttt{template} part of the \texttt{EvaluationView} component}
+	\label{lst:app_implementation_use_template}
+\end{listing}
+
+\subsection{Progressive Web Application}
+\label{subsec:app_implementation_pwa}
+
+The application has been made compatible with the \citeproperref{\gls{pwa} standard}{http://bit.ly/3DQruBU}{2023}{02}{08}, which enables web applications to be installed into browsers. It allows website users to open those applications natively on their device using their browser. If the device has no access to the Internet, those applications can still be accessed.
+
+An application compatible with the \gls{pwa} standard must include various criteria to be fulfilled by an application in order to enable it:
+\begin{itemize}
+	\item Have a valid \textbf{Web App Manifest}
+	\item Serve the application using the \textbf{\gls{https}} protocol
+	\item \textbf{Redirect} the \gls{http} traffic to \gls{https}
+	\item Have a \textbf{robots.txt} file for search engines crawling
+	\item Have \textbf{adapted images} for favicons
+	\item Declare mandatory link to resources in the webpages \textbf{head} sections
+\end{itemize}
+
+We made our application compatible and \gls{pwa}-ready by using the \citeproperref{PWA Vite Plugin}{https://bit.ly/3WQAnTK}{2023}{01}{04} module. We followed its documentation and applied the mandatory configurations in order to be compliant to the standard.
+
+The application can be installed on all \citeproper{Chrome}-based browsers, on \citeproper{Firefox} Mobile and \citeproper{Safari}. Unfortunately, \citeproper{Firefox} desktop does not support this standard, except by using the unofficial \citeproperref{Progressive Web Apps for Firefox}{https://bit.ly/3i88fwf}{2023}{01}{04} add-on.
+
+Other methods could have been used to make our application available natively, such as using \citeproperref{Electron}{https://www.electronjs.org}{2023}{01}{04}. Give the limited usage of our tool in native mode, which will only be useful for offline evaluations, we selected the easiest and fastest approach.
+
+\subsection{Data Restoration Improvement}
+\label{subsec:app_implementation_improvement}
+
+While working on the application, we realized that our guide could become unusable in a specific use case: if an assessor saves their guide results or progress before an update of the guide content and then tries to restore their data afterwards, the application would detect that their data have been generated using an old version of the guide and would block the restoration process. This behaviour is doing exactly what we defined to avoid misleading evaluations, but then the assessor will not have the possibility to load their data.
+
+In order to prevent this issue, we modified some parts or our application.
+
+First, we modified the \texttt{StoredResults} interface, which is used as a support to store the data to be included in the downloaded \gls{json} file, to integrate the guide content as well. This guide content also uses an interface, named \texttt{GuideData}, that represents the \gls{json} object that is generated by our \citeproper{Python} script and imported into our application at its startup.
+
+As shown in \fullrefnametype{lst:app_implementation_improvement_store}, the guide content is generated using a store getter named \citeproper{getWholeGuide} that converts the data from the store under its \gls{typescript} \citeproper{Map} form into arrays for each guide content object. The hash is also stored in the \texttt{GuideData} interface and the latter is returned to the caller.
+
+% LTeX: enabled=false
+\begin{listing}[!ht] 
+	\begin{javascriptcode}
+		getWholeGuide: (state): GuideData => {
+			let categories = [] as CategoryData[]
+			let subcategories = [] as SubcategoryData[]
+			let objectives = [] as ObjectiveData[]
+			let items = [] as ItemData[]
+			let descriptions = [] as DescriptionData[]
+			state.guide.forEach((category) => {
+
+				categories.push(category)
+				category.subcategories.forEach( (subcategory) => {
+
+					subcategories.push(subcategory)
+					subcategory.objectives.forEach((objective) => {
+
+						objectives.push(objective)
+						objective.items.forEach((item) => {
+
+							items.push(item)
+							item.descriptions.forEach((description) => {
+
+								descriptions.push(description)
+							})
+						})
+					})
+				})
+			})
+
+			return {
+				categories: categories as CategoryData[],
+				subcategories: subcategories as SubcategoryData[],
+				objectives: objectives as ObjectiveData[],
+				items: items as ItemData[],
+				descriptions: descriptions as DescriptionData[],
+				hash: state.hash as string
+			} as GuideData
+		},
+	\end{javascriptcode}
+	\caption{New store getter to get the guide content}
+	\label{lst:app_implementation_improvement_store}
+\end{listing}
+% LTeX: enabled=true
+
+Then, we modified the \citeproper{restoreResultsFromFile} function from the \citeproper{dataHandler} module. If the stored hash is different from the one sent by the assessor, the legacy guide content is sent to the \citeproper{initializeData} function of the same module in order to change the guide content stored in the application. If this change occurs, the function fulfilment will return a boolean \citeproper{false} value to specify this change to the caller. Based on that, the \citeproper{Vue} component that calls the \citeproper{restoreResultsFromFile} function displays a warning to the assessors to explain the situation, as shown in \fullrefnametype{fig:ch5_app_implementation_legacy}
+
+\newimage{0.6}{ch5_app_implementation_legacy.png}{A message specifying that the restoration process uses an old version of the guide content}{ch5_app_implementation_legacy}
+
+In addition, the components that used the \citeproper{restoreResultsFromFile} function have also been modified in order to use the correct \citeproper{GuideData} interface. We also made sure that the generated \gls{json} files are compliant with this same interface.
+
+\subsection{Miscellaneous}
+\label{subsec:app_implementation_misc}
+
+Some aspects were not described, such as the visual design part. This part has been done by first defining \gls{css} rules to obtain appropriate \glspl{ui}, and then by tweaking them to reach the most satisfying results as possible. We tried a lot of different styles, and we kept the ones we liked the most while respecting the most-known \gls{ui} and \gls{ux} principles. We used the \citeproperref{Element Plus}{https://element-plus.org}{2023}{01}{03} visual \gls{framework} which provides pre-built and well-designed components. Some of them have been used for our designs.
+
+We also defined the \texttt{Indexes} class which allows us to retrieve indexes of parents given an object \texttt{PK}. We defined five methods, one for each object type, in order to retrieve the correct amount of indexes. Those are useful to navigate through the \texttt{Maps} that store categories and their children. One example of its usage can be seen at line 232 on \fullrefnametype{lst:app_implementation_progress_setcheckbox}.
+
+Some other types have also been defined to use the standardized way of \gls{typescript} to handle data.
+
+\section{Final Results}
+\label{sec:app_results}
+
+Some screenshots of the application will be shown, related to its multiple parts we explained.
+
+\Fullrefnametype{fig:ch5_results_sidebar} shows how the \texttt{Sidebar} is displayed during the evaluation process. When a category or a subcategory has been completely evaluated, its corresponding red dot is removed. Two buttons allow respectively to consult the evaluation results, and to save the evaluation progress. We also added the possibility to toggle the \texttt{Sidebar} visibility for mobile users.
+
+\newimage{0.25}{ch5_results_sidebar.png}{The evaluation \texttt{Sidebar}}{ch5_results_sidebar}
+
+\Fullrefnametype{fig:ch5_results_objective} shows how an objective is displayed on the screen. The colours given to items are defined appropriately to their requirement level. Evaluating items can be done by clicking on the checkboxes, which change their state at every click. If a description is available for an item, a collapsing icon is displayed.
+
+\newimage{1}{ch5_results_objective.png}{An example of an objective}{ch5_results_objective}
+
+\Fullrefnametype{fig:ch5_results_scores} shows how the scores are shown to the assessors. The colours are based on the percentage of the score: if a score is below fifty percent, the progress bar is red. If it is below eighty-five percent, it will be orange. If it is below a hundred percent, it will be displayed on light green, and a full one hundred percent shows the progress bar is displayed on darker green. The thresholds have been chosen subjectively, they can be changed in the future.
+
+\newimage{1}{ch5_results_scores.png}{An example of the scores}{ch5_results_scores}
+
+Finally, \fullrefnametype{fig:ch5_results_upload} shows an example of a drag and drop space to upload files. Two features need this component: when the assessors want to restore their results, and when they want to upload a custom version of the guide content.
+
+\newimage{1}{ch5_results_upload.png}{An example of an upload card}{ch5_results_upload}
+
+% -----------------------------------------------------------------------------
+\section{Software Tests}
+\label{sec:app_tests}
+
+Software needs to be tested in order to prove that their processes behave accordingly to their goals and design. Furthermore, we need to think about all the scenario that can happen when using our software and show that they can handle problems without bugs or failures.
+
+Two devices have been used for the tests. As a personal computer, we used a laptop running \citeproper{Fedora Workstation 37}. As a smartphone, we used an \citeproper{Android} \citeproper{Samsung Galaxy S10 Plus}. Two browsers have been used on both devices, \citeproper{Firefox} and \citeproper{Chrome}. This selection allows us to cover most of the web browsing configurations.
+
+The tests are separated based on the software piece they verify. Their details, expected results and obtained results are available at \appendixref{appendix:tests}.
+
+\subsection{Data Conversion and Validation Tests}
+\label{subsec:app_tests_data}
+
+The tests done on the data converter script are based on what has been explained in \fullrefnametype{subsec:app_implementation_data}.
+
+All the tests have been passed. Invalid values to determine whether an input is valid or not are based on the content in \fullrefnametype{table:proposal_data_attributes}.
+
+\subsection{Application Tests}
+\label{subsec:app_tests_application}
+
+Tests of several natures have been conducted on the application. We tested its \glspl{ui}, its behaviour, and its data store.
+
+Some tests shown in this Subsection have also been implemented as unit tests that can be triggered either manually or during deployment. They are explained in \fullrefnametype{subsec:app_tests_unit}.
+
+All the tests have been passed.
+
+\subsubsection{User Interfaces}
+\label{subsubsec:app_tests_application_ui}
+
+The \gls{ui} tests are based on actions done by the assessors while using the application. Each action must give a result that is visible on the interface. We realized tests on each specific page, and on the overall application regarding its global actions.
+
+In addition to the two devices used for the tests, we used the \citeproper{Firefox} and \citeproper{Chrome} built-in responsive design modes to simulate various displayed screen size.
+
+All the tests have been passed.
+
+\subsubsection{Application Behaviour}
+\label{subsubsec:app_tests_application_behaviour}
+
+The tests on the application behaviour are based on how the application reacts to specific states. Automatic rendering, values or computations should be carried out without any actions from the assessors.
+
+All the tests have been passed.
+
+\subsubsection{Application Stores}
+\label{subsubsec:app_tests_application_store}
+
+The tests on the stores are based on the values and computations that are carried on the state. The state can be altered by the assessors, processed automatically or reacting to changes.
+
+All the tests have been passed.
+
+\subsection{Unit Tests}
+\label{subsec:app_tests_unit}
+
+Due to time constraints, we have selected the tests that are the most crucial to assess whether the application works. We decided to test whether the guide content store are valid, and to simulate the basic path and actions that assessors will do while evaluating their web service.
+
+Each unit test is based on its corresponding tests defined before in this Section. The states, actions, and expected results are the same.
+
+\subsubsection{Environment}
+\label{subsubsec:app_tests_unit_environment}
+
+As explained in \fullrefnametype{subsubsec:app_implementation_basics_creation}, we used the \citeproper{Vitest} unit test \gls{framework}. This choice has been mainly motivated by the fact that \citeproper{Vitest} is recommanded and supported by the \citeproper{Vue} development team.
+
+A few additional \gls{npm} modules had to be installed in order to complete our testing environment. They are only needed in development mode, not for production mode.
+\begin{itemize}
+	\item \citeproperref{\textbf{pinia/testing}}{http://bit.ly/3Xh9ibq}{2023}{02}{08}: a tool that creates \citeproper{Pinia} instances specifically designed for unit testing
+	\item \citeproperref{\textbf{jest}}{https://jestjs.io/}{2023}{02}{08}: another testing \gls{framework} whose features can be used into \citeproper{Vitest}
+	\item \citeproperref{\textbf{happy-dom}}{http://bit.ly/3YilNVJ}{2023}{02}{08}: a web browser simulator without any embedded \gls{gui}
+	\item \citeproperref{\textbf{vue/test-utils}}{https://test-utils.vuejs.org}{2023}{02}{08}: a testing utility that brings features to specifically test \citeproper{Vue} components
+	\item \citeproperref{\textbf{unplugin-auto-import}}{http://bit.ly/3HOLRR8}{2023}{02}{08}: a utility used to automatically import \glspl{api} into \citeproper{Vite} projects
+	\item \citeproperref{\textbf{unplugin-vue-components}}{http://bit.ly/3HLgZRJ}{2023}{02}{08}: a utility used to automatically import \citeproper{Vue} components into \citeproper{Vue} applications
+\end{itemize}
+
+Usage of \citeproper{unplugin-auto-import} and \citeproper{unplugin-vue-components} has been motivated by our usage of the \citeproper{Element Plus} visual \gls{framework}, which needs all its components to be registered into the \citeproper{Vue} application. Otherwise, \citeproper{Vitest} is not able to reach their references. 
+
+Once added to the \citeproper{Vue} project, the \citeproper{unplugin-auto-import} and \citeproper{unplugin-vue-components} modules have to be added to the \citeproper{Vite} configuration, and register the \citeproper{Element Plus} components, as shown in the \fullrefnametype{lst:app_test_modules}.
+
+% LTeX: enabled=false
+\begin{listing}[!ht] 
+	\begin{javascriptcode}
+export default defineConfig({
+	[...]
+	plugins: [
+		AutoImport({
+			resolvers: [ElementPlusResolver({ ssr: true })],
+		}),
+		Components({
+			resolvers: [ElementPlusResolver({ ssr: true })],
+		}),
+	]
+	[...]
+}];
+	\end{javascriptcode}
+	\caption{The modules added to the \citeproper{Vite} configuration}
+	\label{lst:app_test_modules}
+\end{listing}
+% LTeX: enabled=true
+
+\subsubsection{Unit Tests Implementation}
+\label{subsubsec:app_tests_unit_realized}
+
+The unit tests are defined in the \texttt{tests} folder, as explained in \fullrefnametype{table:app_design_architecture_basic}. If some unit tests had been specific to a component or a module, they could have been defined in other folders. We made that choice because of our tests being focused on the whole application.
+
+We created two testing files based on the application part they target. This approach is recommanded to guarantee a clear separation of duties and a better code understanding.
+
+\citeproper{Vitest} provides multiple functions to build tests. The \texttt{describe} function allows to define a set of tests. It allows organizing tests that target the same context in order to bring clarity. The \texttt{test} function allows to define a set of expectations that are related between each others. Some pre-attached functions can be defined in \texttt{describe} blocks in order to realize actions during the life cycle of the tests: we used the \texttt{beforeEach} function in order to keep the same \citeproper{Pinia} store instance through all the tests. The test expectations are defined using the \texttt{expect} function that specifies, with the help of other functions assessing values, the result that must be observed after execution.
+
+\citeproper{Vitest} includes other useful functions, but we did not use them for our tests. It can also benchmark the application on its performances.
+
+The first of our testing files is focused on the application store, as shown in \fullrefnametype{lst:app_test_store}. The first line encapsulates the two tests we defined for this application part. Before running each test, \citeproper{Vitest} will create and pass a \citeproper{Pinia} instance to them. Then, the lines 6 to 11 show the test on the initial state of the guide content store which must be empty by default. Then, the second test defined from line 13 to 19 applies the same approach but initializes the data loading process into the store before testing its values. In this configuration, the guide content data must have verified by the verification checks done by the \citeproper{initializeData} function, as described in \fullrefnametype{subsubsec:app_implementation_features_store_verification}, and then the store must have been populated using this data.
+
+% LTeX: enabled=false
+\begin{listing}[!ht] 
+	\begin{javascriptcode}
+		describe('Evaluation Store', () => {
+			beforeEach(() => {
+				setActivePinia(createPinia())
+			})
+		
+			it('Default state', () => {
+		
+				const store = useEvaluationStore()
+				expect(store.getStatus).toBe(false)
+		
+			})
+		
+			it('Loaded state', () => {
+		
+				initializeData()
+				const store = useEvaluationStore()
+				expect(store.getStatus).toBe(true)
+				
+			})
+		})
+	\end{javascriptcode}
+	\caption{Unit tests on the application store}
+	\label{lst:app_test_store}
+\end{listing}
+% LTeX: enabled=true
+
+Our second testing file is focused on simulating the whole path of an assessor that evaluates its web service through the application. To this end, the different links that allows to navigate through the pages are searched for, and a click is emulated on them. This approach allows us to also test the whole interface of our application, as if an assessor would have use their browser. Once the pages loaded, we make sure that the correct content is displayed, and we define the appropriate expectations. All the references to application content are made using dedicated \texttt{data} \gls{html} attributes, with a value describing their role. 
+
+Here are the different tests we defined, all part of the same \citeproper{Vitest} \texttt{description}:
+\begin{enumerate}
+	\item Going from \citeproper{HomeView} to \citeproper{ResultsView} without the evaluation being completed
+	\item Going From \citeproper{HomeView} to \citeproper{ExplanationView}
+	\item Going From \citeproper{ExplanationView} to \citeproper{ResultsView}
+	\item Click on the result button in \citeproper{EvaluationView} without the evaluation being completed
+	\item Evaluate all items in \citeproper{EvaluationView} as compliant
+	\item Test if the overall score is of one hundred percent
+	\item Test if the overall score is lower than one hundred percent if only one item is evaluated as non-compliant and the others compliant
+	\item Test if the overall score is of one hundred percent if only item is evaluated as not concerned and the others compliant
+\end{enumerate}
+
+Only the most interesting parts of the tests will be explained.
+
+Simulating the whole application needs to mount and use a \citeproper{Vue} instance as browsers do. This step is shown in \fullrefnametype{lst:app_test_path_mount}. The instance declaration is done at the root of the \texttt{describe} block to allow it to be accessible to all tests.
+
+We used the \texttt{mount} function brought by the \citeproper{vue/test-utils} module, which allows us to use the \citeproper{Vue Router} and \citeproper{Pinia} stores we previously defined during implementation time to build the \citeproper{Vue} instance used by \citeproper{Vitest}. A specific constructor brought by the \citeproper{pinia/testing} module allows \citeproper{Pinia} stores to be tested inside the \citeproper{Vitest} environment. Its \texttt{stubActions} argument states whether the actions should be disclosed to the state or not.
+
+As shown from lines 12 to 13 on \fullrefnametype{lst:app_test_path_mount}, every router route update must be followed by assessing whether the view is ready before proceeding to the rest of the test.
+
+\begin{listing}[!ht] 
+	\javascriptfile[firstline=11, lastline=20]{02-main/listings/path.test.ts}
+	\caption{Creation of an instance of the \citeproper{Vue} application}
+	\label{lst:app_test_path_mount}
+\end{listing}
+
+\Fullrefnametype{lst:app_test_path_results} shows the test that assess whether the \texttt{ResultsView} page is not accessible if the evaluation is not complete. Line 25 shows the route being changed, then the next line waits for the navigation to be ready. Line 27 shows the \texttt{flushPromises} function from the \citeproper{vue/test-utils} module that must be used when any update is made on a \citeproper{Vue Router} instance in testing mode to avoid errors. Then, line 30 shows an expectation that assess whether the active route is the one linked to the \texttt{EvaluationView} page, because of the redirection made by a navigation guard we defined for this use case. Finally, we navigate to the root page of the application before the following test being run.
+
+\begin{listing}[!ht] 
+	\javascriptfile[firstline=22, lastline=37]{02-main/listings/path.test.ts}
+	\caption{Unit test on the \texttt{ResultsView} access without a completed evaluation}
+	\label{lst:app_test_path_results}
+\end{listing}
+
+An example of a navigation test is shown in \fullrefnametype{lst:app_test_path_navigate}. This kind of tests is similar to the one done in \fullrefnametype{lst:app_test_path_results}, with a different approach. Lines 45 to 49 show how the navigation buttons are found and clicked on using functions from the \citeproper{vue/test-utils} module. 
+
+\begin{listing}[!ht] 
+	\javascriptfile[firstline=39, lastline=54]{02-main/listings/path.test.ts}
+	\caption{Unit test on the navigation from the \texttt{HomeView} page to the \texttt{ExplanationView} one}
+	\label{lst:app_test_path_navigate}
+\end{listing}
+
+\Fullrefnametype{lst:app_test_path_items} shows an extract of the tests done on the \texttt{EvaluationView} page that evaluate all the items of the guide content as compliant. Line 93 allows us to find and store all the subcategories listed in the \texttt{Sidebar}. Then, an iteration is made on all the subcategories in order to click on them to display their corresponding objectives and items, as shown on line 97. Once each subcategory clicked on, the same approach is applied to find each of its items on the page to evaluate them as compliant by a click on their checkbox.
+
+\begin{listing}[!ht] 
+	\javascriptfile[firstline=93, lastline=106]{02-main/listings/path.test.ts}
+	\caption{Unit test extract that evaluates all items as compliant}
+	\label{lst:app_test_path_items}
+\end{listing}
+
+\Fullrefnametype{lst:app_test_score} shows an extract of the unit tests that assess the overall score. Once the \texttt{ResultView} page accessed, the value of the overall score is obtained using the \texttt{find} method, and we test whether its value is equal to \texttt{100\%} by using the \texttt{toBe} assert function brought by \citeproper{Vitest}.
+
+\begin{listing}[!ht] 
+	\javascriptfile[firstline=130, lastline=132]{02-main/listings/path.test.ts}
+	\caption{Unit test on the value of the overall score}
+	\label{lst:app_test_score}
+\end{listing}
+
+\subsection{Test Summary}
+\label{subsec:app_tests_summary}
+
+All the tests we defined have been successfully validated. We did not find any problem during their validation, both for the data conversion and validation step than for the application.
+
+The implemented unit tests are also validated. They are launched at every code update on the repository~\cite{mt-forge} before the application is deployed. The failure of any unit test causes the deployment to be stopped to avoid any problems in production.
+
+% -----------------------------------------------------------------------------
+\section{Further Application Improvements}
+\label{sec:app_improvements}
+
+Our application is complete, works perfectly, and covers all the features and capabilities we defined. However, some improvements could still be done on its usage or its source code.
+
+First, the \gls{ui} and \gls{ux} can be improved by following recognized guidelines or design languages. The \citeproperref{Material Design}{https://material.io}{2023}{01}{31} design language developed by \citeproper{Google} could be an interesting lead.
+
+The application can be adapted to follow internationalization and localization standards, although translating the guide content would be a heavy and risky task.
+
+The \gls{css} rules can be optimized, and the \gls{sass} preprocessor can be used to both simplify and generalize the style rules throughout the components.
+
+New \citeproper{Vitest} unit tests can be created to cover all the tests defined in \fullrefnametype{subsec:app_tests_application} in order to make sure that all the features of the application and the actions done by assessors are valid.
+
+A new page can be created to show all the categorized objectives, with or without their corresponding items, in a print-friendly layout. This would allow to provide a great summary of the guide content.
+
+Finally, some \citeproper{Vue} components can be improved on their logic part, or divided into multiple more specialized ones.
+
+% -----------------------------------------------------------------------------
+\section{Summary}
+\label{sec:app_summary}
+
+We successfully developed an application that covers the thesis scope and its goals, while implementing the capabilities and features it had to provide. The web application medium was not explicitly planned in the thesis specifications, but we managed to develop it appropriately are we are satisfied with the results we obtained.
+
+The analysis and the design of the application helped us during its implementation phase, but parts have been adapted once tested. For example, some parts of the \gls{ui} have been changed to optimize the usability, and the progress saving and restoration feature has been added afterwards when we noticed that its lack could lead to discomfort while using the application.
+
+The \citeproper{vue} \gls{framework} was a perfect fit: no feature or behaviour has been limited because of this technology choice. Furthermore, our prior knowledge helped us to quickly build a stable and robust software.
+
+At some point, we totally reimplemented the \citeproper{Pinia} store that manages the guide content in order to change the architecture of the state by storing objects in the structure of their corresponding parent. Initially, each object was stored in their own state, and heavy sorting operations had to be done to retrieve an object when referenced using their parent \texttt{PK}. By doing so, the store performance has been improved by reducing the amount of operations during data retrieval.
+
+We encountered some problems during the implementation phase: most of them were minor, but we did lose some time on two major issues. First, the support of the \gls{pwa} standard took us some time: the \citeproper{Firefox} mobile bowsers were able to install the application, but not any \citeproper{Chrome}-based browser. The source of the problem was an invalid link to the web manifest resource put in the \gls{html} file used as a template to mount the \citeproper{Vue} instance. Secondly, the \citeproper{PWA Vite Plugin} module was misconfigured and blocked all navigation to internal links that was not defined within \citeproper{Vue Router}. As a result, the report \gls{pdf} could not be accessed. The reason was that the said module had a fallback configuration that redirects such routes to itself. Adding an appropriate rule in the \gls{typescript} environment configuration fixed this issue.
+
+As explained in \fullrefnametype{sec:app_improvements}, some further work could be done in order to improve our application.

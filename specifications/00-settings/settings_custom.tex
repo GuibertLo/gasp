@@ -1,0 +1,48 @@
+% ========================
+% = TODO: Document
+% ========================
+
+% Marc's font stack
+\usepackage{cmbright}       % Sans serif
+\usepackage{sourcecodepro}  % Monospace
+\renewcommand{\familydefault}{\sfdefault}
+
+\titlespacing{\section}{-5mm}{5mm}{2mm}
+\titlespacing{\subsection}{-5mm}{2mm}{1mm}
+\titlespacing{\subsubsection}{-5mm}{2mm}{1mm}
+
+% Colors and links - https://en.wikibooks.org/wiki/LaTeX/Hyperlinks
+\usepackage{xcolor}% http://ctan.org/pkg/xcolor
+\usepackage{hyperref}% http://ctan.org/pkg/hyperref
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!50!blue,
+  urlcolor=blue!70!blue,
+  citecolor=blue!70!blue
+%	colorlinks=false,% hyperlinks will be black
+%	linkbordercolor=blue,% hyperlink borders will be red
+%	pdfborderstyle={/S/U/W 1}% border style will be underline of width 1pt
+}
+
+% First acroynm long
+\renewcommand*{\CustomAcronymFields}{%
+  name={\the\glsshorttok},% name is abbreviated form
+  description={\the\glslongtok},% description is long form
+  first={\noexpand\emph{\the\glslongtok}\space(\the\glsshorttok)},%
+  firstplural={\noexpand\emph{\the\glslongtok\noexpand\acrpluralsuffix}\space(\the\glsshorttok)},%
+  text={\the\glsshorttok},%
+  plural={\the\glsshorttok\noexpand\acrpluralsuffix}%
+}
+
+% To print date in custom command citeproperref
+\usepackage[en-GB]{datetime2}
+
+
+\glsenablehyper %TODO see why it is not working
+
+% To continue numbering of footnotes in chapters
+% https://tex.stackexchange.com/questions/10448/continuous-footnote-numbering
+\counterwithout{footnote}{chapter}
+
+% To import PDF files as content
+\usepackage{pdfpages}

@@ -1,0 +1,129 @@
+\chapter{Web Service Evaluation}
+\label{chap:use}
+
+Now that the application we developed allows to use our guide by loading our guide content, it will be applied on conditions as close as the real field as possible. This step will allow us to determine whether our proposal can actually be used.
+
+We will start by explaining the methodology which will be applied during the guide utilization. Then, the results be obtains following the utilization will be detailed in order to bring more information on the conditions of the usage. Based on those results, we will discuss what could be done for further improvements.
+
+\minitoc
+
+\newpage
+
+% -----------------------------------------------------------------------------
+\section{Methodology}
+\label{sec:use_methodology}
+
+Using our proposal on an actual web service serves multiple objectives. To ensure that all of them will be covered, we defined a methodology that will be applied during the application usage.
+
+The \textit{development team} term refers to all the parties involved with the development process of the web service that has been used in this Chapter. The \textit{developer} term will also be used to refer to people in the development team.
+
+\subsection{Objectives Definition}
+\label{subsec:use_methodology_objective}
+
+As stated, the guide usage step includes multiple objectives to be meet. Those objectives are the following:
+\begin{itemize}
+	\item Find undetected \textbf{mistakes} in the guide content
+	\item Find undetected \textbf{errors} in the application usage
+	\item Assess the \textbf{accuracy} of the evaluation
+	\item Discuss the whole process with the web service \textbf{development team}
+\end{itemize}
+
+Those purposes allow us to cover the three outcomes of our thesis that had been defined in \fullrefnametype{subsec:introduction_contribution_outcomes}.
+
+\subsection{Metrics Definition}
+\label{subsec:use_methodology_metrics}
+
+Some metrics must be defined and then measured in order to provide a useful and impartial evaluation of our complete guide. Those have been defined accordingly to the objectives that have been defined in \fullrefnametype{subsec:use_methodology_objective}.
+\begin{itemize}
+	\item \textbf{Duration}: how much time has been necessary to evaluate the web service?
+	\item \textbf{Overall score}: with how many items is the evaluated web service compliant?
+	\item \textbf{Category scores}: what are the highest-risk categories? 
+	\item \textbf{Feedback}: does the web service development team agree with the different score?
+\end{itemize}
+
+\subsection{Web Service Choice}
+\label{subsec:use_methodology_service}
+
+The web service we chose is the \citeproperref{Hestia}{https://icosys.ch/hestia}{2023}{02}{01} project administered by \SupervisorOne\ who is also one of the supervisors of this thesis. \citeproper{Hestia} aims to connect medical patients with their doctors through a data exchange platform in a secure and private way.
+
+The service is composed by one central server and by multiple client applications. Those applications are developed for desktop, mobile and web platforms. The whole project is still under development and is still in a prototyping phase. However, the central server implementation has been completed before being evaluated using our guide.
+
+This choice has been motivated by the fact that this web service includes strong security and privacy concerns due to its sensitive use case. In addition, it also includes \gls{ai}-related concerns, especially on the \gls{big-data} topic. Moreover, the fact that the project is still in prototype form will enable useful levers to improve its security and privacy levels to the development team for the future implementation steps.
+
+\subsection{Evaluation Process}
+\label{subsec:use_methodology_evaluation}
+
+We planned a meeting with the \citeproper{Hestia} development team without them knowing any specifics on the thesis. This approach aims to assess whether  newcomers are able to understand the explanations of the guide made on the \texttt{ExplanationView} page.
+
+The whole evaluation process has been made with our monitor being shared to the development team in order to display the same view of our \gls{gasp} application to everyone.
+
+The web service has been evaluated by formally expressing out loud the objectives and their related items. Then, discussions between the developers occurred to decide on the web compliance with each item. If additional information on any item was requested by a developer, the corresponding item descriptions were expended.
+
+\subsection{Confidentiality}
+\label{subsec:use_methodology_confidentiality}
+
+No particular ethical consideration or obligation have been applied during the evaluation process. The developers agreed their feedbacks to be used whilst staying anonymous. Furthermore, no sensitive or personal data were collected during this phase.
+
+% -----------------------------------------------------------------------------
+\section{Obtained Results}
+\label{sec:use_results}
+
+The metrics we defined in \fullrefnametype{subsec:use_methodology_metrics} will be measured and explained.
+
+\subsection{Duration}
+\label{subsec:use_results_duration}
+
+The entire evaluation process of the web service lasted for two hours and ten minutes, including the guide explanation page consultation. Some items took more time to be evaluated than others, often because of their higher complexity or larger scope.
+
+We noticed that every evaluation done through our guide can have different durations: indeed, multiple factors influence the evaluation pace:
+\begin{itemize}
+	\item \textbf{Assessors' confidence}: some people are more certain of their choices and capacities than others.
+	\item \textbf{Assessors' investment}: all organizations have not the same resources, willingness, and motivation to perform such evaluations.
+	\item \textbf{Topic knowledge}: some topics are more difficult to understand and/or more complex than others.
+	\item \textbf{Web service complexity}: some web services and smaller and less complex than others, which has an impact on the amount of work.
+	\item \textbf{Web service knowledge}: the assessor can be the one that developed the whole evaluated web service or one out of many in an entire organization.
+\end{itemize}
+
+\subsection{Scores}
+\label{subsec:use_results_scores}
+
+Once the web service evaluation completed, we obtained the overall and the category scores. Those scores are displayed on \fullrefnametype{fig:ch6_results_overall} and on \fullrefnametype{fig:ch6_results_categories}.
+
+\newimage{1}{ch6_results_overall.png}{The overall score from the \citeproper{Hestia} evaluation}{ch6_results_overall}
+
+\newimage{1}{ch6_results_categories.png}{The category scores from the \citeproper{Hestia} evaluation}{ch6_results_categories}
+
+A discussion about the scores values has been initiated with the developers to attest their veracity. The developers found the results consistent with the idea they have on their web service.
+
+The lack of compliance with the management can be explained by the fact that policies or risk management are concerns that will be handled in future stages of the project development. Furthermore, the organization the development team is attached to is not the one that will eventually handle the production stage of the project in its final shape.
+
+The data and the system categories have a consistent score, with a majority of items already being handled or integrated in the current state of the project. Some parts of those two categories will be processed in future stages of the project, which explains the remaining gap to get complete score values.
+
+The software category shows a few lacks in the development process. Some items could have been integrated into the current development process, which helped to identify this weakness. However, the testing part of the project is planned at the end of its timeframe.
+
+The great scores of the environment and data science categories are mainly explained by the fact that some techniques or approaches related to those categories are not yet integrated. However, the ones that are already implemented attest that the web service is compliant with the categories remaining items.
+
+From our perspective, we share the opinion of the development team on the accuracy of the scores. The insights given by our guide give a comprehensible yet complete status of the current state of the evaluated web service. Some scores can be explained by the fact that the evaluated web service is still at a prototype phase, which caused the lacks shown by the evaluation process. The results seem to us to represent correctly the security and privacy levels of the \citeproper{Hestia} project.
+
+\subsection{Feedback}
+\label{subsec:use_results_feedback}
+
+Everyone in the development team found the guide accessibility, format, and volume as appropriate to its purpose, even if the amount of items is significant. However, the developers agreed that this workload is appropriate given the complexity of  the security and privacy concerns.
+
+The application itself has been evaluated as optimized and well-designed, and also offers a great usability. However, some improvements have been proposed by the developers:
+\begin{itemize}
+	\item Add some navigation buttons to go to the next and previous subcategories.
+	\item Add the possibility to ignore a whole category, subcategory or objective.
+	\item Add a feedback form to ask for assessors' advices or new content.
+	\item Add a guard to avoid any data loss when refreshing the application.
+\end{itemize}
+
+The listed improvements are noteworthy. Because of the limited time at the end of the thesis project, these remarks will be addressed on our free time.
+
+% -----------------------------------------------------------------------------
+\section{Summary}
+\label{sec:use_summary}
+
+We are satisfied with the feedbacks and the remarks we obtained during this evaluation process. The accuracy of our guide have been reviewed and tested by external parties which shows that our proposal is valid, taking into account the sample size.
+
+The methodology to test the usage of our proposal has been designed according to the scope of our thesis. However, our proposal could also be tested by organizing a qualitative and/or quantitative studies, using a standardized approach and an appropriate protocol. Furthermore, the \gls{ui} and \gls{ux} could be included in the process with additional user testing. Those steps could be part of a future work on the same subject.

@@ -1,0 +1,36 @@
+% LTeX: enabled=false
+
+% ===========================================
+% = Codestyles for minted syntax highlighting
+% ===========================================
+
+
+% How to use (replace 'java' with language name):
+% - code blocks:
+%     \begin{javacode}
+%     CODE
+%     \end{javacode}
+% - files:
+%     full: \javafile{PATH}
+%     extract: \javafile[startline=x, endline=y]{PATH}
+
+
+% Javascript
+\newminted{javascript}{frame=single, framesep=6pt, breaklines=true, fontsize=\scriptsize, linenos, autogobble}
+\newmintedfile{javascript}{frame=single, framesep=6pt, breaklines=true, 
+fontsize=\scriptsize, linenos, autogobble}
+
+% Python
+\newminted{python}{frame=single, framesep=6pt, breaklines=true, fontsize=\scriptsize, linenos, autogobble}
+\newmintedfile{python}{frame=single, framesep=6pt, breaklines=true, fontsize=\scriptsize, linenos, autogobble}
+
+% Json
+\newminted{json}{frame=single, framesep=6pt, breaklines=true, fontsize=\scriptsize, linenos}
+\newmintedfile{json}{frame=single, framesep=6pt, breaklines=true, 
+	fontsize=\scriptsize, linenos}
+
+% Plain text
+\newminted{text}{frame=single, framesep=6pt, breaklines=true, breakanywhere, fontsize=\scriptsize, linenos}
+\newmintedfile{text}{frame=single, framesep=6pt, breaklines=true, breakanywhere, fontsize=\scriptsize, linenos}
+
+% LTeX: enabled=true

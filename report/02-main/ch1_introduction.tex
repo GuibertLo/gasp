@@ -1,0 +1,157 @@
+\chapter{Introduction}
+\label{chap:introduction}
+
+This document is the report written during the master thesis that takes place at the end of the HES-SO//Master curriculum. This document starts with an introduction Chapter that will explain the context of this thesis.
+
+First, some useful terms that will be used throughout this report will be defined. Then, the context in which our thesis lays will be exposed, followed by an explanation of the contribution that our thesis brings to the academical and industrial world. The objectives of the thesis, its research question its outcomes will also be exposed. Then, some similar works will be presented, followed by an explanation of the report structure. Finally, small words about the project management will conclude this Chapter.
+
+\minitoc
+
+\newpage
+
+% -----------------------------------------------------------------------------
+\section{Definitions}
+\label{sec:introduction_definitions}
+
+First and foremost, some terms used in this report must be defined so that they are understood by all readers. Indeed, these terms can be confusing.
+
+\begin{itemize}
+    \item \textbf{\gls{ai} process}: any process that uses user data to train predictive or generative models, and/or to infer results using those models. Examples: \gls{big-data}, \gls{ml}, \gls{dl} models.
+    \item \textbf{Privacy}: a catch-all terms referring to user privacy and their data privacy at the same time. Used to express the right to respect these two concerns.
+    \item \textbf{Topic}: a domain, concept, or technique coming from the \gls{ict} field. This is a generic term to group them altogether without differentiation. Examples: \gls{cloud} computing, access control.
+    \item \textbf{Web service}: a service exposed by a device which gives an answer depending on a challenge sent by another device. Both devices communicate using a connexion link through the Internet. No distinction is made on the used technologies, regardless of the misnomer word web. Can be shortened by service. Examples: \citeproper{Google Search}, \citeproper{GitLab}.
+\end{itemize}
+
+% -----------------------------------------------------------------------------
+\section{Context}
+\label{sec:introduction_context}
+
+Nowadays, web services are among the most used Internet resources around the world. Lots of applications communicate with their infrastructure to provide multiple features to their end users. Everyone uses a large variety of them throughout their daily life, both for personal than professional needs.
+
+The latest impressive progress made in the \gls{ai} field leaded a massive adoption of personalized, adaptive and customizable processes inside web services. Among that, the increasing capabilities of \gls{nn} models are among the strongest ones.
+
+However, those models need tremendous amounts of user data in order to achieve satisfactory performances. This constraint raises crucial user privacy issues towards numerous service providers collecting as much data as they can with the goal of either improving their own services, or to resell them to other organizations. This approach is known as \gls{big-data} collection. 
+
+Globally speaking, every software project should be analysed, designed, implemented and tested appropriately to reach great security and privacy levels. But even with the strongest will to provide a robust and secure piece of software, this objective is hard to achieve. Indeed, lots of threats, issues, vulnerabilities and errors must be taken into account and mitigated, which make it difficult for developers to ensure a complete coverage of these concerns.
+
+Developers also need to ensure that the software they develop respect the privacy of their end users. As for security concerns, the considerations to be taken into account are numerous and difficult to assess.
+
+There is currently a lack of methods that allow developers to build software that is as secure and private as possible in a simple, complete, and accessible manner. This fact is true for both web services and the \gls{ai} field.
+
+% -----------------------------------------------------------------------------
+\section{Contribution}
+\label{sec:introduction_contribution}
+
+This thesis aims to fill the gap we found and explained in \fullrefnametype{sec:introduction_context}.
+
+We wish to provide our contribution to the organizations and developers that develop web services which also include \gls{ai} processes. Our contribution aims to offer them an accessible, simple, and complete guide to evaluate their services based on a knowledge collection made of various topics regarding known security and privacy issues. Those evaluations will allow developers to identify the weakest parts of their services: by doing so, some levers can be pointed out to improve the overall security and privacy levels.
+
+% -----------------------------------------------------------------------------
+\subsection{Thesis Objectives}
+\label{subsec:introduction_objectives}
+
+A specifications document has been made to describe the scope of this thesis: the objectives it defines are summarized below. For further details, the document is available at \appendixref{appendix:specifications}.
+
+In order to specify relevant objectives, three global questions have been asked based the scope of this thesis:
+\begin{enumerate}
+    \item Which rules, best practices, technologies and aspects should be used in order to improve the security and privacy levels of web services?
+    \item Which rules, best practices, technologies and aspects should be used in order to improve the security and privacy levels of the \gls{ai} field, particularly for \gls{ml} and \gls{dl} models?
+    \item How can we provide an understandable and complete method to present our findings?
+\end{enumerate}
+
+\subsubsection{Primary Objectives}
+\label{subsubsec:introduction_objectives_primary}
+
+To answer the above questions, three objectives have been defined. They must all be completed at the end of the timeframe for the thesis to be considered as completed.
+\begin{enumerate}
+    \item Establish an up-to-date knowledge collection
+    \item Provide an understandable guide
+    \item Apply and test the guide on a web service
+\end{enumerate}
+
+The specifications document originally defined one of the output as \textit{Guide} or \Gls{framework}. We simplified this statement by removing the \gls{framework} part.
+
+\subsubsection{Secondary Objective}
+\label{subsubsec:introduction_objectives_secondary}
+
+A secondary objective has been defined: \citeproper{Publish the guide as an online resource}. It will only be completed if all primary objectives have been fulfilled and if there is still time left before the end of the thesis timeframe.
+
+\subsubsection{Constraint}
+\label{subsubsec:introduction_objectives_constraint}
+
+If any data collected under real-life conditions is used, analysed or processed during this thesis, ethical considerations and obligations must be applied.
+
+\subsection{Research Question}
+\label{subsec:introduction_contribution_question}
+
+A proper and answerable research question has been defined in order to efficiently lead the conduct of the thesis. To this end, we have chosen the \citeproperref{\gls{pico} method}{https://bit.ly/3y4N1E0}{2022}{09}{30}, which is mainly used in the medical research field but also adapted to broader scientific fields. This is the method the most adapted to our approach we found.
+
+We have used the \gls{pico} method using the questions asked in \fullrefnametype{subsec:introduction_objectives}. The two first questions are focused on the same goal, but on two different subjects: we can therefore combine them in only one research question, and integrate the third question as well into the method.
+
+Each letter of the \gls{pico} method, which we will refer to as \citeproper{item}, can have different meanings. As an example, the item \textit{P} can either identify a population, a patients group or the problem itself. We have chosen the most appropriate meaning for each item based on our objectives and context, while also considering the specificity of the \gls{ict} field.
+\begin{itemize}
+    \item \textbf{Population}: the aimed population is the organizations and developers that develop web services that include \gls{ai} processes. Their end users are not concerned. 
+    \item \textbf{Intervention}: an accessible, simple and complete guide made of various topics used to evaluate the said services.
+    \item \textbf{Control}: the guide is used to evaluate the security and privacy levels, which point out levers that can improve the said services and overcome their weaknesses.
+    \item \textbf{Outcomes}: an improved awareness about both the security risks of the systems, and about end users' privacy protections.
+\end{itemize}
+
+By putting all the items together, we can define our final research question which is the following: 
+\begin{displayquote}
+	\Researchquestion
+\end{displayquote}
+
+\subsection{Outcomes}
+\label{subsec:introduction_contribution_outcomes}
+
+Based on the research question, this thesis will provide three outcomes.
+
+The first outcome will be a knowledge collection built from all topics concerned by our scope: the security and privacy concerns of web services, including the topic of \gls{ai}. A state-of-the-art review will be conducted to search all relevant data needed to explain the biggest risks related to each topic using adequate sources.
+
+The second outcome will be a new proposal that states guidelines to build a guide which allows evaluating web services based on specific knowledge. Once this proposal defined, it will be applied to the knowledge collection previously built to create our own guide content.
+
+The third outcome will be an application that uses the guide content previously created to allow developers and decision makers to evaluate whether their web services are compliant with the various security and privacy issues.
+
+% -----------------------------------------------------------------------------
+\section{Similar Projects}
+\label{sec:introduction_similar}
+
+During our preliminary researches, we found a great amount of projects that allow to assess the security and privacy levels of \gls{ict} systems: yet, none of them have a complete approach. Indeed, those projects are specialized on particular topics, such as \gls{cloud} computing security, password strength or vulnerabilities evaluation. Furthermore, none of those projects address the specific scope of web services.
+
+Nevertheless, we found some projects that are close to our scope. These projects and their references could be useful when defining our own proposal. Here is a non-exhaustive list or the major projects we found:
+\begin{itemize}
+    \item \textbf{\citeproperref{\gls{owasp} Projects}{https://owasp.org}{2022}{10}{04}}: non-profit that publishes several projects to help developers to secure their software. Their projects are focused on vulnerabilities and risks.
+    \item \textbf{\citeproperref{Privacy Guide}{https://www.privacyguides.org}{2022}{10}{04}}: community-driven website, lists ethical and privacy-friendly applications. Limited to recommendations and best-practices for end users.
+    \item \textbf{\citeproperref{Security-List}{https://security-list.js.org}{2022}{10}{04}}: community-driven best practices regarding various security and privacy aspects of an information system. Oriented towards a usage of web services by end users.
+    \item \textbf{\gls{iso} 27000 Series}: multiple standards focusing on various fields, such as storage security or \gls{ict} disaster recovery programs. Yet, such standards are not accessible and can be difficult to assess.
+    \item \textbf{\gls{gdpr}}: regulation on data protection and privacy applied in the European Union. This set of laws does not offer any concrete applications or mitigations.
+    \item \textbf{\citeproperref{\gls{nist} Cybersecurity \gls{framework}}{https://bit.ly/3Szsm3j}{2022}{10}{04}}: allows managing cybersecurity risks using standards, guidelines and best practices. Only focused on risk management in order to improve security and resilience levels.
+    \item \textbf{\citeproperref{\gls{nist} Special Publication 1800}{https://bit.ly/3M6V35k}{2022}{10}{04}}: set of various specialized guides applicable to cybersecurity, using standards-based approaches and best practices. Many of these guides are not focused on web services.
+    \item \textbf{\citeproperref{\gls{cisa} Cyber Essentials \Glspl{toolkit}}{http://bit.ly/3GOf3bY}{2022}{11}{23}}: set of \gls{pdf} pages that lists some actions defined to help organizations to integrate cybersecurity processes. Does not integrate concerns on web services nor \gls{ai}.
+\end{itemize}
+
+% -----------------------------------------------------------------------------
+\section{Report Structure}
+\label{sec:introduction_structure}
+
+Our report is divided into several Chapters, each addressing specific steps of our thesis.
+
+A first Chapter will cover our approach used to build our knowledge collection. A state-of-the-art review will be defined, and all the knowledge needed to answer our research question will be collected.
+
+Then, a Chapter will analyse and compare several other guides that also aim to assess and evaluate software. Their characteristics will also be listed.
+
+Afterwards, our proposal will be defined in details. This Chapter will explain the considerations toward this challenge and our vision to create an effective and complete guide that suits our scope. The process of creating the guide content by applying our proposal will also be explained.
+
+Based on our proposal and on the guide content, an application will be analysed, designed, implemented and tested in order to simplify the usage of our proposal.
+
+Once all the previous steps finished, the application will be tested on a web service in order to validate it on multiple points. This approach will also concern our proposal and our guide content as they will be integrated in the application.
+
+Finally, a conclusion will be done on the entire thesis.
+
+% -----------------------------------------------------------------------------
+\section{Project Management}
+\label{sec:introduction_management}
+
+The thesis will be managed using the \gls{scrum} method, with weekly meetings between the student and the supervisors to discuss and define the backlogs of tasks to be completed. Those backlogs will be executed each week.
+
+All the resources used and produced within the scope of this thesis can be consulted on the \gls{heia} software forge~\cite{mt-forge}.
