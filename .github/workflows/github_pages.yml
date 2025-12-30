@@ -11,13 +11,13 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     defaults:
       run:
         working-directory: ./app
-
+    permissions:
+      id-token: write
+      pages: write
     strategy:
       matrix:
         node-version: [18.x, 20.x, 22.x]
